@@ -140,9 +140,15 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);color:var
 .cl-msg .ln{color:#e6e8f0}
 #micfoot{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;gap:8px;padding-top:4px;border-top:1px solid var(--line)}
 #micfoot a{color:var(--gold);text-decoration:none;font-size:11px;font-weight:800;letter-spacing:.3px}
-#micfoot .ev{font-size:10.5px;color:var(--gold2);font-weight:700;display:inline-flex;align-items:center;gap:6px;
-  background:rgba(245,197,66,.12);border:1px solid rgba(245,197,66,.4);border-radius:999px;padding:4px 11px;white-space:nowrap}
-#micfoot .ev .livedot{width:6px;height:6px;border-radius:50%;background:#39ff9d;box-shadow:0 0 7px #39ff9d;animation:pulse 1.4s infinite;flex:0 0 auto}
+#status-strip{display:flex;align-items:center;gap:4px;font-size:10px;flex-wrap:wrap;min-width:0}
+.hud-day{font-weight:800;color:#fff;font-size:11px;flex-shrink:0;margin-right:2px}
+.stp{display:inline-flex;align-items:center;padding:2px 7px;border-radius:7px;font-weight:700;white-space:nowrap;
+  color:var(--dim);border:1px solid var(--line);background:rgba(255,255,255,.03)}
+.stp.running{color:#fbbf24;border-color:rgba(251,191,36,.5);background:rgba(251,191,36,.1);animation:pulse 1s ease-in-out infinite}
+.stp.done{color:#4ade80;border-color:rgba(74,222,128,.45);background:rgba(74,222,128,.08)}
+.stp.current{color:#fff;border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.09)}
+.stp-arr{color:rgba(255,255,255,.18);font-size:9px}
+.stp-next{color:var(--gold2);font-weight:700;margin-left:4px;white-space:nowrap}
 
 /* ── overlays ── */
 .ov{position:fixed;inset:0;z-index:80;background:rgba(4,5,9,.74);backdrop-filter:blur(4px);
@@ -340,7 +346,14 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);color:var
     <div id="pulse"><span class="dot"></span><span id="pulse-txt">—</span></div>
     <div id="chat-feed"></div>
     <div id="micfoot">
-      <span class="ev" id="mic-ev">—</span>
+      <div id="status-strip">
+        <span class="hud-day" id="hud-day">Day 1</span>
+        <div class="stp" id="stp-morning">🌅 7am</div><span class="stp-arr">›</span>
+        <div class="stp" id="stp-midday">🥊 12:30</div><span class="stp-arr">›</span>
+        <div class="stp" id="stp-evening">🌆 6pm</div><span class="stp-arr">›</span>
+        <div class="stp" id="stp-night">🌙 11pm</div>
+        <span class="stp-next" id="stp-next">— </span>
+      </div>
       <a href="story.html">The full story ▸</a>
     </div>
   </div>
@@ -772,17 +785,16 @@ function fighterSVG(cid, poseOverride){
     stretch:{l:[-4.5,-86,-(+sw),-70],      r:[4.5,-86,(+sw),-70]},   // arms up, warming up
   }[pose||'ready'];
   const rope = pose==='skip'
-    ? `<path class="rope-d" d="M -9 -41 Q 0 7 9 -41" fill="none" stroke="#d6dde8" stroke-width="1.2" stroke-linecap="round"/>`
-     +`<path class="rope-u" d="M -9 -41 Q 0 -95 9 -41" fill="none" stroke="#d6dde8" stroke-width="1.2" stroke-linecap="round"/>` : '';
+    ? `<path class="rope-d" d="M -9 -40 C -23 8 23 8 9 -40" fill="none" stroke="#e6ecf4" stroke-width="1.7" stroke-linecap="round"/>`
+     +`<path class="rope-u" d="M -9 -40 C -23 -90 23 -90 9 -40" fill="none" stroke="#e6ecf4" stroke-width="1.7" stroke-linecap="round"/>` : '';
   const arm=(shx,shy,ex,ey,hx,hy)=>`<path d="M ${shx} ${shy} Q ${ex} ${ey} ${hx} ${hy}" stroke="${skin}" stroke-width="6.4" fill="none" stroke-linecap="round"/>`;
-  // padded MMA fist — rounded, knuckles toward the top, thumb low-outer, wrist wrap above
-  const glove=(x,y)=>{x=+x;y=+y;const out=x>0?1:-1;return `<rect x="${(x-3).toFixed(1)}" y="${(y-7.8).toFixed(1)}" width="6" height="3.4" rx="1.6" fill="#eceef4"/>`
-    +`<ellipse cx="${x}" cy="${y}" rx="4.4" ry="4.7" fill="${color}"/>`
-    +`<path d="M ${x-4.3} ${y+1} A 4.4 4.7 0 0 0 ${x+4.3} ${y+1} L ${x+4.3} ${y+1.8} A 4.4 4.7 0 0 1 ${x-4.3} ${y+1.8} Z" fill="#00000026"/>`
-    +`<path d="M ${x-3} ${y-2.6} q 3 -1.5 6 0 M ${x-3.2} ${y-.3} q 3.2 -1.5 6.4 0" stroke="#0000003d" stroke-width=".8" fill="none"/>`
-    +`<ellipse cx="${(x+out*3.7).toFixed(1)}" cy="${y+2}" rx="1.8" ry="2.3" fill="${color}"/>`
-    +`<ellipse cx="${(x+out*3.7).toFixed(1)}" cy="${y+2}" rx="1.8" ry="2.3" fill="#00000018"/>`
-    +`<ellipse cx="${x-1.3}" cy="${y-2.4}" rx="1.4" ry="1.9" fill="#ffffff28"/>`;};
+  // padded MMA fist held UP like a fighter's guard — knuckles toward the TOP, forearm enters from BELOW
+  const glove=(x,y)=>{x=+x;y=+y;const out=x>0?1:-1;return `<ellipse cx="${x}" cy="${y}" rx="4.6" ry="5" fill="${color}"/>`
+    +`<ellipse cx="${x}" cy="${y}" rx="4.6" ry="5" fill="url(#sk-${cid})" opacity=".34"/>`
+    +`<path d="M ${x-3.5} ${y-2.8} q 3.5 -1.9 7 0 M ${x-3.1} ${y-.6} q 3.1 -1.7 6.2 0 M ${x-2.4} ${y+1.6} q 2.4 -1.4 4.8 0" stroke="#00000042" stroke-width=".8" fill="none"/>`
+    +`<ellipse cx="${(x+out*4).toFixed(1)}" cy="${y-1}" rx="1.7" ry="2.3" fill="${color}"/><ellipse cx="${(x+out*4).toFixed(1)}" cy="${y-1}" rx="1.7" ry="2.3" fill="#0000001c"/>`
+    +`<path d="M ${x-3.6} ${y+3.6} q 3.6 2.4 7.2 0" stroke="#00000040" stroke-width="1.6" fill="none"/>`
+    +`<ellipse cx="${x-1.4}" cy="${y-3}" rx="1.6" ry="2" fill="#ffffff2c"/>`;};
   const armsSVG = rope+arm(-(+sw),-57,A.l[2],A.l[3],A.l[0],A.l[1])+arm(+sw,-57,A.r[2],A.r[3],A.r[0],A.r[1])+glove(A.l[0],A.l[1])+glove(A.r[0],A.r[1]);
   return `<svg class="char-svg" width="${W}" height="${H}" viewBox="-22 -94 44 98" xmlns="http://www.w3.org/2000/svg">
   <defs><linearGradient id="sk-${cid}" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffffff14"/><stop offset="1" stop-color="#00000026"/></linearGradient></defs>
@@ -1104,11 +1116,20 @@ function nextCycleETA(){
   const d=next-mins, h=Math.floor(d/60), m=d%60;
   return h>0?`${h}h ${m}m`:`${m}m`;
 }
-function updateCountdown(){
-  const w=S.world||{}; const cyc=(w.cycle||'').charAt(0).toUpperCase()+(w.cycle||'').slice(1);
-  const phase=(w.week_label||'').split('—')[0].trim();
-  const el=document.getElementById('mic-ev');
-  if(el) el.innerHTML=`<span class="livedot"></span>Day ${w.day||1} · ${cyc||'Live'}${phase?' · '+phase:''} · ⏱ next in ${nextCycleETA()}`;
+const ALL_STEPS=['morning','midday','evening','night'];
+function updateStatusBar(){
+  const w=S.world||{};
+  const hd=document.getElementById('hud-day'); if(hd) hd.textContent='Day '+(w.day||1);
+  const ns=document.getElementById('stp-next'); if(ns) ns.textContent='next in '+nextCycleETA();
+  // which cycles have already RUN today → turn green (like the sibling worlds)
+  const done=new Set();
+  (S.feed||[]).forEach(e=>{ if(e.day===(w.day||1)) done.add(e.cycle); });
+  ALL_STEPS.forEach(s=>{
+    const el=document.getElementById('stp-'+s); if(!el) return;
+    el.classList.remove('done','current','running');
+    if(done.has(s)) el.classList.add('done');
+  });
+  if(w.cycle && !done.has(w.cycle)) document.getElementById('stp-'+w.cycle)?.classList.add('current');
 }
 function toggleFeed(){ document.getElementById('mic').classList.toggle('open'); }
 function cycLabel(e){ return `Day ${e.day} · ${cap(e.cycle||'')}`; }
@@ -1152,7 +1173,7 @@ function render(){
   document.getElementById('ev-chip').innerHTML=`<b>${card.event||'BFC'}</b> · ${(SCENE_META[curScene]||{}).label||''}`;
   buildTabs();
   initMotes();
-  updateCountdown();
+  updateStatusBar();
   // live scene gets the LIVE dot
   if(!viewScene) viewScene=curScene;
   applyScene(viewScene);
@@ -1165,7 +1186,7 @@ function render(){
 
 loadData();
 setInterval(loadData, 90000);
-setInterval(updateCountdown, 30000);
+setInterval(updateStatusBar, 30000);
 window.addEventListener('resize', ()=>{ if(viewScene)layoutFighters(); });
 </script>
 </body>
