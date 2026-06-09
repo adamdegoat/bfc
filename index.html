@@ -30,6 +30,8 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);color:var
 .chip{background:rgba(225,29,46,.16);border:1px solid rgba(225,29,46,.5);color:#ffd9dd;
   border-radius:999px;padding:4px 11px;font-size:11px;font-weight:800;letter-spacing:.4px;white-space:nowrap}
 .chip b{color:#fff}
+.cyc-chip{background:rgba(245,197,66,.12);border-color:rgba(245,197,66,.45);color:#ffe08a;display:inline-flex;align-items:center;gap:6px}
+.cyc-chip .livedot{width:6px;height:6px;border-radius:50%;background:#39ff9d;box-shadow:0 0 7px #39ff9d;animation:pulse 1.4s infinite}
 .hublink{color:var(--dim);text-decoration:none;font-size:11px;font-weight:700;border:1px solid var(--line);
   border-radius:999px;padding:5px 10px;white-space:nowrap}
 .hublink:hover{color:#fff;border-color:var(--gold)}
@@ -88,6 +90,8 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);color:var
 @keyframes twk{0%,100%{opacity:.12}50%{opacity:.95}}
 .pyro-flame{transform-box:fill-box;transform-origin:50% 100%;animation:pyro .55s ease-in-out infinite alternate}
 @keyframes pyro{0%{transform:scaleY(.82) scaleX(1.04)}100%{transform:scaleY(1.18) scaleX(.9)}}
+.rope{transform-box:fill-box;transform-origin:center;animation:skiprope 1s ease-in-out infinite}
+@keyframes skiprope{0%,100%{transform:scaleX(1)}50%{transform:scaleX(.18)}}
 .flash{opacity:.1;animation:flash 2.2s steps(1) infinite}
 @keyframes flash{0%,96%{opacity:.12}97%,99%{opacity:1}100%{opacity:.12}}
 .sweep,.sweep2{transform-box:view-box;transform-origin:500px 22px}
@@ -290,6 +294,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);color:var
       </svg>
     </a>
     <div id="evchip">
+      <span class="chip cyc-chip" id="cyc-chip"><span class="livedot"></span><span id="cyc-txt">—</span></span>
       <span class="chip" id="ev-chip">—</span>
       <a class="hublink" href="https://adamdegoat.github.io/neverendingworld/">◂ World</a>
     </div>
@@ -554,6 +559,19 @@ function ARENA(){
   <polygon class="sweep2" points="500,22 410,300 590,300" fill="#38bdf8" opacity=".05"/>
   <!-- light rig -->
   ${spec(7,i=>`<g transform="translate(${130+i*120} 26)"><circle r="6" fill="#fff" opacity=".85"/><ellipse cx="0" cy="200" rx="70" ry="220" fill="url(#cagebeam)" opacity=".10"/></g>`)}
+  <!-- centre hanging jumbotron (the iconic LED cube over the cage) -->
+  <g transform="translate(500 46)">
+    <line x1="-78" y1="0" x2="-46" y2="22" stroke="#161a23" stroke-width="2"/><line x1="78" y1="0" x2="46" y2="22" stroke="#161a23" stroke-width="2"/><line x1="0" y1="0" x2="0" y2="22" stroke="#161a23" stroke-width="2"/>
+    <polygon points="-120,30 -76,22 -76,96 -120,112" fill="#081019"/>
+    <polygon points="120,30 76,22 76,96 120,112" fill="#081019"/>
+    <polygon points="-120,30 -76,22 -76,96 -120,112" fill="#38bdf8" opacity=".05"/>
+    <rect x="-76" y="22" width="152" height="76" rx="3" fill="url(#bigscreen)" stroke="#1c3a55" stroke-width="1.5"/>
+    <circle cx="-64" cy="34" r="3" fill="#e11d2e"/><text x="-55" y="38" font-family="Oswald,sans-serif" font-weight="700" font-size="9" fill="#ff6477">LIVE</text>
+    <text x="0" y="66" font-family="Anton,sans-serif" font-size="34" fill="#f5c542" text-anchor="middle" opacity=".9">BFC</text>
+    <text x="0" y="84" font-family="Oswald,sans-serif" font-weight="600" font-size="9" letter-spacing="3" fill="#9fb6cc" text-anchor="middle">FIGHT NIGHT</text>
+    <rect x="-78" y="98" width="156" height="6" fill="#e11d2e"/>
+    <ellipse cx="0" cy="118" rx="120" ry="14" fill="url(#cagebeam)" opacity=".22"/>
+  </g>
   <!-- entrance tunnel + walkout (far end) -->
   <g transform="translate(500 300)">
     <path d="M -54 6 L -40 -54 L 40 -54 L 54 6 Z" fill="#04060b"/>
@@ -572,10 +590,17 @@ function ARENA(){
     <polygon points="-260,90 -150,-40 150,-40 260,90 150,150 -150,150" fill="#0c1018"/>
     <polygon points="-230,80 -130,-26 130,-26 230,80 130,128 -130,128" fill="url(#canvas)"/>
     <text x="0" y="64" font-family="Anton,sans-serif" font-weight="900" font-size="58" fill="#f5c542" text-anchor="middle" opacity=".42">BFC</text>
-    <!-- cage posts + fence -->
-    ${spec(7,i=>{const xs=[-230,-130,0,130,230,130,-130][i],ys=[80,-26,-40,-26,80,128,128][i];return `<line x1="${xs}" y1="${ys}" x2="${xs}" y2="${ys-110}" stroke="#cbd2e0" stroke-width="4"/>`})}
+    <!-- apron sponsor band -->
+    <polygon points="-230,80 230,80 130,128 -130,128" fill="#0a0e16" opacity=".9"/>
+    ${spec(5,i=>`<text x="${-120+i*60}" y="108" font-family="Oswald,sans-serif" font-weight="700" font-size="8" letter-spacing="1" fill="#566480" text-anchor="middle" opacity=".8">BFC</text>`)}
+    <!-- chain-link fence: posts + diamond mesh -->
+    <clipPath id="fenceclip"><polygon points="-230,80 230,80 230,-30 130,-136 -130,-136 -230,-30"/></clipPath>
+    <g clip-path="url(#fenceclip)" stroke="#8a93a5" stroke-width=".6" opacity=".18">
+      ${spec(22,i=>`<line x1="${-280+i*26}" y1="-140" x2="${-160+i*26}" y2="90"/>`)}
+      ${spec(22,i=>`<line x1="${-160+i*26}" y1="-140" x2="${-280+i*26}" y2="90"/>`)}
+    </g>
     <polygon points="-230,-30 -130,-136 130,-136 230,-30" fill="none" stroke="#9aa3b5" stroke-width="2" opacity=".4"/>
-    ${spec(13,i=>`<line x1="${-130+i*22}" y1="-26" x2="${-130+i*22}" y2="-136" stroke="#5a6276" stroke-width="1" opacity=".3"/>`)}
+    ${spec(7,i=>{const xs=[-230,-130,0,130,230,130,-130][i],ys=[80,-26,-40,-26,80,128,128][i];return `<rect x="${xs-3}" y="${ys-110}" width="6" height="110" rx="2" fill="#cbd2e0"/><rect x="${xs-4}" y="${ys-112}" width="8" height="14" rx="3" fill="#${i%2?'2563eb':'e11d2e'}" opacity=".7"/>`})}
   </g>
   <!-- corner teams: red + blue corner, stool, cornermen, bucket -->
   ${spec(2,i=>{const x=i?726:274, c=i?'#2563eb':'#e11d2e', dir=i?1:-1; return `<g transform="translate(${x} 530)">`
@@ -676,7 +701,10 @@ function fighterSVG(cid, poseOverride){
     ready:{l:[-(+sw-2),-46,-(+sw+5),-50],  r:[(+sw-2),-46,(+sw+5),-50]},
     guard:{l:[-6.5,-59,-(+sw+2),-51],      r:[6.5,-59,(+sw+2),-51]},
     punch:{l:[-5.5,-58,-(+sw+1),-52],      r:[17,-54,(+sw+2),-52]},  // right cross thrown out (kept in-frame)
-  }[pose];
+    skip: {l:[-9,-41,-(+sw+1),-45],        r:[9,-41,(+sw+1),-45]},   // turning a skipping rope
+    stretch:{l:[-4.5,-86,-(+sw),-70],      r:[4.5,-86,(+sw),-70]},   // arms up, warming up
+  }[pose||'ready'];
+  const rope = pose==='skip' ? `<ellipse class="rope" cx="0" cy="-42" rx="15.5" ry="42" fill="none" stroke="#d6dde8" stroke-width="1.2" opacity=".6"/>` : '';
   const arm=(shx,shy,ex,ey,hx,hy)=>`<path d="M ${shx} ${shy} Q ${ex} ${ey} ${hx} ${hy}" stroke="${skin}" stroke-width="6.4" fill="none" stroke-linecap="round"/>`;
   const glove=(x,y)=>{x=+x;y=+y;return `<rect x="${(x-3.2).toFixed(1)}" y="${(y-7.6).toFixed(1)}" width="6.4" height="3.6" rx="1.7" fill="#eceef4"/>`
     +`<path d="M ${x-4} ${y-3} Q ${x-4.4} ${y+4.2} ${x} ${y+4.8} Q ${x+4.4} ${y+4.2} ${x+4} ${y-3} Q ${x} ${y-5.6} ${x-4} ${y-3} Z" fill="${color}"/>`
@@ -684,7 +712,7 @@ function fighterSVG(cid, poseOverride){
     +`<path d="M ${x-2.7} ${y-1.4} q 2.7 -2 5.4 0 M ${x-2.4} ${y+1} q 2.4 -1.5 4.8 0" stroke="#00000044" stroke-width=".9" fill="none"/>`
     +`<ellipse cx="${x-1.4}" cy="${y-2.6}" rx="1.5" ry="2.1" fill="#ffffff26"/>`
     +`<ellipse cx="${(x>0?x+4.3:x-4.3).toFixed(1)}" cy="${y+1.6}" rx="1.7" ry="2.2" fill="${color}"/>`;};
-  const armsSVG = arm(-(+sw),-57,A.l[2],A.l[3],A.l[0],A.l[1])+arm(+sw,-57,A.r[2],A.r[3],A.r[0],A.r[1])+glove(A.l[0],A.l[1])+glove(A.r[0],A.r[1]);
+  const armsSVG = rope+arm(-(+sw),-57,A.l[2],A.l[3],A.l[0],A.l[1])+arm(+sw,-57,A.r[2],A.r[3],A.r[0],A.r[1])+glove(A.l[0],A.l[1])+glove(A.r[0],A.r[1]);
   return `<svg class="char-svg" width="${W}" height="${H}" viewBox="-22 -94 44 98" xmlns="http://www.w3.org/2000/svg">
   <defs><linearGradient id="sk-${cid}" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffffff14"/><stop offset="1" stop-color="#00000026"/></linearGradient></defs>
   ${hair.back}
@@ -791,11 +819,11 @@ const SPOTS={
   gym:[
     {x:45,b:9,s:1.04,f:'r',a:'ready'},{x:55,b:9,s:1.04,f:'l',a:'ready'},  // 0+1 face-to-face on the mat
     {x:15,b:16,s:0.80,f:'r',a:'punch'},                   // working the heavy bags
-    {x:29,b:7,s:1.10,f:'r',a:'guard'},                    // shadow-boxing, foreground
+    {x:29,b:7,s:1.10,f:'r',a:'skip'},                     // skipping rope, foreground
     {x:73,b:15,s:0.84,f:'l',a:'guard'},                   // shadow-boxing by the cage
-    {x:87,b:8,s:1.02,f:'l',a:'ready'},                    // foreground right
+    {x:87,b:8,s:1.02,f:'l',a:'stretch'},                  // stretching/warming up, foreground right
     {x:63,b:19,s:0.74,f:'l',a:'punch'},                   // bag work, deep back
-    {x:8,b:10,s:0.96,f:'r',a:'guard'},                    // far left
+    {x:8,b:10,s:0.96,f:'r',a:'guard'},                    // far left shadow-boxing
   ],
   weighin:[
     {x:43,b:13,s:1.06,f:'r',a:'ready'},{x:57,b:13,s:1.06,f:'l',a:'ready'},   // face-off on the scale
@@ -996,6 +1024,20 @@ function buildTabs(){
   const t=document.getElementById('scenetabs');
   t.innerHTML=SCENES.map(s=>`<button class="stab" data-s="${s}" onclick="applyScene('${s}')"><span class="e">${SCENE_META[s].emoji}</span><span class="t">${SCENE_META[s].label}</span></button>`).join('');
 }
+// countdown to the next live cycle (SGT 7:00 / 12:30 / 18:00 / 23:00) — like the sibling worlds
+function nextCycleETA(){
+  const n=new Date(); const sgt=new Date(n.getTime()+n.getTimezoneOffset()*60000+8*3600000);
+  const mins=sgt.getHours()*60+sgt.getMinutes();
+  const slots=[7*60,12*60+30,18*60,23*60];
+  let next=slots.find(s=>s>mins); if(next==null) next=slots[0]+1440;
+  const d=next-mins, h=Math.floor(d/60), m=d%60;
+  return h>0?`${h}h ${m}m`:`${m}m`;
+}
+function updateCountdown(){
+  const w=S.world||{}; const cyc=(w.cycle||'').charAt(0).toUpperCase()+(w.cycle||'').slice(1);
+  const el=document.getElementById('cyc-txt');
+  if(el) el.textContent=`Day ${w.day||1} · ${cyc||'Live'} · next in ${nextCycleETA()}`;
+}
 function toggleFeed(){ document.getElementById('mic').classList.toggle('open'); }
 function cycLabel(e){ return `Day ${e.day} · ${cap(e.cycle||'')}`; }
 function renderMic(){
@@ -1039,6 +1081,7 @@ function render(){
   document.getElementById('ev-chip').innerHTML=`<b>${card.event||'BFC'}</b> · ${(SCENE_META[curScene]||{}).label||''}`;
   buildTabs();
   initMotes();
+  updateCountdown();
   // live scene gets the LIVE dot
   if(!viewScene) viewScene=curScene;
   applyScene(viewScene);
@@ -1051,6 +1094,7 @@ function render(){
 
 loadData();
 setInterval(loadData, 90000);
+setInterval(updateCountdown, 30000);
 window.addEventListener('resize', ()=>{ if(viewScene)layoutFighters(); });
 </script>
 </body>
