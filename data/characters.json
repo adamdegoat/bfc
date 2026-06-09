@@ -512,7 +512,7 @@
     "skin": "#cf9e6b",
     "scores": {
       "aggression": 62,
-      "charisma": 28,
+      "charisma": 92,
       "discipline": 98,
       "ego": 28,
       "heart": 92,
@@ -529,7 +529,11 @@
       "y": 60
     },
     "shelter": "gym",
-    "memories": []
+    "memories": [],
+    "star": true,
+    "star_tag": "The Untouchable",
+    "draw_rank": 3,
+    "hype": "21-0 and never been hurt. The aura is real — everyone wants to be the one."
   },
   "lw_cross": {
     "id": "lw_cross",
@@ -581,7 +585,11 @@
       "y": 60
     },
     "shelter": "gym",
-    "memories": []
+    "memories": [],
+    "star": true,
+    "star_tag": "The Face of BFC",
+    "draw_rank": 1,
+    "hype": "The biggest draw in the sport — sells out arenas, then backs every word up."
   },
   "lw_mwangi": {
     "id": "lw_mwangi",
@@ -1009,7 +1017,11 @@
       "y": 60
     },
     "shelter": "gym",
-    "memories": []
+    "memories": [],
+    "star": true,
+    "star_tag": "The Knockout King",
+    "draw_rank": 2,
+    "hype": "Nobody ends a night like Blackout. Must-see violence, every single time."
   },
   "mw_romano": {
     "id": "mw_romano",
@@ -1524,7 +1536,7 @@
     "skin": "#8d5a3c",
     "scores": {
       "aggression": 86,
-      "charisma": 82,
+      "charisma": 92,
       "discipline": 72,
       "ego": 84,
       "heart": 72,
@@ -1541,7 +1553,11 @@
       "y": 60
     },
     "shelter": "gym",
-    "memories": []
+    "memories": [],
+    "star": true,
+    "star_tag": "The Next Big Thing",
+    "draw_rank": 4,
+    "hype": "Loud, undefeated, electric. The future of the sport showed up early."
   },
   "lhw_petrovic": {
     "id": "lhw_petrovic",
@@ -1952,7 +1968,7 @@
     "skin": "#8d5a3c",
     "scores": {
       "aggression": 88,
-      "charisma": 80,
+      "charisma": 92,
       "discipline": 62,
       "ego": 44,
       "heart": 99,
@@ -1969,7 +1985,11 @@
       "y": 60
     },
     "shelter": "gym",
-    "memories": []
+    "memories": [],
+    "star": true,
+    "star_tag": "The Baddest Man",
+    "draw_rank": 5,
+    "hype": "One concrete right hand and it's over. The scariest man in the building."
   },
   "hw_morozov": {
     "id": "hw_morozov",
