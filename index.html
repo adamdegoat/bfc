@@ -90,6 +90,8 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);color:var
 @keyframes twk{0%,100%{opacity:.12}50%{opacity:.95}}
 .pyro-flame{transform-box:fill-box;transform-origin:50% 100%;animation:pyro .55s ease-in-out infinite alternate}
 @keyframes pyro{0%{transform:scaleY(.82) scaleX(1.04)}100%{transform:scaleY(1.18) scaleX(.9)}}
+.crowdwave{animation:cwave 9s linear infinite}
+@keyframes cwave{from{transform:translateX(0)}to{transform:translateX(1300px)}}
 .rope{transform-box:fill-box;transform-origin:center;animation:skiprope 1s ease-in-out infinite}
 @keyframes skiprope{0%,100%{transform:scaleX(1)}50%{transform:scaleX(.18)}}
 .flash{opacity:.1;animation:flash 2.2s steps(1) infinite}
@@ -568,6 +570,8 @@ function ARENA(){
   <!-- crowd tiers + a sea of phone lights -->
   <rect y="50" width="1000" height="210" fill="#080b12"/>${tiers}
   ${spec(80,i=>`<circle class="twinkle" style="animation-delay:${(((i*0.37)%2.5)).toFixed(2)}s" cx="${(i*137)%1000}" cy="${56+((i*53)%200)}" r="${1+(i%2)}" fill="#${i%7===0?'ffe9b0':'ffffff'}" opacity="${(.15+(i%5)*.06).toFixed(2)}"/>`)}
+  <!-- crowd wave: a light band sweeping across the bowl -->
+  <rect class="crowdwave" x="-260" y="50" width="260" height="210" fill="url(#cagebeam)" opacity=".07"/>
   <!-- big screens -->
   <g transform="translate(150 70)"><rect width="150" height="86" rx="5" fill="url(#bigscreen)" stroke="#1c3a55"/><text x="75" y="54" font-family="Anton,sans-serif" font-weight="900" font-size="34" fill="#f5c542" text-anchor="middle" opacity=".8">BFC</text></g>
   <g transform="translate(700 70)"><rect width="150" height="86" rx="5" fill="url(#bigscreen)" stroke="#1c3a55"/><text x="75" y="54" font-family="Anton,sans-serif" font-weight="900" font-size="34" fill="#f5c542" text-anchor="middle" opacity=".8">BFC</text></g>
@@ -608,6 +612,10 @@ function ARENA(){
     <polygon points="-260,90 -150,-40 150,-40 260,90 150,150 -150,150" fill="#0c1018"/>
     <polygon points="-230,80 -130,-26 130,-26 230,80 130,128 -130,128" fill="url(#canvas)"/>
     <text x="0" y="64" font-family="Anton,sans-serif" font-weight="900" font-size="58" fill="#f5c542" text-anchor="middle" opacity=".42">BFC</text>
+    <!-- referee in the cage (black uniform) -->
+    <g transform="translate(86 30)" fill="#0b0d12"><ellipse cy="8" rx="9" ry="3" opacity=".5"/><path d="M -7 6 L -6 -24 Q -6 -31 0 -31 Q 6 -31 6 -24 L 7 6 Z"/><rect x="-7" y="-20" width="14" height="4" fill="#46505f"/><circle cy="-37" r="6"/></g>
+    <!-- round + clock indicator on the cage top -->
+    <g transform="translate(0 -150)"><rect x="-38" y="-11" width="76" height="16" rx="3" fill="#05070d" stroke="#1c3a55"/><circle cx="-28" cy="-3" r="2.6" fill="#e11d2e"/><text x="4" y="1" font-family="Oswald,sans-serif" font-weight="600" font-size="10" letter-spacing="1" fill="#39ff9d" text-anchor="middle">RD 1 · 5:00</text></g>
     <!-- apron sponsor band -->
     <polygon points="-230,80 230,80 130,128 -130,128" fill="#0a0e16" opacity=".9"/>
     ${spec(5,i=>`<text x="${-120+i*60}" y="108" font-family="Oswald,sans-serif" font-weight="700" font-size="8" letter-spacing="1" fill="#566480" text-anchor="middle" opacity=".8">BFC</text>`)}
@@ -631,10 +639,13 @@ function ARENA(){
   <!-- entrance ramp glow + pyro jets -->
   <polygon points="470,300 530,300 560,440 440,440" fill="#e11d2e" opacity=".08"/>
   ${spec(2,i=>{const x=i?770:230;return `<g transform="translate(${x} 300)"><g class="pyro-flame" style="animation-delay:${i?'-.3s':'0s'}"><path d="M0 0 Q-8 -34 0 -70 Q8 -34 0 0 Z" fill="#ff8a1e" opacity=".55"/><path d="M0 6 Q-5 -22 0 -48 Q5 -22 0 6 Z" fill="#ffe08a" opacity=".7"/></g></g>`})}
+  <!-- cage-side cast: photographers crouched at the fence + ring announcer at the mic -->
+  ${spec(4,i=>{const x=[330,420,580,670][i];return `<g transform="translate(${x} 540)" fill="#06090e"><ellipse cy="6" rx="13" ry="4" opacity=".5"/><path d="M -10 4 L -9 -16 Q -9 -24 0 -24 Q 9 -24 9 -16 L 10 4 Z"/><circle cy="-30" r="7"/><rect x="${i%2?4:-18}" y="-34" width="16" height="9" rx="2" fill="#11151d"/><circle cx="${i%2?16:-16}" cy="-30" r="3" fill="#1a2230"/></g>`})}
+  <g transform="translate(500 548)" fill="#070a10"><ellipse cy="6" rx="11" ry="4" opacity=".5"/><path d="M -8 4 L -7 -30 Q -7 -38 0 -38 Q 7 -38 7 -30 L 8 4 Z"/><rect x="-8" y="-30" width="16" height="22" rx="2" fill="#0e1320"/><circle cy="-44" r="6.5"/><rect x="-1.5" y="-30" width="3" height="16" fill="#1a2230"/><circle cx="0" cy="-14" r="2.4" fill="#1a2230"/></g>
   <!-- foreground: the commentary desk + barrier silhouette -->
-  <rect y="556" width="1000" height="44" fill="#04060b"/>
-  <g transform="translate(500 556)" opacity=".9"><rect x="-120" y="-20" width="240" height="22" rx="4" fill="#0a0e16"/><rect x="-120" y="-20" width="240" height="6" fill="#e11d2e" opacity=".4"/><text x="0" y="-6" font-family="Anton,sans-serif" font-weight="900" font-size="11" fill="#cfd8e6" text-anchor="middle" opacity=".5">BFC · OCTAGON</text></g>
-  ${spec(20,i=>`<line x1="${i*52}" y1="556" x2="${i*52}" y2="600" stroke="#11151f" stroke-width="2"/>`)}
+  <rect y="566" width="1000" height="34" fill="#04060b"/>
+  <g transform="translate(500 566)" opacity=".9"><rect x="-120" y="-18" width="240" height="20" rx="4" fill="#0a0e16"/><rect x="-120" y="-18" width="240" height="6" fill="#e11d2e" opacity=".4"/><text x="0" y="-5" font-family="Anton,sans-serif" font-weight="900" font-size="11" fill="#cfd8e6" text-anchor="middle" opacity=".5">BFC · OCTAGON</text></g>
+  ${spec(20,i=>`<line x1="${i*52}" y1="566" x2="${i*52}" y2="600" stroke="#11151f" stroke-width="2"/>`)}
   </svg>`;
 }
 
