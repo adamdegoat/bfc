@@ -450,6 +450,15 @@ function GYM(){
   <rect x="640" y="552" width="30" height="8" rx="3" fill="#cfd8e6" opacity=".5"/>
   <!-- ring ropes hint, back-left corner -->
   <g transform="translate(90 300)" opacity=".5"><rect x="0" y="-2" width="150" height="4" fill="#7d2626"/><rect x="0" y="14" width="150" height="4" fill="#cfd8e6"/><rect x="0" y="30" width="150" height="4" fill="#7d2626"/><rect x="-4" y="-10" width="8" height="48" fill="#1a1d26"/><rect x="146" y="-10" width="8" height="48" fill="#1a1d26"/></g>
+  <!-- coaches / cornermen silhouettes (depth) -->
+  ${spec(2,i=>{const x=i?640:340;return `<g transform="translate(${x} 590) scale(${i?-1:1} 1)" fill="#0a0d14" opacity=".8">
+    <ellipse cx="0" cy="3" rx="15" ry="4" opacity=".5"/>
+    <path d="M -10 -2 L -9 -42 Q -9 -50 0 -50 Q 9 -50 9 -42 L 10 -2 Z"/>
+    <rect x="-13" y="-44" width="11" height="6" rx="3" transform="rotate(8 -8 -41)"/>
+    <circle cx="0" cy="-57" r="8.5"/>
+    <path d="M -9 -60 Q 0 -68 9 -60 L 12 -58 L -9 -58 Z"/>
+    <rect x="-16" y="-46" width="9" height="14" rx="3" fill="#11151d"/>
+  </g>`})}
   </svg>`;
 }
 
@@ -585,7 +594,7 @@ function moodFace(mood){
   if(/(happy|confident|smil|joy|elated|proud|relief|relieved|hyped|beaming)/.test(m))return'happy';
   return'normal';
 }
-function fighterSVG(cid){
+function fighterSVG(cid, poseOverride){
   const c=F(cid); const color=c.color||'#888'; const skin=c.skin||'#d9a066';
   const div=c.division||'lightweight';
   const bf={featherweight:.93,lightweight:.97,middleweight:1.0,light_heavyweight:1.07,heavyweight:1.16}[div]||1;
@@ -598,23 +607,23 @@ function fighterSVG(cid){
   // size: heavier = taller
   const sz=({featherweight:.94,lightweight:.97,middleweight:1.0,light_heavyweight:1.05,heavyweight:1.12}[div]||1);
   const W=(52*sz).toFixed(1),H=(116*sz).toFixed(1);
-  // ── STANCE: fighters don't stand identically. Pick an arm pose from id + mood. ──
+  // ── STANCE: fighters work, they don't pose like statues. Pose from station, else id+mood. ──
   const _hh=cid.split('').reduce((a,ch)=>a+ch.charCodeAt(0),0);
-  const poses=['guard','ready','ready','low','guard','ready'];
-  let pose=poses[_hh%poses.length];
-  if(face==='narrow') pose='guard';          // fired-up → hands up
-  const HP={
-    low:  [-(+sw+3),-29, -(+sw+5),-43],
-    ready:[-(+sw-2),-46, -(+sw+5),-50],
-    guard:[-6.5,-59,    -(+sw+2),-51],
+  const poses=['guard','ready','guard','low','guard','ready'];
+  let pose=poseOverride||poses[_hh%poses.length];
+  if(!poseOverride && face==='narrow') pose='guard';
+  // each pose = explicit left + right arm [handX,handY,elbowX,elbowY]
+  const A={
+    low:  {l:[-(+sw+3),-29,-(+sw+5),-43],  r:[(+sw+3),-29,(+sw+5),-43]},
+    ready:{l:[-(+sw-2),-46,-(+sw+5),-50],  r:[(+sw-2),-46,(+sw+5),-50]},
+    guard:{l:[-6.5,-59,-(+sw+2),-51],      r:[6.5,-59,(+sw+2),-51]},
+    punch:{l:[-5.5,-58,-(+sw+1),-52],      r:[17,-54,(+sw+2),-52]},  // right cross thrown out (kept in-frame)
   }[pose];
-  const lhx=HP[0],lhy=HP[1],lex=HP[2],ley=HP[3];
-  const rhx=-lhx,rhy=lhy,rex=-lex,rey=ley;
   const arm=(shx,shy,ex,ey,hx,hy)=>`<path d="M ${shx} ${shy} Q ${ex} ${ey} ${hx} ${hy}" stroke="${skin}" stroke-width="6.4" fill="none" stroke-linecap="round"/>`;
   const glove=(x,y)=>`<rect x="${(x-3.1).toFixed(1)}" y="${(y-7).toFixed(1)}" width="6.2" height="3.2" rx="1.5" fill="#e8eaf0"/>`
     +`<ellipse cx="${x}" cy="${y}" rx="4.1" ry="4.5" fill="${color}"/><ellipse cx="${x}" cy="${y}" rx="4.1" ry="4.5" fill="#00000026"/>`
     +`<path d="M ${(x-2.6).toFixed(1)} ${(y-1).toFixed(1)} q 2.6 -2 5.2 0" stroke="#0000004d" stroke-width="1" fill="none"/>`;
-  const armsSVG = arm(-(+sw),-57,lex,ley,lhx,lhy)+arm(+sw,-57,rex,rey,rhx,rhy)+glove(lhx,lhy)+glove(rhx,rhy);
+  const armsSVG = arm(-(+sw),-57,A.l[2],A.l[3],A.l[0],A.l[1])+arm(+sw,-57,A.r[2],A.r[3],A.r[0],A.r[1])+glove(A.l[0],A.l[1])+glove(A.r[0],A.r[1]);
   return `<svg class="char-svg" width="${W}" height="${H}" viewBox="-22 -94 44 98" xmlns="http://www.w3.org/2000/svg">
   <defs><linearGradient id="sk-${cid}" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffffff14"/><stop offset="1" stop-color="#00000026"/></linearGradient></defs>
   ${hair.back}
@@ -698,22 +707,22 @@ function latestFor(cid){
 //    scattered spots at varied depth — NOT an even row. {x:left%, b:bottom%, s:scale, f:'l'|'r' facing} ──
 const SPOTS={
   gym:[
-    {x:45,b:9,s:1.04,f:'r'},{x:55,b:9,s:1.04,f:'l'},     // 0+1 talk face-to-face on the mat
-    {x:15,b:16,s:0.80,f:'r'},                             // back by the bags
-    {x:29,b:7,s:1.10,f:'r'},                              // foreground left
-    {x:73,b:15,s:0.84,f:'l'},                             // back by the cage
-    {x:87,b:8,s:1.02,f:'l'},                              // foreground right
-    {x:63,b:19,s:0.74,f:'l'},                             // deep back
-    {x:8,b:10,s:0.96,f:'r'},                              // far left
+    {x:45,b:9,s:1.04,f:'r',a:'ready'},{x:55,b:9,s:1.04,f:'l',a:'ready'},  // 0+1 face-to-face on the mat
+    {x:15,b:16,s:0.80,f:'r',a:'punch'},                   // working the heavy bags
+    {x:29,b:7,s:1.10,f:'r',a:'guard'},                    // shadow-boxing, foreground
+    {x:73,b:15,s:0.84,f:'l',a:'guard'},                   // shadow-boxing by the cage
+    {x:87,b:8,s:1.02,f:'l',a:'ready'},                    // foreground right
+    {x:63,b:19,s:0.74,f:'l',a:'punch'},                   // bag work, deep back
+    {x:8,b:10,s:0.96,f:'r',a:'guard'},                    // far left
   ],
   weighin:[
-    {x:43,b:13,s:1.06,f:'r'},{x:57,b:13,s:1.06,f:'l'},   // face-off on the scale
+    {x:43,b:13,s:1.06,f:'r',a:'ready'},{x:57,b:13,s:1.06,f:'l',a:'ready'},   // face-off on the scale
     {x:21,b:10,s:0.94,f:'r'},{x:79,b:10,s:0.94,f:'l'},
     {x:32,b:8,s:1.02,f:'r'},{x:68,b:8,s:1.02,f:'l'},
     {x:11,b:14,s:0.82,f:'r'},{x:89,b:14,s:0.82,f:'l'},
   ],
   arena:[
-    {x:46,b:15,s:1.06,f:'r'},{x:54,b:15,s:1.06,f:'l'},   // the two in the cage
+    {x:46,b:15,s:1.06,f:'r',a:'guard'},{x:54,b:15,s:1.06,f:'l',a:'guard'},   // the two squared up in the cage
     {x:20,b:9,s:0.92,f:'r'},{x:80,b:9,s:0.92,f:'l'},
     {x:33,b:20,s:0.78,f:'r'},{x:67,b:20,s:0.78,f:'l'},
     {x:12,b:11,s:0.9,f:'r'},{x:88,b:11,s:0.9,f:'l'},
@@ -763,7 +772,7 @@ function layoutFighters(){
     const dur=(3.6 + (h%9)*0.18).toFixed(2), sway=(((h%5)-2)*0.5).toFixed(1), delay=(-(h%7)*0.4).toFixed(2);
     div.innerHTML =
       (thought?`<div class="bubble show"><div class="bn" style="color:${c.color}">${firstName(cid)}</div>${thought}</div>`:'')+
-      `<div class="figface" style="transform:scaleX(${flip})"><div class="figwrap" style="--idledur:${dur}s;--sway:${sway}deg;animation-delay:${delay}s">`+fighterSVG(cid)+`</div></div>`+
+      `<div class="figface" style="transform:scaleX(${flip})"><div class="figwrap" style="--idledur:${dur}s;--sway:${sway}deg;animation-delay:${delay}s">`+fighterSVG(cid, sp.a)+`</div></div>`+
       `<div class="nametag">${c.champion?'<span class="belt">🏆 </span>':c.star?'<span class="belt">⭐ </span>':''}${firstName(cid)}</div>`;
     div.onclick=()=>showStat(cid);
     wrap.appendChild(div);

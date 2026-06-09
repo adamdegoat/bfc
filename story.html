@@ -58,24 +58,24 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--text);font-size:14px
 .order-cue{font-size:11px;color:var(--muted2);margin-bottom:14px}
 
 /* day groups + posts (the Log — book order, latest badge) */
-.day-group{margin:0 0 22px}
-.day-head{display:flex;align-items:center;gap:10px;margin:0 0 12px}
-.day-head .d{font-family:'Cinzel',serif;font-weight:900;font-size:17px;color:#fff}
-.day-head .wk{font-size:10px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--muted);
-  background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:6px;padding:2px 8px}
-.day-head .line{flex:1;height:1px;background:var(--line)}
-.daysum{background:linear-gradient(90deg,rgba(245,197,66,.10),transparent);border:1px solid rgba(245,197,66,.25);
-  border-left:3px solid var(--gold);border-radius:10px;padding:10px 13px;margin:0 0 14px;font-size:13px;line-height:1.5;color:#f3ead2}
-.daysum .k{font-size:9px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:3px}
-.post{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:14px;padding:13px 15px;margin:0 0 12px}
-.post.latest{border-color:rgba(245,197,66,.5);background:linear-gradient(180deg,rgba(245,197,66,.07),rgba(255,255,255,.02))}
-.post-top{display:flex;align-items:center;gap:8px;margin-bottom:7px}
-.cyc{font-family:'VT323',monospace;font-size:13px;letter-spacing:1px;color:var(--muted);text-transform:uppercase}
-.latest-badge{font-size:9px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:#1a1300;background:var(--gold);border-radius:5px;padding:2px 7px}
-.rel{font-size:10px;color:var(--muted2);margin-left:auto}
-.desc{font-size:14px;line-height:1.5;color:#e9ebf3;margin-bottom:9px;font-weight:500}
-.dlg{display:flex;flex-direction:column;gap:3px}
-.dl{font-size:13.5px;line-height:1.4}.dl b{font-weight:800}
+/* flat day-by-day log — same grammar as the sibling worlds */
+.log-day{margin-bottom:24px}
+.log-day.latest{position:relative}
+.log-day.latest::before{content:'';position:absolute;left:-11px;top:30px;bottom:10px;width:3px;border-radius:3px;background:linear-gradient(var(--gold),rgba(245,197,66,0))}
+.log-day-header{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--muted);
+  margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px}
+.log-day-header .wk{font-size:9.5px;font-weight:800;letter-spacing:.6px;color:var(--gold);background:rgba(245,197,66,.1);border:1px solid rgba(245,197,66,.25);border-radius:5px;padding:1px 7px}
+.log-recap{font-size:12.5px;line-height:1.5;color:#cdd2dd;font-style:italic;padding:2px 0 10px;border-left:2px solid rgba(245,197,66,.4);padding-left:10px;margin-bottom:6px}
+.log-entry{font-size:13.5px;padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.05);display:flex;gap:.6rem;align-items:flex-start;line-height:1.5}
+.log-entry.latest{background:linear-gradient(90deg,rgba(245,197,66,.08),transparent);border-radius:8px;border-bottom-color:transparent;padding-left:8px;margin-left:-8px}
+.log-tag{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--muted2);flex-shrink:0;width:58px;margin-top:2px}
+.log-dots{display:flex;gap:3px;flex-shrink:0;align-items:center;margin-top:5px}
+.log-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.log-text{flex:1;color:#e9ebf3}
+.latest-badge{display:inline-flex;align-items:center;font-size:9px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;
+  color:#1a1300;background:var(--gold);border-radius:20px;padding:2px 8px;margin-right:6px;animation:lp 2.2s ease-in-out infinite}
+@keyframes lp{0%,100%{box-shadow:0 0 0 0 rgba(245,197,66,.5)}50%{box-shadow:0 0 0 6px rgba(245,197,66,0)}}
+.log-rel{font-size:10px;color:var(--muted2);font-weight:600;margin-left:6px}
 
 /* results scorecard */
 .scorecard{background:radial-gradient(120% 100% at 50% 0%,rgba(225,29,46,.16),transparent 70%),rgba(255,255,255,.03);
@@ -238,21 +238,29 @@ function render(){
   if(!days.length){document.getElementById('log').innerHTML='<div class="empty">The story begins soon…</div>';}
   else{
     let newestTs='';S.feed.forEach(e=>{if((e.type==='interaction'||e.type==='results')&&e.timestamp&&e.timestamp>newestTs)newestTs=e.timestamp;});
-    const dayHtml=d=>{
+    const TAG={morning:'7:00 AM',midday:'12:30',evening:'6:00 PM',night:'11:00 PM'};
+    const dayHtml=(d,isLast)=>{
       const evs=byDay[d];const wk=(evs.find(e=>e.phase)||{}).phase;
       let inner='';const summ=(w.day_summaries||{})[d];
-      if(summ)inner+=`<div class="daysum"><span class="k">Day ${d} · Recap</span>${esc(summ)}</div>`;
+      if(summ)inner+=`<div class="log-recap">${esc(summ)}</div>`;
       CYCLE_ORDER.forEach(cyc=>{evs.filter(e=>e.cycle===cyc).forEach(e=>{
-        if(e.type==='results')inner+=resultsCard(e);
-        else if(e.type==='interaction'&&e.description)inner+=post(e,cyc,e.timestamp===newestTs);
+        const latest=e.timestamp===newestTs;
+        if(e.type==='results'){ inner+=logResults(e,latest); }
+        else if(e.type==='interaction'&&e.description){
+          const dots=(e.characters||[]).map(id=>`<div class="log-dot" style="background:${col(id)}"></div>`).join('');
+          const badge=latest?`<span class="latest-badge">Latest</span><span class="log-rel">${relAgo(e.timestamp)}</span> `:'';
+          inner+=`<div class="log-entry${latest?' latest':''}"><div class="log-tag">${TAG[cyc]||cyc}</div>
+            <div class="log-dots">${dots}</div><div class="log-text">${badge}${esc(e.description)}</div></div>`;
+        }
       });});
-      return `<div class="day-group" id="day-${d}"><div class="day-head"><span class="d">Day ${d}</span>${wk?`<span class="wk">${phaseLabel(wk)}</span>`:''}<span class="line"></span></div>${inner}</div>`;
+      return `<div class="log-day${isLast?' latest':''}" id="day-${d}"><div class="log-day-header">Day ${d}${wk?`<span class="wk">${phaseLabel(wk)}</span>`:''}</div>${inner}</div>`;
     };
+    const newest=days[days.length-1];
     const recent=days.slice(-2),earlier=days.slice(0,-2);
-    let html=recent.map(dayHtml).join('');
+    let html=recent.map(d=>dayHtml(d,d===newest)).join('');
     if(earlier.length){
       const lbl=`📖 Read from the beginning (Day ${earlier[0]}–${earlier[earlier.length-1]})`;
-      html=`<button class="older-toggle" id="ot" data-l="${lbl}" onclick="toggleOlder()">${lbl}</button><div id="older" hidden>${earlier.map(dayHtml).join('')}</div>`+html;
+      html=`<button class="older-toggle" id="ot" data-l="${lbl}" onclick="toggleOlder()">${lbl}</button><div id="older" hidden>${earlier.map(d=>dayHtml(d,false)).join('')}</div>`+html;
     }
     document.getElementById('log').innerHTML=html;
   }
@@ -282,14 +290,7 @@ function render(){
       }).join('')+`</div>`;
   }).join('');
 }
-function post(e,cyc,latest){
-  const m=CYCLE_META[cyc]||{e:'•',l:cyc};const se=SCENE_E[e.scene]||'';
-  const dlg=(e.dialogue||[]).map(d=>`<div class="dl"><b style="color:${col(d.speaker)}">${sur(d.speaker)||d.speaker}:</b> <span style="color:#dfe2ee">${esc(d.line)}</span></div>`).join('');
-  return `<div class="post ${latest?'latest':''}"><div class="post-top"><span class="cyc">${se||m.e} ${m.l}</span>
-    ${latest?'<span class="latest-badge">Latest</span>':''}<span class="rel">${relAgo(e.timestamp)}</span></div>
-    <div class="desc">${esc(e.description)}</div><div class="dlg">${dlg}</div></div>`;
-}
-function resultsCard(e){
+function logResults(e,latest){
   const order={main:0,'co-main':1,feature:2,prelim:3};
   const bouts=(e.bouts||[]).slice().sort((a,b)=>(order[a.slot]??9)-(order[b.slot]??9));
   const rows=bouts.map(b=>{const r=b.result||{};
@@ -298,7 +299,8 @@ function resultsCard(e){
     return `<div class="scb ${b.slot==='main'?'main':''}"><div class="bl">${b.title?'🏆 ':''}${slot}</div>
       <div class="res"><b>${sur(r.winner)}</b> def. ${sur(r.loser)}<span class="m">${r.method_detail||r.method||''}${r.round?(' · Round '+r.round):''}${r.war?' · WAR':''}${newC?' · NEW CHAMPION 🏆':''}</span></div></div>`;
   }).join('');
-  return `<div class="scorecard"><div class="sc-top"><div class="ev">${e.event||'BFC'}</div><div class="sub">Official Results</div></div>${rows}</div>`;
+  const badge=latest?`<span class="latest-badge">Latest</span> `:'';
+  return `<div class="scorecard" style="margin:10px 0">${badge?`<div style="padding:8px 12px 0">${badge}</div>`:''}<div class="sc-top"><div class="ev">${e.event||'BFC'}</div><div class="sub">Official Results</div></div>${rows}</div>`;
 }
 function toggleOlder(){const o=document.getElementById('older'),b=document.getElementById('ot');
   if(o.hasAttribute('hidden')){o.removeAttribute('hidden');b.textContent='▴ Hide earlier days';}
