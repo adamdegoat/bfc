@@ -1,6 +1,6 @@
 {
   "day": 1,
-  "cycle": "night",
+  "cycle": "evening",
   "scene": "gym",
   "phase": "camp",
   "week_label": "Camp — Tuesday, grinding the rounds",
@@ -136,21 +136,19 @@
   },
   "next_card": null,
   "results_history": [],
-  "pulse": "Tamiev and Cross lock eyes as the gym holds its breath—undefeated Mountain versus hungry challenger, Saturday's fire now undeniable.",
-  "scene_blurb": "Tuesday evening at The Gym. Tamiev towels off heavy-bag work as Cross finishes mitts, the weight of Saturday settling between them. The room quiets as the lightweight rivals lock eyes, the championship bout now undeniable.",
+  "pulse": "Two rivals face off for the Lightweight throne—undefeated Mountain against the hungry Showman, the gym electric as their championship week begins.",
+  "scene_blurb": "The announcement sits fresh on the gym floor as evening settles—Cross finishes hard rounds while Tamiev winds down, the championship pace already setting in. The mats hum with the weight of Saturday.",
   "last_run_date": "2026-06-09",
-  "last_cycle_key": "2026-06-09:night",
-  "day_summaries": {
-    "1": "Day 1: The BFC gym crackles with the official confirmation of Tamiev vs. Cross for the Lightweight belt at BFC 100 Saturday—the undefeated Mountain and the Showtime showman finally locked in. Across the mats, champions and contenders grind through camp sessions, each building toward their moment. The promotion holds its breath."
-  },
+  "last_cycle_key": "2026-06-09:evening",
+  "day_summaries": {},
   "present": [
     "lw_tamiev",
     "lw_cross",
-    "lhw_manos",
-    "fw_costa",
-    "lw_torres",
-    "fw_karim",
-    "lw_novak",
-    "lhw_brandt"
+    "hw_flynn",
+    "lw_ferreira",
+    "lhw_banks",
+    "lhw_sokolov",
+    "mw_tonga",
+    "hw_morozov"
   ]
 }
