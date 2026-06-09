@@ -1,0 +1,4 @@
+.playwright-mcp/
+shot_*.jpeg
+data/*.bak
+data/*.tmp

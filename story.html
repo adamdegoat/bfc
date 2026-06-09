@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<title>BFC — The Story</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=VT323&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--red:#e11d2e;--red2:#ff2d40;--gold:#f5c542;--gold2:#ffe08a;--ink:#0a0c12;--line:rgba(255,255,255,.10);--txt:#eef0f6;--dim:rgba(238,240,246,.58)}
+body{background:radial-gradient(120% 80% at 50% -10%,#16121b,#080a10 60%);color:var(--txt);
+  font-family:'Plus Jakarta Sans',sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh;padding-bottom:60px}
+.wrap{max-width:680px;margin:0 auto;padding:0 16px}
+header{position:sticky;top:0;z-index:20;background:linear-gradient(180deg,#080a10 70%,transparent);
+  padding:12px 0 10px;backdrop-filter:blur(6px)}
+.hrow{display:flex;align-items:center;gap:10px;max-width:680px;margin:0 auto;padding:0 16px}
+.brand{display:flex;align-items:baseline;gap:7px;text-decoration:none}
+.brand .b1{font-family:'Cinzel',serif;font-weight:900;font-size:20px;letter-spacing:1px;color:#fff}
+.brand .b1 .r{color:var(--red2)}
+.brand .b2{font-family:'VT323',monospace;font-size:11px;letter-spacing:2px;color:var(--gold);text-transform:uppercase}
+.hlinks{margin-left:auto;display:flex;gap:7px}
+.hlinks a{color:var(--dim);text-decoration:none;font-size:11px;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:5px 10px;white-space:nowrap}
+.hlinks a:hover{color:#fff;border-color:var(--gold)}
+.intro{text-align:center;padding:18px 16px 6px}
+.intro h1{font-family:'Cinzel',serif;font-weight:900;font-size:26px;letter-spacing:.5px}
+.intro h1 .r{color:var(--red2)}
+.intro p{color:var(--dim);font-size:12.5px;margin-top:5px;line-height:1.5}
+.nowbar{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:12px 0 4px}
+.nb{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:11px;font-weight:700}
+.nb b{color:var(--gold2)}
+
+.older-toggle{display:block;width:100%;margin:16px 0;background:rgba(255,255,255,.04);border:1px dashed var(--line);
+  color:var(--gold);border-radius:12px;padding:11px;font-family:inherit;font-size:13px;font-weight:800;cursor:pointer;letter-spacing:.3px}
+.older-toggle:hover{border-color:var(--gold)}
+
+.day-group{margin:22px 0}
+.day-head{display:flex;align-items:center;gap:10px;margin:0 0 12px}
+.day-head .d{font-family:'Cinzel',serif;font-weight:900;font-size:18px;color:#fff}
+.day-head .wk{font-size:10.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--dim);
+  background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:6px;padding:2px 8px}
+.day-head .line{flex:1 1 auto;height:1px;background:var(--line)}
+
+.daysum{background:linear-gradient(90deg,rgba(245,197,66,.09),transparent);border:1px solid rgba(245,197,66,.25);
+  border-left:3px solid var(--gold);border-radius:10px;padding:10px 13px;margin:0 0 14px;font-size:13px;line-height:1.5;color:#f3ead2}
+.daysum .k{font-size:9px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:3px}
+
+.post{background:rgba(255,255,255,.025);border:1px solid var(--line);border-radius:14px;padding:13px 15px;margin:0 0 13px}
+.post.latest{border-color:rgba(245,197,66,.5);background:linear-gradient(180deg,rgba(245,197,66,.06),rgba(255,255,255,.02))}
+.post-top{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.cyc{font-family:'VT323',monospace;font-size:13px;letter-spacing:1px;color:var(--dim);text-transform:uppercase}
+.cyc .e{font-size:13px}
+.latest-badge{font-size:9px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:#1a1300;
+  background:var(--gold);border-radius:5px;padding:2px 7px}
+.rel{font-size:10px;color:var(--dim);margin-left:auto}
+.desc{font-size:14px;line-height:1.5;color:#e9ebf3;margin-bottom:9px;font-weight:500}
+.dlg{display:flex;flex-direction:column;gap:3px}
+.dl{font-size:13.5px;line-height:1.4}
+.dl b{font-weight:800}
+
+/* results scorecard */
+.scorecard{background:radial-gradient(120% 100% at 50% 0%,rgba(225,29,46,.16),transparent 70%),rgba(255,255,255,.03);
+  border:1px solid rgba(225,29,46,.4);border-radius:14px;padding:0;overflow:hidden;margin:0 0 13px}
+.sc-top{text-align:center;padding:12px;border-bottom:1px solid var(--line)}
+.sc-top .ev{font-family:'Cinzel',serif;font-weight:900;font-size:22px;color:#fff}
+.sc-top .sub{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-top:2px}
+.scb{padding:10px 14px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px}
+.scb:last-child{border-bottom:none}
+.scb .bl{flex:0 0 74px;font-size:8.5px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--dim);line-height:1.2}
+.scb.main .bl{color:var(--gold)}
+.scb .res{flex:1 1 auto;font-size:13px}
+.scb .res b{color:var(--gold2)}
+.scb .res .m{display:block;font-size:11px;color:var(--dim);margin-top:1px}
+.scb .belt{color:var(--gold)}
+
+.empty{text-align:center;color:var(--dim);padding:50px 0;font-size:14px}
+.foot{text-align:center;color:var(--dim);font-size:11px;padding:30px 0 10px}
+.foot a{color:var(--gold)}
+</style>
+</head>
+<body>
+<header><div class="hrow">
+  <a class="brand" href="index.html"><span class="b1">B<span class="r">F</span>C</span><span class="b2">The Story</span></a>
+  <div class="hlinks">
+    <a href="index.html">◂ Live</a>
+    <a href="https://adamdegoat.github.io/neverendingworld/">World</a>
+  </div>
+</div></header>
+
+<div class="intro">
+  <h1>BEST FIGHTING <span class="r">CHAMPIONSHIP</span></h1>
+  <p>The living chronicle of the promotion — every camp, every weigh-in, every fight night, four times a day. Fifty fighters. Five divisions. One belt each, and everyone climbing.</p>
+  <div class="nowbar" id="nowbar"></div>
+</div>
+
+<div class="wrap"><div id="log"><div class="empty">Loading the story…</div></div></div>
+
+<div class="foot">BFC · World 05 of <a href="https://adamdegoat.github.io/neverendingworld/">The Never Ending Story Project</a></div>
+
+<script>
+const CYCLE_ORDER=['morning','midday','evening','night'];
+const CYCLE_META={morning:{e:'🌅',l:'Morning'},midday:{e:'🥊',l:'Midday'},evening:{e:'🌆',l:'Evening'},night:{e:'🌙',l:'Night'}};
+const SCENE_E={gym:'🏋️',weighin:'⚖️',arena:'🏟️',recovery:'🩹'};
+let S={chars:{},world:{},feed:[]};
+
+async function load(){
+  const b='?t='+Date.now();
+  const [c,w,f]=await Promise.all([
+    fetch('data/characters.json'+b).then(r=>r.json()),
+    fetch('data/world.json'+b).then(r=>r.json()),
+    fetch('data/feed.json'+b).then(r=>r.json()),
+  ]);
+  S.chars=c;S.world=w;S.feed=f;render();
+}
+const fn=id=>(S.chars[id]&&S.chars[id].name)||id;
+const first=id=>fn(id).split(' ')[0];
+const col=id=>(S.chars[id]&&S.chars[id].color)||'#fff';
+function relAgo(ts){if(!ts)return'';const d=(Date.now()-new Date(ts).getTime())/1000;
+  if(d<90)return'just now';if(d<3600)return Math.floor(d/60)+'m ago';if(d<86400)return Math.floor(d/3600)+'h ago';return Math.floor(d/86400)+'d ago'}
+
+function render(){
+  const w=S.world;const card=w.card||{};
+  document.getElementById('nowbar').innerHTML=
+    `<span class="nb">Day <b>${w.day||1}</b></span>`+
+    `<span class="nb">${(w.week_label||'').split('—')[0].trim()}</span>`+
+    `<span class="nb">Next: <b>${card.event||'BFC'}</b></span>`;
+
+  const byDay={};
+  S.feed.forEach(e=>{(byDay[e.day]=byDay[e.day]||[]).push(e)});
+  const days=Object.keys(byDay).map(Number).sort((a,b)=>a-b);
+  if(!days.length){document.getElementById('log').innerHTML='<div class="empty">The story begins soon…</div>';return}
+
+  let newestTs='';
+  S.feed.forEach(e=>{if((e.type==='interaction'||e.type==='results')&&e.timestamp&&e.timestamp>newestTs)newestTs=e.timestamp});
+
+  const dayHtml=d=>{
+    const evs=byDay[d];
+    const wk=(evs.find(e=>e.phase)||{}).phase;
+    const wkLabel=phaseLabel(wk);
+    let inner='';
+    const summ=(S.world.day_summaries||{})[d];
+    if(summ)inner+=`<div class="daysum"><span class="k">Day ${d} · Recap</span>${esc(summ)}</div>`;
+    CYCLE_ORDER.forEach(cyc=>{
+      evs.filter(e=>e.cycle===cyc).forEach(e=>{
+        if(e.type==='results')inner+=resultsCard(e);
+        else if(e.type==='interaction'&&e.description)inner+=post(e,cyc,e.timestamp===newestTs);
+      });
+    });
+    return `<div class="day-group"><div class="day-head"><span class="d">Day ${d}</span>${wkLabel?`<span class="wk">${wkLabel}</span>`:''}<span class="line"></span></div>${inner}</div>`;
+  };
+
+  const recent=days.slice(-2), earlier=days.slice(0,-2);
+  let html=recent.map(dayHtml).join('');
+  if(earlier.length){
+    const lbl=`📖 Read from the beginning (Day ${earlier[0]}–${earlier[earlier.length-1]})`;
+    html=`<button class="older-toggle" id="ot" data-l="${lbl}" onclick="toggleOlder()">${lbl}</button><div id="older" hidden>${earlier.map(dayHtml).join('')}</div>`+html;
+  }
+  document.getElementById('log').innerHTML=html;
+}
+function phaseLabel(p){return({camp:'Fight Camp',fight_week:'Fight Week',weigh_in:'Weigh-Ins',fight_night:'Fight Night',aftermath:'Aftermath'})[p]||''}
+
+function post(e,cyc,latest){
+  const m=CYCLE_META[cyc]||{e:'•',l:cyc};
+  const se=SCENE_E[e.scene]||'';
+  const dlg=(e.dialogue||[]).map(d=>`<div class="dl"><b style="color:${col(d.speaker)}">${first(d.speaker)||d.speaker}:</b> <span style="color:#dfe2ee">${esc(d.line)}</span></div>`).join('');
+  return `<div class="post ${latest?'latest':''}">
+    <div class="post-top"><span class="cyc"><span class="e">${se||m.e}</span> ${m.l}</span>
+      ${latest?'<span class="latest-badge">Latest</span>':''}
+      <span class="rel">${relAgo(e.timestamp)}</span></div>
+    <div class="desc">${esc(e.description)}</div>
+    <div class="dlg">${dlg}</div>
+  </div>`;
+}
+function resultsCard(e){
+  const order={main:0,'co-main':1,feature:2,prelim:3};
+  const bouts=(e.bouts||[]).slice().sort((a,b)=>(order[a.slot]??9)-(order[b.slot]??9));
+  const rows=bouts.map(b=>{
+    const r=b.result||{};const w=fn(r.winner),l=fn(r.loser);
+    const slot=b.slot==='main'?'MAIN EVENT':b.slot==='co-main'?'CO-MAIN':((b.billing||'').split('—')[0].trim());
+    return `<div class="scb ${b.slot==='main'?'main':''}"><div class="bl">${b.title?'<span class="belt">🏆</span> ':''}${slot}</div>
+      <div class="res"><b>${w}</b> def. ${l}<span class="m">${r.method_detail||r.method||''}${r.round?(' · Round '+r.round):''}${r.war?' · WAR':''}${(r.title&&isNewChamp(b))?' · NEW CHAMPION 🏆':''}</span></div></div>`;
+  }).join('');
+  return `<div class="scorecard"><div class="sc-top"><div class="ev">${e.event||'BFC'}</div><div class="sub">Official Results</div></div>${rows}</div>`;
+}
+function isNewChamp(b){const r=b.result||{};return r.title&&r.winner!==b.red&&S.chars[r.winner]&&S.chars[r.winner].champion}
+function esc(s){return (s||'').replace(/[&<>]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[m]))}
+function toggleOlder(){const o=document.getElementById('older'),b=document.getElementById('ot');
+  if(o.hasAttribute('hidden')){o.removeAttribute('hidden');b.textContent='▴ Hide earlier days'}
+  else{o.setAttribute('hidden','');b.textContent=b.dataset.l;b.scrollIntoView({behavior:'smooth'})}}
+
+load();
+setInterval(load,120000);
+</script>
+</body>
+</html>
