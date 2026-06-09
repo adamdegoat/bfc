@@ -1,0 +1,154 @@
+{
+  "day": 1,
+  "cycle": "morning",
+  "scene": "gym",
+  "phase": "camp",
+  "week_label": "Camp — Tuesday, grinding the rounds",
+  "promotion": "Best Fighting Championship",
+  "abbr": "BFC",
+  "event_no": 100,
+  "rankings": {
+    "featherweight": [
+      "fw_costa",
+      "fw_brady",
+      "fw_tanaka",
+      "fw_lima",
+      "fw_hale",
+      "fw_karim",
+      "fw_chen",
+      "fw_marin",
+      "fw_ellis",
+      "fw_dubois"
+    ],
+    "lightweight": [
+      "lw_tamiev",
+      "lw_cross",
+      "lw_mwangi",
+      "lw_ferreira",
+      "lw_walsh",
+      "lw_aliyev",
+      "lw_mori",
+      "lw_torres",
+      "lw_novak",
+      "lw_balogun"
+    ],
+    "middleweight": [
+      "mw_adeyemi",
+      "mw_romano",
+      "mw_hutchins",
+      "mw_khalidov",
+      "mw_alves",
+      "mw_tonga",
+      "mw_brenner",
+      "mw_okeke",
+      "mw_hcosta",
+      "mw_demir"
+    ],
+    "light_heavyweight": [
+      "lhw_brandt",
+      "lhw_banks",
+      "lhw_petrovic",
+      "lhw_achebe",
+      "lhw_doyle",
+      "lhw_sokolov",
+      "lhw_coleman",
+      "lhw_manos",
+      "lhw_ford",
+      "lhw_ndlovu"
+    ],
+    "heavyweight": [
+      "hw_boateng",
+      "hw_morozov",
+      "hw_tui",
+      "hw_flynn",
+      "hw_reyes",
+      "hw_nurlan",
+      "hw_bamidele",
+      "hw_muller",
+      "hw_walker",
+      "hw_mendoza"
+    ]
+  },
+  "champions": {
+    "featherweight": "fw_costa",
+    "lightweight": "lw_tamiev",
+    "middleweight": "mw_adeyemi",
+    "light_heavyweight": "lhw_brandt",
+    "heavyweight": "hw_boateng"
+  },
+  "card": {
+    "event": "BFC 100",
+    "no": 100,
+    "date_label": "this Saturday",
+    "status": "announced",
+    "bouts": [
+      {
+        "id": "b1",
+        "division": "lightweight",
+        "title": true,
+        "slot": "main",
+        "red": "lw_tamiev",
+        "blue": "lw_cross",
+        "result": null,
+        "billing": "Lightweight Championship"
+      },
+      {
+        "id": "b2",
+        "division": "middleweight",
+        "title": true,
+        "slot": "co-main",
+        "red": "mw_adeyemi",
+        "blue": "mw_romano",
+        "result": null,
+        "billing": "Middleweight Championship"
+      },
+      {
+        "id": "b3",
+        "division": "heavyweight",
+        "title": false,
+        "slot": "feature",
+        "red": "hw_morozov",
+        "blue": "hw_tui",
+        "result": null,
+        "billing": "Heavyweight — #1 Contender"
+      },
+      {
+        "id": "b4",
+        "division": "light_heavyweight",
+        "title": false,
+        "slot": "feature",
+        "red": "lhw_banks",
+        "blue": "lhw_petrovic",
+        "result": null,
+        "billing": "Light Heavyweight Eliminator"
+      },
+      {
+        "id": "b5",
+        "division": "featherweight",
+        "title": false,
+        "slot": "feature",
+        "red": "fw_brady",
+        "blue": "fw_tanaka",
+        "result": null,
+        "billing": "Featherweight — Title Eliminator"
+      }
+    ]
+  },
+  "next_card": null,
+  "results_history": [],
+  "pulse": "The undefeated mountain and the flashy showman finally lock in for their title war—Saturday's main event announcement echoes through the gym.",
+  "scene_blurb": "The announcement drops this morning: undefeated champ Aslan Tamiev defends his crown against challenger Jordan Cross this Saturday. The gym feels it instantly—Cross is electric, Tamiev immovable, everyone else is watching.",
+  "last_run_date": "2026-06-09",
+  "last_cycle_key": "2026-06-09:morning",
+  "day_summaries": {},
+  "present": [
+    "lw_tamiev",
+    "lw_cross",
+    "lw_torres",
+    "lhw_ndlovu",
+    "fw_hale",
+    "fw_karim",
+    "hw_walker",
+    "lw_aliyev"
+  ]
+}

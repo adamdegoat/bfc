@@ -1,0 +1,182 @@
+[
+  {
+    "day": 1,
+    "cycle": "morning",
+    "type": "interaction",
+    "characters": [
+      "lw_tamiev",
+      "lw_cross"
+    ],
+    "description": "BFC 100 is announced: undefeated lightweight king Aslan Tamiev will defend his belt against the division's loudest challenger, Jordan 'Showtime' Cross, in the main event.",
+    "dialogue": [
+      {
+        "speaker": "lw_cross",
+        "line": "Twenty-one and oh? Saturday that becomes twenty-one and one."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "You talk. I wrestle. We will see who is tired in round three."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Nobody's seen you hit. You haven't been hit. I hit."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Then hit me. I will be there, in your face, all night."
+      }
+    ],
+    "timestamp": "2026-06-09T18:43:12.077489"
+  },
+  {
+    "day": 1,
+    "cycle": "morning",
+    "character": "lw_tamiev",
+    "action": "Lies on his back on the mat, pressing his hips into Aliyev's shoulders in a positional grind.",
+    "thought": "Every day, the mountain gets heavier.",
+    "mood": "focused",
+    "timestamp": "2026-06-09T18:51:21.842592"
+  },
+  {
+    "day": 1,
+    "cycle": "morning",
+    "character": "lw_cross",
+    "action": "Fires combinations on the heavy bag while a coach calls cadence, each punch crisp and fast.",
+    "thought": "Finally. The time has come.",
+    "mood": "electric",
+    "timestamp": "2026-06-09T18:51:21.842592"
+  },
+  {
+    "day": 1,
+    "cycle": "morning",
+    "character": "lw_torres",
+    "action": "Wraps his hands slowly, watching the young fighters from the corner with a veteran's eye.",
+    "thought": "These kids want war. Good.",
+    "mood": "measured",
+    "timestamp": "2026-06-09T18:51:21.842592"
+  },
+  {
+    "day": 1,
+    "cycle": "morning",
+    "character": "lhw_ndlovu",
+    "action": "Drills takedown setups against a heavy bag, each shot explosive and sharp.",
+    "thought": "Raw tools. Gotta use them.",
+    "mood": "hungry",
+    "timestamp": "2026-06-09T18:51:21.842592"
+  },
+  {
+    "day": 1,
+    "cycle": "morning",
+    "character": "fw_hale",
+    "action": "Leads a grappling session with two younger fighters, pressing the pace, smothering them in position.",
+    "thought": "Grind. That's how we climb.",
+    "mood": "grounded",
+    "timestamp": "2026-06-09T18:51:21.842592"
+  },
+  {
+    "day": 1,
+    "cycle": "morning",
+    "character": "fw_karim",
+    "action": "Rolls easy on a mat in the corner, a measuring stick watching the contenders.",
+    "thought": "Been here before. Many times over.",
+    "mood": "knowing",
+    "timestamp": "2026-06-09T18:51:21.842592"
+  },
+  {
+    "day": 1,
+    "cycle": "morning",
+    "character": "hw_walker",
+    "action": "Unloads bombs on a heavy bag, the swivel hips and explosiveness of a true banger.",
+    "thought": "Bomb. Bomb. Keep throwing bombs.",
+    "mood": "aggressive",
+    "timestamp": "2026-06-09T18:51:21.842592"
+  },
+  {
+    "day": 1,
+    "cycle": "morning",
+    "character": "lw_aliyev",
+    "action": "Grinds with Tamiev on the mat, wrestling for position, every muscle tense and fighting.",
+    "thought": "I'm the wrestler. Not him.",
+    "mood": "defiant",
+    "timestamp": "2026-06-09T18:51:21.842592"
+  },
+  {
+    "day": 1,
+    "cycle": "morning",
+    "type": "interaction",
+    "characters": [
+      "lw_tamiev",
+      "lw_cross"
+    ],
+    "description": "Cross approaches Tamiev mid-drill as the announcement spreads—their title fight is official for Saturday, the mountain and the showman finally facing their moment.",
+    "dialogue": [
+      {
+        "speaker": "lw_cross",
+        "line": "Mountain. Saturday. Main event. That's MY belt up for grabs."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Not for grabs. It will be with me after."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "That's what every fighter says before they face me."
+      },
+      {
+        "speaker": "lw_aliyev",
+        "line": "You're facing a wrestler. Not your usual dinner date."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Rustam, you got choked. Keep watching from the sideline."
+      },
+      {
+        "speaker": "hw_walker",
+        "line": "Yo, both of you bring the NOISE on Saturday. That's the deal."
+      },
+      {
+        "speaker": "fw_hale",
+        "line": "Respect. Respect to whoever is standing at the end."
+      },
+      {
+        "speaker": "lw_torres",
+        "line": "Cross has the speed. Tamiev's got the grind. This is a real fight."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "I'm ready. Every training day is the same."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "That's exactly the problem. You've never faced me before."
+      },
+      {
+        "speaker": "lw_aliyev",
+        "line": "He's 21-0. What's your record, Jordan? Twenty and two?"
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Twenty and two. I lost twice. Learned twice. You're undefeated but green."
+      },
+      {
+        "speaker": "fw_karim",
+        "line": "Both of you are hungry. That's what I see."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Hungry doesn't matter. Wrestling matters. Control matters."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "And striking matters when you keep a man off his back."
+      },
+      {
+        "speaker": "lw_torres",
+        "line": "Saturday will tell the truth. Always does."
+      }
+    ],
+    "scene": "gym",
+    "phase": "camp",
+    "timestamp": "2026-06-09T18:51:21.842592"
+  }
+]
