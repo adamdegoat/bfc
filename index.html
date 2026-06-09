@@ -46,6 +46,9 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);color:var
   background:radial-gradient(120% 80% at 50% 8%,transparent 55%,rgba(0,0,0,.5));z-index:5}
 #fighters{position:absolute;inset:0;z-index:10}
 #panhint{display:none}
+.emptynote{position:absolute;left:50%;bottom:18%;transform:translateX(-50%);text-align:center;
+  max-width:300px;background:rgba(8,9,14,.66);border:1px solid var(--line);border-radius:12px;
+  padding:9px 15px;font-size:12px;font-weight:600;color:var(--dim);backdrop-filter:blur(4px)}
 .fg{position:absolute;bottom:8%;transform:translateX(-50%);cursor:pointer;transition:filter .2s;
   display:flex;flex-direction:column;align-items:center;will-change:transform}
 .fg .figwrap{animation:idle var(--idledur,4.2s) ease-in-out infinite;transform-origin:50% 100%}
@@ -625,34 +628,71 @@ function latestFor(cid){
   }
   return null;
 }
+// ── natural "stations" per scene: a facing pair mid-floor (spots 0+1) then
+//    scattered spots at varied depth — NOT an even row. {x:left%, b:bottom%, s:scale, f:'l'|'r' facing} ──
+const SPOTS={
+  gym:[
+    {x:45,b:9,s:1.04,f:'r'},{x:55,b:9,s:1.04,f:'l'},     // 0+1 talk face-to-face on the mat
+    {x:15,b:16,s:0.80,f:'r'},                             // back by the bags
+    {x:29,b:7,s:1.10,f:'r'},                              // foreground left
+    {x:73,b:15,s:0.84,f:'l'},                             // back by the cage
+    {x:87,b:8,s:1.02,f:'l'},                              // foreground right
+    {x:63,b:19,s:0.74,f:'l'},                             // deep back
+    {x:8,b:10,s:0.96,f:'r'},                              // far left
+  ],
+  weighin:[
+    {x:43,b:13,s:1.06,f:'r'},{x:57,b:13,s:1.06,f:'l'},   // face-off on the scale
+    {x:21,b:10,s:0.94,f:'r'},{x:79,b:10,s:0.94,f:'l'},
+    {x:32,b:8,s:1.02,f:'r'},{x:68,b:8,s:1.02,f:'l'},
+    {x:11,b:14,s:0.82,f:'r'},{x:89,b:14,s:0.82,f:'l'},
+  ],
+  arena:[
+    {x:46,b:15,s:1.06,f:'r'},{x:54,b:15,s:1.06,f:'l'},   // the two in the cage
+    {x:20,b:9,s:0.92,f:'r'},{x:80,b:9,s:0.92,f:'l'},
+    {x:33,b:20,s:0.78,f:'r'},{x:67,b:20,s:0.78,f:'l'},
+    {x:12,b:11,s:0.9,f:'r'},{x:88,b:11,s:0.9,f:'l'},
+  ],
+  recovery:[
+    {x:26,b:8,s:1.02,f:'r'},{x:43,b:12,s:0.9,f:'r'},
+    {x:58,b:12,s:0.9,f:'l'},{x:74,b:8,s:1.02,f:'l'},
+    {x:15,b:15,s:0.80,f:'r'},{x:86,b:15,s:0.80,f:'l'},
+    {x:50,b:7,s:1.06,f:'l'},{x:34,b:17,s:0.76,f:'r'},
+  ],
+};
+const SCENE_WAIT={
+  weighin:'⚖️ Weigh-ins are Friday — the stage is empty until then.',
+  arena:'🏟️ Fight night is Saturday — the arena is dark until the walkouts.',
+  recovery:'🩹 The recovery room fills Sunday, after the fights.',
+  gym:'🏋️ The gym is quiet right now.',
+};
 function layoutFighters(){
   const wrap=document.getElementById('fighters');
-  // only show fighters when viewing the LIVE scene (the one the story is in)
-  const showLive = (viewScene===curScene);
-  const present = showLive ? presentList() : presentSceneFallback(viewScene);
   wrap.innerHTML='';
-  const n=present.length||1;
-  // bubbles only for the men actually talking this cycle (keeps the scene readable)
-  const speakers = showLive ? activeSpeakers() : new Set();
+  const showLive = (viewScene===curScene);
+  // A future/past venue is EMPTY until its day — nobody's at the arena on a Tuesday.
+  if(!showLive){
+    wrap.innerHTML=`<div class="emptynote">${SCENE_WAIT[viewScene]||''}</div>`;
+    return;
+  }
+  let present = presentList();
+  // lead with the two men actually talking so they take the face-to-face centre spots
+  const sp=[...activeSpeakers()].filter(id=>present.includes(id));
+  if(sp.length>=2){ present=[sp[0],sp[1],...present.filter(id=>id!==sp[0]&&id!==sp[1])]; }
+  const speakers = activeSpeakers();
   const fewEnough = present.length<=4;
-  present.forEach((cid,i)=>{
-    const c=F(cid);
+  const spots = SPOTS[viewScene]||SPOTS.gym;
+  present.slice(0,spots.length).forEach((cid,i)=>{
+    const c=F(cid); const sp=spots[i];
     const h=cid.split('').reduce((a,ch)=>a+ch.charCodeAt(0),0);
-    // organic placement: even spread + small per-fighter jitter, alternating depth rows
-    const base=(100/(n+1))*(i+1);
-    const x = base + ((h%5)-2)*0.7;
-    const depth = (i%2)? 0 : 1;
     const div=document.createElement('div');
-    div.className='fg'; div.style.left=x+'%';
+    div.className='fg';
+    div.style.left=(sp.x + ((h%3)-1)*0.6)+'%';
+    div.style.bottom=(sp.b + ((h%3)-1))+'%';
     div.style.setProperty('--cc', c.color||'#888');
-    div.style.bottom=(6+depth*5 + (h%3)-1)+'%';
-    div.style.zIndex=10+(depth?0:1);
-    const sc=(1 - depth*0.09) * (1 + ((h%4)-1.5)*0.012);
-    // fighters on the right half turn to face the centre — they read as a room, not a police line-up
-    const faceLeft = x>52;
-    const flip = faceLeft ? -1 : 1;
-    div.style.transform=`translateX(-50%) scale(${sc})`;
-    const lat = (showLive && (speakers.has(cid) || fewEnough)) ? latestFor(cid) : null;
+    div.style.zIndex=Math.round(120 - sp.b);     // closer (smaller bottom) draws on top
+    div.style.transform=`translateX(-50%) scale(${sp.s})`;
+    const flip = sp.f==='l' ? -1 : 1;
+    const lat = (speakers.has(cid) || fewEnough) ? latestFor(cid) : null;
     const thought = lat && lat.thought ? lat.thought : '';
     const dur=(3.6 + (h%9)*0.18).toFixed(2), sway=(((h%5)-2)*0.5).toFixed(1), delay=(-(h%7)*0.4).toFixed(2);
     div.innerHTML =
@@ -662,14 +702,8 @@ function layoutFighters(){
     div.onclick=()=>showStat(cid);
     wrap.appendChild(div);
   });
-  // mobile: open the panorama centred so the action sits mid-screen
   const stage=document.getElementById('stage');
   if(stage && window.innerWidth<620){ stage.scrollLeft=(760-window.innerWidth)/2; }
-}
-function presentSceneFallback(scene){
-  // when browsing a non-live scene, show a representative set so it's never empty
-  const champs=Object.values(S.world.champions||{}).filter(id=>S.chars[id]);
-  return champs.slice(0,6);
 }
 
 /* ════════════ rankings overlay ════════════ */
