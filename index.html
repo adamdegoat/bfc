@@ -24,9 +24,9 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);color:var
 #topbar{position:relative;z-index:40;display:flex;align-items:center;gap:10px;
   padding:8px 12px;background:linear-gradient(180deg,rgba(8,9,14,.96),rgba(8,9,14,.7) 70%,transparent);
   flex:0 0 auto}
-.brand{display:flex;align-items:center;text-decoration:none}
-.bfc-logo{height:38px;width:auto;display:block;filter:drop-shadow(0 1px 2px rgba(0,0,0,.6))}
-#evchip{margin-left:auto;display:flex;align-items:center;gap:8px}
+.brand{display:flex;align-items:center;text-decoration:none;flex:0 1 auto;min-width:0;overflow:hidden}
+.bfc-logo{height:38px;width:auto;display:block;flex:0 1 auto;filter:drop-shadow(0 1px 2px rgba(0,0,0,.6))}
+#evchip{margin-left:auto;display:flex;align-items:center;gap:8px;flex:0 0 auto}
 .chip{background:rgba(225,29,46,.16);border:1px solid rgba(225,29,46,.5);color:#ffd9dd;
   border-radius:999px;padding:4px 11px;font-size:11px;font-weight:800;letter-spacing:.4px;white-space:nowrap}
 .chip b{color:#fff}
@@ -140,8 +140,9 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);color:var
 .cl-msg .ln{color:#e6e8f0}
 #micfoot{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;gap:8px;padding-top:4px;border-top:1px solid var(--line)}
 #micfoot a{color:var(--gold);text-decoration:none;font-size:11px;font-weight:800;letter-spacing:.3px}
-#micfoot .ev{font-size:10.5px;color:var(--gold2);font-weight:700;display:inline-flex;align-items:center;gap:6px}
-#micfoot .ev .livedot{width:6px;height:6px;border-radius:50%;background:#39ff9d;box-shadow:0 0 7px #39ff9d;animation:pulse 1.4s infinite}
+#micfoot .ev{font-size:10.5px;color:var(--gold2);font-weight:700;display:inline-flex;align-items:center;gap:6px;
+  background:rgba(245,197,66,.12);border:1px solid rgba(245,197,66,.4);border-radius:999px;padding:4px 11px;white-space:nowrap}
+#micfoot .ev .livedot{width:6px;height:6px;border-radius:50%;background:#39ff9d;box-shadow:0 0 7px #39ff9d;animation:pulse 1.4s infinite;flex:0 0 auto}
 
 /* ── overlays ── */
 .ov{position:fixed;inset:0;z-index:80;background:rgba(4,5,9,.74);backdrop-filter:blur(4px);
@@ -260,7 +261,12 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);color:var
 .star-p4p b{font-family:'Oswald',sans-serif;font-size:18px;color:#fff}
 
 @media(max-width:620px){
-  .bfc-logo{height:31px}
+  #topbar{padding:7px 8px;gap:6px}
+  .bfc-logo{height:27px}
+  #evchip{gap:5px}
+  .chip{font-size:9.5px;padding:3px 8px}
+  .hublink{font-size:0;padding:5px 8px}
+  .hublink::before{content:'◂';font-size:13px}
   #sidebtns .sbtn span.t{display:none}
   #sidebtns .sbtn{padding:9px}
   .stab span.t{display:none}
