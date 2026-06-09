@@ -8,7 +8,7 @@
 <title>BFC — the story so far</title>
 <meta name="theme-color" content="#0a0c12">
 <meta property="og:title" content="BFC — the story so far">
-<meta property="og:description" content="The living chronicle of the Best Fighting Championship — fight camps, weigh-ins, fight nights and rankings, four times a day with no script.">
+<meta property="og:description" content="The living chronicle of the Best Fighting Championship — fight camps, weigh-ins, fight nights and rankings, five times a day with no script.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -141,7 +141,7 @@ footer a{color:var(--gold)}
 
   <div class="hero">
     <div class="tag">THE FIGHT <span class="r">CHRONICLE</span></div>
-    <div class="body">The living story of the Best Fighting Championship — fifty fighters, five divisions, one belt each. Camp, weigh-ins, fight night and the climb up the rankings, told four times a day with no script.</div>
+    <div class="body">The living story of the Best Fighting Championship — fifty fighters, five divisions, one belt each. Camp, weigh-ins, fight night and the climb up the rankings, told five times a day with no script.</div>
     <div class="hero-stats">
       <div class="hsc">Day <strong id="hsc-day">—</strong></div>
       <div class="hsc">50 fighters · 5 divisions</div>
@@ -168,12 +168,12 @@ footer a{color:var(--gold)}
     <div id="rankings"></div>
   </div>
 
-  <footer>BFC · World 05 of <a href="https://adamdegoat.github.io/neverendingworld/">The Never Ending Story Project</a><br>Built with Claude Haiku · running four times a day</footer>
+  <footer>BFC · World 05 of <a href="https://adamdegoat.github.io/neverendingworld/">The Never Ending Story Project</a><br>Built with Claude Haiku · running five times a day</footer>
 </div>
 
 <script>
-const CYCLE_ORDER=['morning','midday','evening','night'];
-const CYCLE_META={morning:{e:'🌅',l:'Morning'},midday:{e:'🥊',l:'Midday'},evening:{e:'🌆',l:'Evening'},night:{e:'🌙',l:'Night'}};
+const CYCLE_ORDER=['morning','midday','afternoon','evening','night'];
+const CYCLE_META={morning:{e:'🌅',l:'Morning'},midday:{e:'🥊',l:'Midday'},afternoon:{e:'🥋',l:'Afternoon'},evening:{e:'🌆',l:'Evening'},night:{e:'🌙',l:'Night'}};
 const SCENE_E={gym:'🏋️',weighin:'⚖️',arena:'🏟️',recovery:'🩹'};
 const DIVS={featherweight:{l:'Featherweight',s:'FW',e:'🪶'},lightweight:{l:'Lightweight',s:'LW',e:'⚡'},
   middleweight:{l:'Middleweight',s:'MW',e:'🔥'},light_heavyweight:{l:'Light Heavyweight',s:'LHW',e:'💪'},heavyweight:{l:'Heavyweight',s:'HW',e:'🗿'}};
@@ -248,7 +248,7 @@ function render(){
   if(!days.length){document.getElementById('log').innerHTML='<div class="empty">The story begins soon…</div>';}
   else{
     let newestTs='';S.feed.forEach(e=>{if((e.type==='interaction'||e.type==='results')&&e.timestamp&&e.timestamp>newestTs)newestTs=e.timestamp;});
-    const TAG={morning:'7:00 AM',midday:'12:30',evening:'6:00 PM',night:'11:00 PM'};
+    const TAG={morning:'7:00 AM',midday:'11:30',afternoon:'3:00 PM',evening:'6:30 PM',night:'10:30 PM'};
     const dayHtml=(d,isLast)=>{
       const evs=byDay[d];const wk=(evs.find(e=>e.phase)||{}).phase;
       let inner='';const summ=(w.day_summaries||{})[d];

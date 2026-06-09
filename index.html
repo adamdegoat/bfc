@@ -349,9 +349,10 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);color:var
       <div id="status-strip">
         <span class="hud-day" id="hud-day">Day 1</span>
         <div class="stp" id="stp-morning">🌅 7am</div><span class="stp-arr">›</span>
-        <div class="stp" id="stp-midday">🥊 12:30</div><span class="stp-arr">›</span>
-        <div class="stp" id="stp-evening">🌆 6pm</div><span class="stp-arr">›</span>
-        <div class="stp" id="stp-night">🌙 11pm</div>
+        <div class="stp" id="stp-midday">🥊 11:30</div><span class="stp-arr">›</span>
+        <div class="stp" id="stp-afternoon">🥋 3pm</div><span class="stp-arr">›</span>
+        <div class="stp" id="stp-evening">🌆 6:30</div><span class="stp-arr">›</span>
+        <div class="stp" id="stp-night">🌙 10:30</div>
         <span class="stp-next" id="stp-next">— </span>
       </div>
       <a href="story.html">The full story ▸</a>
@@ -1143,16 +1144,16 @@ function buildTabs(){
   const t=document.getElementById('scenetabs');
   t.innerHTML=SCENES.map(s=>`<button class="stab" data-s="${s}" onclick="applyScene('${s}')"><span class="e">${SCENE_META[s].emoji}</span><span class="t">${SCENE_META[s].label}</span></button>`).join('');
 }
-// countdown to the next live cycle (SGT 7:00 / 12:30 / 18:00 / 23:00) — like the sibling worlds
+// countdown to the next live cycle (SGT 7:00 / 11:30 / 15:00 / 18:30 / 22:30) — like the sibling worlds
 function nextCycleETA(){
   const n=new Date(); const sgt=new Date(n.getTime()+n.getTimezoneOffset()*60000+8*3600000);
   const mins=sgt.getHours()*60+sgt.getMinutes();
-  const slots=[7*60,12*60+30,18*60,23*60];
+  const slots=[7*60,11*60+30,15*60,18*60+30,22*60+30];
   let next=slots.find(s=>s>mins); if(next==null) next=slots[0]+1440;
   const d=next-mins, h=Math.floor(d/60), m=d%60;
   return h>0?`${h}h ${m}m`:`${m}m`;
 }
-const ALL_STEPS=['morning','midday','evening','night'];
+const ALL_STEPS=['morning','midday','afternoon','evening','night'];
 function updateStatusBar(){
   const w=S.world||{};
   const hd=document.getElementById('hud-day'); if(hd) hd.textContent='Day '+(w.day||1);
