@@ -94,8 +94,10 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);color:var
 @keyframes cwave{from{transform:translateX(0)}to{transform:translateX(1300px)}}
 .pa-ticker{animation:paticker 22s linear infinite}
 @keyframes paticker{from{transform:translateX(1000px)}to{transform:translateX(-1100px)}}
-.rope{transform-box:fill-box;transform-origin:center;animation:skiprope 1s ease-in-out infinite}
-@keyframes skiprope{0%,100%{transform:scaleX(1)}50%{transform:scaleX(.18)}}
+.rope-d{animation:roped .9s steps(1) infinite}
+.rope-u{animation:ropeu .9s steps(1) infinite}
+@keyframes roped{0%,48%{opacity:.6}49%,100%{opacity:0}}
+@keyframes ropeu{0%,48%{opacity:0}49%,100%{opacity:.4}}
 .flash{opacity:.1;animation:flash 2.2s steps(1) infinite}
 @keyframes flash{0%,96%{opacity:.12}97%,99%{opacity:1}100%{opacity:.12}}
 .sweep,.sweep2{transform-box:view-box;transform-origin:500px 22px}
@@ -138,7 +140,8 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);color:var
 .cl-msg .ln{color:#e6e8f0}
 #micfoot{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;gap:8px;padding-top:4px;border-top:1px solid var(--line)}
 #micfoot a{color:var(--gold);text-decoration:none;font-size:11px;font-weight:800;letter-spacing:.3px}
-#micfoot .ev{font-size:10px;color:var(--dim);font-weight:700}
+#micfoot .ev{font-size:10.5px;color:var(--gold2);font-weight:700;display:inline-flex;align-items:center;gap:6px}
+#micfoot .ev .livedot{width:6px;height:6px;border-radius:50%;background:#39ff9d;box-shadow:0 0 7px #39ff9d;animation:pulse 1.4s infinite}
 
 /* ── overlays ── */
 .ov{position:fixed;inset:0;z-index:80;background:rgba(4,5,9,.74);backdrop-filter:blur(4px);
@@ -305,7 +308,6 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);color:var
       </svg>
     </a>
     <div id="evchip">
-      <span class="chip cyc-chip" id="cyc-chip"><span class="livedot"></span><span id="cyc-txt">—</span></span>
       <span class="chip" id="ev-chip">—</span>
       <a class="hublink" href="https://adamdegoat.github.io/neverendingworld/">◂ World</a>
     </div>
@@ -763,14 +765,18 @@ function fighterSVG(cid, poseOverride){
     skip: {l:[-9,-41,-(+sw+1),-45],        r:[9,-41,(+sw+1),-45]},   // turning a skipping rope
     stretch:{l:[-4.5,-86,-(+sw),-70],      r:[4.5,-86,(+sw),-70]},   // arms up, warming up
   }[pose||'ready'];
-  const rope = pose==='skip' ? `<ellipse class="rope" cx="0" cy="-42" rx="15.5" ry="42" fill="none" stroke="#d6dde8" stroke-width="1.2" opacity=".6"/>` : '';
+  const rope = pose==='skip'
+    ? `<path class="rope-d" d="M -9 -41 Q 0 7 9 -41" fill="none" stroke="#d6dde8" stroke-width="1.2" stroke-linecap="round"/>`
+     +`<path class="rope-u" d="M -9 -41 Q 0 -95 9 -41" fill="none" stroke="#d6dde8" stroke-width="1.2" stroke-linecap="round"/>` : '';
   const arm=(shx,shy,ex,ey,hx,hy)=>`<path d="M ${shx} ${shy} Q ${ex} ${ey} ${hx} ${hy}" stroke="${skin}" stroke-width="6.4" fill="none" stroke-linecap="round"/>`;
-  const glove=(x,y)=>{x=+x;y=+y;return `<rect x="${(x-3.2).toFixed(1)}" y="${(y-7.6).toFixed(1)}" width="6.4" height="3.6" rx="1.7" fill="#eceef4"/>`
-    +`<path d="M ${x-4} ${y-3} Q ${x-4.4} ${y+4.2} ${x} ${y+4.8} Q ${x+4.4} ${y+4.2} ${x+4} ${y-3} Q ${x} ${y-5.6} ${x-4} ${y-3} Z" fill="${color}"/>`
-    +`<path d="M ${x-4} ${y+1} Q ${x} ${y+5.4} ${x+4} ${y+1} Q ${x+4.2} ${y+4} ${x} ${y+4.8} Q ${x-4.2} ${y+4} ${x-4} ${y+1} Z" fill="#0000002e"/>`
-    +`<path d="M ${x-2.7} ${y-1.4} q 2.7 -2 5.4 0 M ${x-2.4} ${y+1} q 2.4 -1.5 4.8 0" stroke="#00000044" stroke-width=".9" fill="none"/>`
-    +`<ellipse cx="${x-1.4}" cy="${y-2.6}" rx="1.5" ry="2.1" fill="#ffffff26"/>`
-    +`<ellipse cx="${(x>0?x+4.3:x-4.3).toFixed(1)}" cy="${y+1.6}" rx="1.7" ry="2.2" fill="${color}"/>`;};
+  // padded MMA fist — rounded, knuckles toward the top, thumb low-outer, wrist wrap above
+  const glove=(x,y)=>{x=+x;y=+y;const out=x>0?1:-1;return `<rect x="${(x-3).toFixed(1)}" y="${(y-7.8).toFixed(1)}" width="6" height="3.4" rx="1.6" fill="#eceef4"/>`
+    +`<ellipse cx="${x}" cy="${y}" rx="4.4" ry="4.7" fill="${color}"/>`
+    +`<path d="M ${x-4.3} ${y+1} A 4.4 4.7 0 0 0 ${x+4.3} ${y+1} L ${x+4.3} ${y+1.8} A 4.4 4.7 0 0 1 ${x-4.3} ${y+1.8} Z" fill="#00000026"/>`
+    +`<path d="M ${x-3} ${y-2.6} q 3 -1.5 6 0 M ${x-3.2} ${y-.3} q 3.2 -1.5 6.4 0" stroke="#0000003d" stroke-width=".8" fill="none"/>`
+    +`<ellipse cx="${(x+out*3.7).toFixed(1)}" cy="${y+2}" rx="1.8" ry="2.3" fill="${color}"/>`
+    +`<ellipse cx="${(x+out*3.7).toFixed(1)}" cy="${y+2}" rx="1.8" ry="2.3" fill="#00000018"/>`
+    +`<ellipse cx="${x-1.3}" cy="${y-2.4}" rx="1.4" ry="1.9" fill="#ffffff28"/>`;};
   const armsSVG = rope+arm(-(+sw),-57,A.l[2],A.l[3],A.l[0],A.l[1])+arm(+sw,-57,A.r[2],A.r[3],A.r[0],A.r[1])+glove(A.l[0],A.l[1])+glove(A.r[0],A.r[1]);
   return `<svg class="char-svg" width="${W}" height="${H}" viewBox="-22 -94 44 98" xmlns="http://www.w3.org/2000/svg">
   <defs><linearGradient id="sk-${cid}" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffffff14"/><stop offset="1" stop-color="#00000026"/></linearGradient></defs>
@@ -1094,15 +1100,15 @@ function nextCycleETA(){
 }
 function updateCountdown(){
   const w=S.world||{}; const cyc=(w.cycle||'').charAt(0).toUpperCase()+(w.cycle||'').slice(1);
-  const el=document.getElementById('cyc-txt');
-  if(el) el.textContent=`Day ${w.day||1} · ${cyc||'Live'} · next in ${nextCycleETA()}`;
+  const phase=(w.week_label||'').split('—')[0].trim();
+  const el=document.getElementById('mic-ev');
+  if(el) el.innerHTML=`<span class="livedot"></span>Day ${w.day||1} · ${cyc||'Live'}${phase?' · '+phase:''} · ⏱ next in ${nextCycleETA()}`;
 }
 function toggleFeed(){ document.getElementById('mic').classList.toggle('open'); }
 function cycLabel(e){ return `Day ${e.day} · ${cap(e.cycle||'')}`; }
 function renderMic(){
   const w=S.world;
   document.getElementById('pulse-txt').textContent=w.pulse||'';
-  document.getElementById('mic-ev').textContent=`${(w.week_label||'').split('—')[0].trim()} · Day ${w.day||1}`;
   // ── FULL conversation feed (every line, like the other worlds) ──
   const feedEl=document.getElementById('chat-feed');
   const ents=S.feed.slice(-50);
