@@ -178,5 +178,164 @@
     "scene": "gym",
     "phase": "camp",
     "timestamp": "2026-06-09T18:51:21.842592"
+  },
+  {
+    "day": 1,
+    "cycle": "midday",
+    "character": "lw_tamiev",
+    "action": "Grinds through a takedown drill, rolling from his back with his partner across the mat.",
+    "thought": "He talks. I work. Saturday decides.",
+    "mood": "focused",
+    "timestamp": "2026-06-09T21:57:38.120204"
+  },
+  {
+    "day": 1,
+    "cycle": "midday",
+    "character": "lw_cross",
+    "action": "Works the heavy bag with crisp combinations, celebrating the title-shot announcement with his team.",
+    "thought": "My moment finally. Mountain's about to crumble.",
+    "mood": "fired",
+    "timestamp": "2026-06-09T21:57:38.120204"
+  },
+  {
+    "day": 1,
+    "cycle": "midday",
+    "character": "lw_mori",
+    "action": "Watches from the mat, observing the two title contenders with quiet, measured interest.",
+    "thought": "Both dangerous. Showtime has the speed.",
+    "mood": "observant",
+    "timestamp": "2026-06-09T21:57:38.120204"
+  },
+  {
+    "day": 1,
+    "cycle": "midday",
+    "character": "mw_hcosta",
+    "action": "Continues his tidy distance drills on the heavy bag, striking with technical precision.",
+    "thought": "Stay ready. Title contenders are focused.",
+    "mood": "steady",
+    "timestamp": "2026-06-09T21:57:38.120204"
+  },
+  {
+    "day": 1,
+    "cycle": "midday",
+    "character": "fw_dubois",
+    "action": "Throws precise teeps and jabs on the heavy bag, working his karate-based distance game.",
+    "thought": "Puzzles beat power. Distance beats chaos.",
+    "mood": "focused",
+    "timestamp": "2026-06-09T21:57:38.120204"
+  },
+  {
+    "day": 1,
+    "cycle": "midday",
+    "character": "mw_brenner",
+    "action": "Walks forward methodically, throwing combinations while a coach calls cadence, unbothered by the main-event drama.",
+    "thought": "Walk forward. Never stop. One pace.",
+    "mood": "cold",
+    "timestamp": "2026-06-09T21:57:38.120204"
+  },
+  {
+    "day": 1,
+    "cycle": "midday",
+    "character": "lhw_ford",
+    "action": "Watches the champion and his challenger from the corner, then mirrors their intensity in his own work.",
+    "thought": "That's the level. That's where I'm going.",
+    "mood": "hungry",
+    "timestamp": "2026-06-09T21:57:38.120204"
+  },
+  {
+    "day": 1,
+    "cycle": "midday",
+    "character": "hw_boateng",
+    "action": "Hits the heavy bag with his signature right-hand power, controlled and methodical, aware of the championship tension.",
+    "thought": "Loud and quiet. Both ways to win.",
+    "mood": "composed",
+    "timestamp": "2026-06-09T21:57:38.120204"
+  },
+  {
+    "day": 1,
+    "cycle": "midday",
+    "type": "interaction",
+    "characters": [
+      "lw_tamiev",
+      "lw_cross"
+    ],
+    "description": "Cross locks eyes with Tamiev as the Saturday announcement spreads—the undefeated Mountain and the Showtime challenger facing their moment at last, the gym electric with what's to come.",
+    "dialogue": [
+      {
+        "speaker": "lw_cross",
+        "line": "Tamiev! You see it? We're on for the strap Saturday."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "I see it."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "You finally got tested, Mountain. The real test starts now."
+      },
+      {
+        "speaker": "lw_mori",
+        "line": "Showtime got his moment. The level awaits."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Come Saturday, you will understand why I remain undefeated."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Understand? The whole world's gonna see your weakness — my speed."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Fastest hands in this division. Your wrestling can't answer that."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Speed without patience is reckless. We will see which survives."
+      },
+      {
+        "speaker": "lhw_ford",
+        "line": "That's your undefeated champ right there. That's the level."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Your level is broken ground, Mountain. I'm the earthquake."
+      },
+      {
+        "speaker": "mw_hcosta",
+        "line": "Tamiev's patient. Cross has the volume. Both dangerous."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "You will learn Saturday."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "I'm gonna teach the whole world."
+      },
+      {
+        "speaker": "hw_boateng",
+        "line": "One's loud. One's quiet. Quiet usually wins."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Not this time, Concrete. Not this time."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Then we will make history together."
+      },
+      {
+        "speaker": "lw_mori",
+        "line": "Two different paths. Same destination Saturday."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Yeah, and only one of us walks out champ."
+      }
+    ],
+    "scene": "gym",
+    "phase": "camp",
+    "timestamp": "2026-06-09T21:57:38.120204"
   }
 ]

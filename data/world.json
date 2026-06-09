@@ -1,6 +1,6 @@
 {
   "day": 1,
-  "cycle": "morning",
+  "cycle": "midday",
   "scene": "gym",
   "phase": "camp",
   "week_label": "Camp — Tuesday, grinding the rounds",
@@ -136,19 +136,19 @@
   },
   "next_card": null,
   "results_history": [],
-  "pulse": "The undefeated mountain and the flashy showman finally lock in for their title war—Saturday's main event announcement echoes through the gym.",
-  "scene_blurb": "The announcement drops this morning: undefeated champ Aslan Tamiev defends his crown against challenger Jordan Cross this Saturday. The gym feels it instantly—Cross is electric, Tamiev immovable, everyone else is watching.",
+  "pulse": "Showtime's moment arrives: the fastest hands in the division challenge the undefeated Mountain for the lightweight strap.",
+  "scene_blurb": "Tamiev grinds takedowns while Cross celebrates nearby—the champ and his challenger now officially locked in. The gym hums with championship-week tension.",
   "last_run_date": "2026-06-09",
-  "last_cycle_key": "2026-06-09:morning",
+  "last_cycle_key": "2026-06-09:midday",
   "day_summaries": {},
   "present": [
     "lw_tamiev",
     "lw_cross",
-    "lw_torres",
-    "lhw_ndlovu",
-    "fw_hale",
-    "fw_karim",
-    "hw_walker",
-    "lw_aliyev"
+    "lw_mori",
+    "mw_hcosta",
+    "fw_dubois",
+    "mw_brenner",
+    "lhw_ford",
+    "hw_boateng"
   ]
 }
