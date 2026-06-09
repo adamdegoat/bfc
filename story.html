@@ -10,7 +10,7 @@
 <meta property="og:title" content="BFC — the story so far">
 <meta property="og:description" content="The living chronicle of the Best Fighting Championship — fight camps, weigh-ins, fight nights and rankings, four times a day with no script.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=VT323&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--red:#e11d2e;--red2:#ff2d40;--gold:#f5c542;--gold2:#ffe08a;--line:rgba(255,255,255,.10);
@@ -32,7 +32,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--text);font-size:14px
 .back-btn{color:var(--muted);text-decoration:none;font-size:12px;font-weight:800;border:1px solid var(--line);
   border-radius:999px;padding:5px 11px;white-space:nowrap}
 .back-btn:hover{color:#fff;border-color:var(--gold)}
-.bb-title{font-family:'Cinzel',serif;font-weight:900;font-size:16px;letter-spacing:2px;
+.bb-title{font-family:'Anton',sans-serif;font-weight:900;font-size:16px;letter-spacing:2px;
   background:linear-gradient(180deg,#fff7d6,#f4cf63 45%,#dca72c 65%,#9c6c0c);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 #day-chips{display:flex;align-items:center;gap:5px;margin-left:auto;overflow-x:auto;scrollbar-width:none;max-width:60%}
 #day-chips::-webkit-scrollbar{display:none}
@@ -43,7 +43,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--text);font-size:14px
 
 /* hero intro */
 .hero{padding:34px 16px 14px;max-width:700px;margin:0 auto;text-align:center}
-.hero .tag{font-family:'Cinzel',serif;font-weight:900;font-size:30px;line-height:1.05;letter-spacing:.5px}
+.hero .tag{font-family:'Anton',sans-serif;font-weight:900;font-size:30px;line-height:1.05;letter-spacing:.5px}
 .hero .tag .r{color:var(--red2)}
 .hero .body{color:var(--muted);font-size:13px;line-height:1.6;margin:12px auto 0;max-width:560px}
 .hero-stats{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:14px}
@@ -52,7 +52,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--text);font-size:14px
 
 .divider{height:1px;background:var(--line);margin:22px 0;max-width:700px;margin-left:auto;margin-right:auto}
 .section{max-width:700px;margin:0 auto;padding:0 16px}
-.section-title{font-family:'Cinzel',serif;font-weight:900;font-size:18px;color:#fff;margin-bottom:4px;
+.section-title{font-family:'Anton',sans-serif;font-weight:900;font-size:18px;color:#fff;margin-bottom:4px;
   display:flex;align-items:center;gap:8px}
 .section-title .e{color:var(--red2)}
 .order-cue{font-size:11px;color:var(--muted2);margin-bottom:14px}
@@ -81,7 +81,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--text);font-size:14px
 .scorecard{background:radial-gradient(120% 100% at 50% 0%,rgba(225,29,46,.16),transparent 70%),rgba(255,255,255,.03);
   border:1px solid rgba(225,29,46,.4);border-radius:14px;overflow:hidden;margin:0 0 12px}
 .sc-top{text-align:center;padding:12px;border-bottom:1px solid var(--line)}
-.sc-top .ev{font-family:'Cinzel',serif;font-weight:900;font-size:22px;color:#fff}
+.sc-top .ev{font-family:'Anton',sans-serif;font-weight:900;font-size:22px;color:#fff}
 .sc-top .sub{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-top:2px}
 .scb{padding:10px 14px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px}
 .scb:last-child{border-bottom:none}
@@ -94,22 +94,22 @@ body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--text);font-size:14px
 .profiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
 .pcard{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:13px;padding:10px;text-align:center;cursor:default}
 .pcard.star{border-color:rgba(245,197,66,.4);background:linear-gradient(180deg,rgba(245,197,66,.08),rgba(255,255,255,.02))}
-.pcard .pfig{height:80px;display:flex;align-items:flex-end;justify-content:center}
-.pcard .pfig .char-svg{filter:drop-shadow(0 4px 5px rgba(0,0,0,.5))}
+.pcard .pfig{height:88px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
+.pcard .pfig .char-svg{height:86px;width:auto;filter:drop-shadow(0 4px 5px rgba(0,0,0,.5))}
 .pcard.star .pfig .char-svg{filter:drop-shadow(0 0 8px rgba(245,197,66,.5))}
 .pcard .pnm{font-weight:800;font-size:13px;color:#fff;margin-top:4px}
 .pcard .ptag{font-size:9.5px;font-weight:800;letter-spacing:.4px;color:var(--gold);text-transform:uppercase}
-.pcard .prec{font-family:'VT323',monospace;font-size:17px;color:var(--gold2)}
+.pcard .prec{font-family:'Oswald',sans-serif;font-size:17px;color:var(--gold2)}
 .pcard .pstyle{font-size:10.5px;color:var(--muted);line-height:1.3;margin-top:2px}
 
 /* rankings mini */
 .rkmini{margin:0 0 12px}
 .rkmini .rh{font-size:12px;font-weight:800;color:#fff;margin-bottom:5px}
 .rkrow{display:flex;align-items:center;gap:8px;padding:4px 6px;border-radius:7px;font-size:12.5px}
-.rkrow .p{flex:0 0 28px;font-family:'VT323',monospace;font-size:15px;color:var(--muted);text-align:center}
+.rkrow .p{flex:0 0 28px;font-family:'Oswald',sans-serif;font-size:15px;color:var(--muted);text-align:center}
 .rkrow.c .p{color:var(--gold)}
 .rkrow .nm{flex:1;color:#e9ebf3}.rkrow .nm b{color:#fff}
-.rkrow .rc{font-family:'VT323',monospace;font-size:14px;color:var(--gold2)}
+.rkrow .rc{font-family:'Oswald',sans-serif;font-size:14px;color:var(--gold2)}
 
 footer{text-align:center;color:var(--muted2);font-size:11px;padding:34px 16px 30px}
 footer a{color:var(--gold)}
@@ -198,7 +198,7 @@ function bgSVG(){
     <rect width="1000" height="600" fill="url(#ab)"/><rect y="50" width="1000" height="210" fill="#080b12"/>${dots}
     <ellipse cx="500" cy="430" rx="300" ry="120" fill="url(#cb)" opacity=".5"/>
     <g transform="translate(500 440)"><polygon points="-230,80 -130,-26 130,-26 230,80 130,128 -130,128" fill="#1c2536"/>
-    <text x="0" y="64" font-family="Cinzel,serif" font-weight="900" font-size="58" fill="#f5c542" text-anchor="middle" opacity=".34">BFC</text></g></svg>`;
+    <text x="0" y="64" font-family="Anton,sans-serif" font-weight="900" font-size="58" fill="#f5c542" text-anchor="middle" opacity=".34">BFC</text></g></svg>`;
 }
 
 /* fighter figure (compact copy of the world renderer, for profile cards) */
