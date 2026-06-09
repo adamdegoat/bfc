@@ -23,7 +23,7 @@
     "height": "5'9\"",
     "reach": "72\"",
     "condition": "fresh",
-    "mood": "focused",
+    "mood": "calm",
     "where": "gym",
     "tier": "deep",
     "hook": "Ice-cold and silent; the most feared counter-striker in the division. Says nothing, lets his fists answer.",
@@ -534,6 +534,11 @@
         "day": 1,
         "text": "Finally, someone worthy steps in front of me.",
         "weight": 2
+      },
+      {
+        "day": 1,
+        "text": "Saturday comes. Cross is next. The climb ends when I decide.",
+        "weight": 2
       }
     ],
     "star": true,
@@ -595,6 +600,11 @@
       {
         "day": 1,
         "text": "My shot. The Mountain goes down Saturday.",
+        "weight": 2
+      },
+      {
+        "day": 1,
+        "text": "I have my shot. Now I break the zero and take his belt.",
         "weight": 2
       }
     ],
@@ -862,7 +872,7 @@
     "height": "5'8\"",
     "reach": "70\"",
     "condition": "fresh",
-    "mood": "measured",
+    "mood": "steady",
     "where": "gym",
     "tier": "loaded",
     "hook": "Old-school hands and ring IQ; a tough out for anyone climbing the ladder.",
@@ -909,7 +919,7 @@
     "height": "5'8\"",
     "reach": "69\"",
     "condition": "fresh",
-    "mood": "focused",
+    "mood": "determined",
     "where": "gym",
     "tier": "loaded",
     "hook": "Impossible to finish; you have to beat him for twenty-five hard minutes.",
@@ -1487,7 +1497,7 @@
     "height": "6'1\"",
     "reach": "76\"",
     "condition": "fresh",
-    "mood": "focused",
+    "mood": "composed",
     "where": "gym",
     "tier": "deep",
     "hook": "Never stops walking forward. A soft-spoken family man who turns into an unkillable engine the second the cage shuts.",
@@ -1830,7 +1840,7 @@
     "height": "6'4\"",
     "reach": "79\"",
     "condition": "fresh",
-    "mood": "focused",
+    "mood": "watchful",
     "where": "gym",
     "tier": "loaded",
     "hook": "The division's measuring stick — beat Manos and you've earned your ranking.",
