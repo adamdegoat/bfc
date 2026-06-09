@@ -659,5 +659,156 @@
     "scene": "gym",
     "phase": "camp",
     "timestamp": "2026-06-09T23:00:00.710443"
+  },
+  {
+    "day": 2,
+    "cycle": "oracle",
+    "character": "lw_tamiev",
+    "action": "Grapples his partner in a leg lock scramble, calm and methodical.",
+    "thought": "He's loose. Good energy here.",
+    "mood": "Focused",
+    "timestamp": "2026-06-10T00:00:00.717321"
+  },
+  {
+    "day": 2,
+    "cycle": "oracle",
+    "character": "lw_cross",
+    "action": "Fires explosive combinations on the mitts—one-two-three, slip, body kick—pace relentless.",
+    "thought": "Four days of this, then he falls.",
+    "mood": "Aggressive",
+    "timestamp": "2026-06-10T00:00:00.717321"
+  },
+  {
+    "day": 2,
+    "cycle": "oracle",
+    "character": "mw_tonga",
+    "action": "Wraps his hands between rounds, eyes drifting toward the two lightweights.",
+    "thought": "These guys are gonna hurt each other.",
+    "mood": "Engaged",
+    "timestamp": "2026-06-10T00:00:00.717321"
+  },
+  {
+    "day": 2,
+    "cycle": "oracle",
+    "character": "lw_aliyev",
+    "action": "Drills footwork patterns alone, studying both contenders' rhythms.",
+    "thought": "Tamiev's steady; Cross lives on impulse.",
+    "mood": "Observant",
+    "timestamp": "2026-06-10T00:00:00.717321"
+  },
+  {
+    "day": 2,
+    "cycle": "oracle",
+    "character": "hw_muller",
+    "action": "Sits on the bench sipping water, watching with weathered eyes.",
+    "thought": "Youth always fights like there's tomorrow.",
+    "mood": "Composed",
+    "timestamp": "2026-06-10T00:00:00.717321"
+  },
+  {
+    "day": 2,
+    "cycle": "oracle",
+    "character": "fw_costa",
+    "action": "Slips angles at half-speed, each movement economical and detached.",
+    "thought": "Noise. I focus on silence.",
+    "mood": "Detached",
+    "timestamp": "2026-06-10T00:00:00.717321"
+  },
+  {
+    "day": 2,
+    "cycle": "oracle",
+    "character": "lhw_petrovic",
+    "action": "Drives the heavy bag with controlled power, steady rhythm.",
+    "thought": "Grind separates men from boys.",
+    "mood": "Methodical",
+    "timestamp": "2026-06-10T00:00:00.717321"
+  },
+  {
+    "day": 2,
+    "cycle": "oracle",
+    "character": "fw_marin",
+    "action": "Shadow-boxes between partners with explosive footwork, feeding off the energy.",
+    "thought": "This gym is hungry today, man.",
+    "mood": "Energized",
+    "timestamp": "2026-06-10T00:00:00.717321"
+  },
+  {
+    "day": 2,
+    "cycle": "oracle",
+    "type": "interaction",
+    "characters": [
+      "lw_tamiev",
+      "lw_cross"
+    ],
+    "description": "Cross finishes pad work while Tamiev rises from wrestling rounds; their eyes meet across the gym—three days until the undefeated Mountain defends against Showtime's relentless fire.",
+    "dialogue": [
+      {
+        "speaker": "lw_cross",
+        "line": "Mountain, you looking tired already?"
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Saving it for Saturday."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Keep saving. I'll still be there."
+      },
+      {
+        "speaker": "lw_aliyev",
+        "line": "Don't bait him, Cross. He's different."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Different? He's a tank. I'm a cheetah."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Cheetahs get caught."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Not this one."
+      },
+      {
+        "speaker": "mw_tonga",
+        "line": "Yo, Cross is sharp today."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Every day, Tonga. Every single day."
+      },
+      {
+        "speaker": "coach",
+        "line": "Cross, pads now. Let's move."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Again."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "You're gonna beg for the clinch, Tamiev!"
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Maybe. But I'll win from there."
+      },
+      {
+        "speaker": "fw_marin",
+        "line": "These lightweights, too much mouth."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Marin, you walk walls and lose to footwork."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "He's loose. Good."
+      }
+    ],
+    "scene": "gym",
+    "phase": "camp",
+    "timestamp": "2026-06-10T00:00:00.717321"
   }
 ]
