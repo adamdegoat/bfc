@@ -810,5 +810,156 @@
     "scene": "gym",
     "phase": "camp",
     "timestamp": "2026-06-10T00:00:00.717321"
+  },
+  {
+    "day": 2,
+    "cycle": "morning",
+    "character": "lw_tamiev",
+    "action": "Tapes his wrists deliberately, watching the mat clock tick toward the next round, face blank and patient.",
+    "thought": "Four more rounds ahead. Stay steady.",
+    "mood": "focused",
+    "timestamp": "2026-06-10T07:00:00.520191"
+  },
+  {
+    "day": 2,
+    "cycle": "morning",
+    "character": "lw_cross",
+    "action": "Fires rapid combinations on the mitts—one-two-slip-kick—calling out the rhythm, sweat already heavy.",
+    "thought": "Stamina, speed, never stop moving.",
+    "mood": "wired",
+    "timestamp": "2026-06-10T07:00:00.520191"
+  },
+  {
+    "day": 2,
+    "cycle": "morning",
+    "character": "fw_dubois",
+    "action": "Circles the heavy bag at distance, jabbing and sliding angles—economical, testing every inch of range.",
+    "thought": "Range and precision beat power.",
+    "mood": "calm",
+    "timestamp": "2026-06-10T07:00:00.520191"
+  },
+  {
+    "day": 2,
+    "cycle": "morning",
+    "character": "fw_chen",
+    "action": "Launches a spinning back kick into the bag, plants, resets for a head-high teep—poster moment with every strike.",
+    "thought": "Make them see my kicks.",
+    "mood": "confident",
+    "timestamp": "2026-06-10T07:00:00.520191"
+  },
+  {
+    "day": 2,
+    "cycle": "morning",
+    "character": "lw_mori",
+    "action": "Feeds his partner jabs then sprawls over an imaginary shot, drilling the counter scramble into muscle memory.",
+    "thought": "Bait the shot, take back.",
+    "mood": "methodical",
+    "timestamp": "2026-06-10T07:00:00.520191"
+  },
+  {
+    "day": 2,
+    "cycle": "morning",
+    "character": "mw_adeyemi",
+    "action": "Pounds the heavy bag in controlled bursts—left kick, right cross, clinch knee—then laughs, shaking his hands loose.",
+    "thought": "Body's feeling dangerous this morning.",
+    "mood": "sharp",
+    "timestamp": "2026-06-10T07:00:00.520191"
+  },
+  {
+    "day": 2,
+    "cycle": "morning",
+    "character": "hw_bamidele",
+    "action": "Drills jab-cross-jab on the bag with brutal precision, pure power application, each rep a statement.",
+    "thought": "Building it the right way here.",
+    "mood": "hungry",
+    "timestamp": "2026-06-10T07:00:00.520191"
+  },
+  {
+    "day": 2,
+    "cycle": "morning",
+    "character": "hw_walker",
+    "action": "Shadow-boxes between rounds, throwing elbows and bombs at the air, total commitment in every exchange.",
+    "thought": "Always throwing, always hitting hard.",
+    "mood": "fierce",
+    "timestamp": "2026-06-10T07:00:00.520191"
+  },
+  {
+    "day": 2,
+    "cycle": "morning",
+    "type": "interaction",
+    "characters": [
+      "lw_tamiev",
+      "lw_cross"
+    ],
+    "description": "Tamiev rises from his wrestling round as Cross finishes pad work—the undefeated Mountain and Showtime lock eyes across the mat, three days until their Saturday unification.",
+    "dialogue": [
+      {
+        "speaker": "lw_cross",
+        "line": "You're looking slow today, champ. Cottage cheese catching up with you?"
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "I'm on pace. Question is whether you'll still be here at the bell."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Here at the bell? I'll be the only one throwing combinations, rock."
+      },
+      {
+        "speaker": "lw_mori",
+        "line": "Both of you should focus. Talking doesn't win fights."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Says the guy nobody's heard of, Mori. Some of us sell fights."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Twenty-one and zero sells itself. No marketing needed."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Twenty-one and zero against who? I'm the real deal here."
+      },
+      {
+        "speaker": "mw_adeyemi",
+        "line": "Both of you are killers. Just handle your business Saturday."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "That's what I plan to do, Blackout. Hand this guy his first loss."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "You won't. But I respect the hunger. It'll make Saturday real."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Real? Brother, I'm bringing the storm. You won't survive it."
+      },
+      {
+        "speaker": "coach",
+        "line": "Cross, mouthguard. Next round in two."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Got it. Just putting this guy on notice—his perfect record ends with me."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Then bring it. I've been waiting for someone real."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Oh, you're about to see real. See you Saturday, Mountain."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Looking forward to it, Showtime."
+      }
+    ],
+    "scene": "gym",
+    "phase": "camp",
+    "timestamp": "2026-06-10T07:00:00.520191"
   }
 ]
