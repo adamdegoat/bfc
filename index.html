@@ -75,6 +75,8 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);color:var
 .stab.live:after{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);
   box-shadow:0 0 7px var(--gold);animation:pulse 1.1s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.hbag{transform-box:fill-box;transform-origin:center top;animation:bagsway 3.4s ease-in-out infinite}
+@keyframes bagsway{0%,100%{transform:rotate(-2.6deg)}50%{transform:rotate(2.6deg)}}
 
 /* ── side buttons (pinned to the viewport so panning never moves them) ── */
 #sidebtns{position:fixed;right:10px;top:50px;z-index:45;display:flex;flex-direction:column;gap:7px}
@@ -85,15 +87,28 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);color:var
 .sbtn .e{font-size:14px}
 
 /* ── bottom mic / pulse ── */
-#mic{position:relative;z-index:30;flex:0 0 auto;background:linear-gradient(0deg,rgba(8,9,14,.97),rgba(8,9,14,.78));
-  border-top:1px solid var(--line);padding:8px 12px 10px;max-height:30vh;display:flex;flex-direction:column;gap:5px}
-#pulse{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--gold2);font-weight:600;line-height:1.3}
-#pulse .dot{flex:0 0 auto;width:7px;height:7px;border-radius:50%;background:var(--red2);box-shadow:0 0 8px var(--red2)}
-#transcript{overflow:hidden;font-size:12.5px;line-height:1.45}
-#transcript .desc{color:var(--dim);font-style:italic;margin-bottom:3px}
-#transcript .ln{margin:1px 0}
-#transcript .ln b{color:var(--cc,#fff)}
-#micfoot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:2px}
+#mic{position:relative;z-index:30;flex:0 0 auto;background:linear-gradient(0deg,rgba(8,9,14,.98),rgba(8,9,14,.84));
+  border-top:1px solid var(--line);padding:7px 12px 8px;height:34vh;display:flex;flex-direction:column;gap:5px;transition:height .25s}
+#mic.open{height:74vh}
+#feedbar{display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:800;letter-spacing:1.2px;color:var(--gold2);text-transform:uppercase}
+#feedbar .fdot{width:7px;height:7px;border-radius:50%;background:var(--red2);box-shadow:0 0 8px var(--red2);animation:pulse 1.1s infinite}
+#feedchev{color:var(--dim);font-size:11px;transition:transform .25s}
+#mic.open #feedchev{transform:rotate(180deg)}
+#pulse{display:flex;align-items:center;gap:8px;font-size:11.5px;color:var(--gold2);font-weight:600;line-height:1.3;flex:0 0 auto}
+#pulse .dot{flex:0 0 auto;width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold)}
+#chat-feed{flex:1 1 auto;overflow-y:auto;font-size:13px;line-height:1.4;padding-right:4px;-webkit-overflow-scrolling:touch}
+#chat-feed::-webkit-scrollbar{width:4px}#chat-feed::-webkit-scrollbar-thumb{background:rgba(255,255,255,.14);border-radius:4px}
+.cl-ts{font-family:'VT323',monospace;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim);
+  text-align:center;padding:8px 0 4px;border-top:1px solid var(--line);margin-top:6px}
+.cl-ts:first-child{border-top:none;margin-top:0}
+.cl-ts.latest{color:var(--gold)}
+.cl-ts .rel{color:var(--red2);font-weight:700}
+.cl-label{display:block;color:var(--dim);font-style:italic;font-size:12.5px;margin:3px 0 5px;line-height:1.45}
+.cl-msg{margin:2px 0;line-height:1.4}
+.cl-msg .spk{font-weight:800}
+.cl-msg .ln{color:#e6e8f0}
+#micfoot{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;gap:8px;padding-top:4px;border-top:1px solid var(--line)}
 #micfoot a{color:var(--gold);text-decoration:none;font-size:11px;font-weight:800;letter-spacing:.3px}
 #micfoot .ev{font-size:10px;color:var(--dim);font-weight:700}
 
@@ -236,23 +251,22 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);color:var
 <div id="app">
   <div id="topbar">
     <a class="brand" href="./" aria-label="BFC — Best Fighting Championship">
-      <svg class="bfc-logo" viewBox="0 0 252 48" xmlns="http://www.w3.org/2000/svg">
+      <svg class="bfc-logo" viewBox="0 0 250 48" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="lgold" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#fff6cf"/><stop offset=".42" stop-color="#f7cd54"/>
-            <stop offset=".58" stop-color="#e6ad28"/><stop offset="1" stop-color="#a9740c"/></linearGradient>
-          <linearGradient id="lred" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#ff556a"/><stop offset="1" stop-color="#bd1228"/></linearGradient>
+            <stop offset="0" stop-color="#fff7d6"/><stop offset=".4" stop-color="#f4cf63"/>
+            <stop offset=".62" stop-color="#dca72c"/><stop offset="1" stop-color="#9c6c0c"/></linearGradient>
         </defs>
         <!-- cage emblem -->
         <g transform="translate(2,2.5)">
           <polygon points="13,1 29,1 41,13 41,29 29,41 13,41 1,29 1,13" fill="#0b0d14" stroke="url(#lgold)" stroke-width="2.4"/>
-          <polygon points="13,5 29,5 37,13 37,29 29,37 13,37 5,29 5,13" fill="none" stroke="url(#lgold)" stroke-width=".7" opacity=".5"/>
-          <text x="21" y="27.5" text-anchor="middle" font-family="Cinzel,serif" font-weight="900" font-size="15.5" fill="url(#lgold)">B<tspan fill="url(#lred)">F</tspan>C</text>
+          <polygon points="13,5 29,5 37,13 37,29 29,37 13,37 5,29 5,13" fill="none" stroke="url(#lgold)" stroke-width=".7" opacity=".45"/>
+          <text x="21" y="27.6" text-anchor="middle" font-family="Cinzel,serif" font-weight="900" font-size="15.5" fill="url(#lgold)">BFC</text>
         </g>
-        <!-- wordmark -->
-        <text x="56" y="26" font-family="Cinzel,serif" font-weight="900" font-size="25" letter-spacing="1" fill="url(#lgold)">B<tspan fill="url(#lred)">F</tspan>C</text>
-        <text x="57.5" y="40" font-family="'Plus Jakarta Sans',sans-serif" font-weight="800" font-size="7.6" letter-spacing="3.1" fill="#c8a04a">BEST FIGHTING CHAMPIONSHIP</text>
+        <!-- wordmark, single metallic gold -->
+        <text x="55" y="27" font-family="Cinzel,serif" font-weight="900" font-size="26" letter-spacing="2" fill="url(#lgold)">BFC</text>
+        <rect x="56" y="32" width="124" height="1.4" fill="#e11d2e"/>
+        <text x="56" y="42.5" font-family="'Plus Jakarta Sans',sans-serif" font-weight="800" font-size="7.3" letter-spacing="2.9" fill="#b98f3e">BEST FIGHTING CHAMPIONSHIP</text>
       </svg>
     </a>
     <div id="evchip">
@@ -277,11 +291,12 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);color:var
 
   <div id="mic">
     <div id="scenetabs"></div>
+    <div id="feedbar" onclick="toggleFeed()"><span class="fdot"></span><span id="feed-cyc">FIGHT FEED</span><span id="feedchev">▴</span></div>
     <div id="pulse"><span class="dot"></span><span id="pulse-txt">—</span></div>
-    <div id="transcript"></div>
+    <div id="chat-feed"></div>
     <div id="micfoot">
       <span class="ev" id="mic-ev">—</span>
-      <a href="story.html">Read the full story ▸</a>
+      <a href="story.html">The full story ▸</a>
     </div>
   </div>
 </div>
@@ -371,7 +386,7 @@ const spec = (n,fn)=>{let s='';for(let i=0;i<n;i++)s+=fn(i);return s};
 
 function GYM(){
   // crowd of heavy bags + a cage platform + ring, industrial wall
-  const bags = spec(5,i=>{const x=120+i*60;return `<g transform="translate(${x} 250)"><rect x="-1.5" y="-110" width="3" height="60" fill="#3a3f4a"/><rect x="-13" y="-52" width="26" height="80" rx="11" fill="#${i%2?'b23b3b':'2a2f3a'}"/><rect x="-13" y="-52" width="26" height="80" rx="11" fill="url(#bagsh)"/><rect x="-13" y="-40" width="26" height="5" fill="#00000033"/><rect x="-13" y="-12" width="26" height="5" fill="#00000033"/></g>`});
+  const bags = spec(5,i=>{const x=120+i*60;return `<g transform="translate(${x} 200)"><rect x="-1.5" y="-60" width="3" height="60" fill="#3a3f4a"/><g class="hbag" style="animation-delay:${(i*-0.7).toFixed(1)}s"><rect x="-13" y="-2" width="26" height="80" rx="11" fill="#${i%2?'b23b3b':'2a2f3a'}"/><rect x="-13" y="-2" width="26" height="80" rx="11" fill="url(#bagsh)"/><rect x="-13" y="10" width="26" height="5" fill="#00000033"/><rect x="-13" y="38" width="26" height="5" fill="#00000033"/><rect x="-6" y="-4" width="12" height="4" rx="2" fill="#15171d"/></g></g>`});
   const trusses = spec(7,i=>`<rect x="${60+i*135}" y="0" width="5" height="46" fill="#1a1e27"/>`);
   const lights = spec(6,i=>`<g transform="translate(${110+i*160} 44)"><rect x="-22" y="-6" width="44" height="9" rx="3" fill="#11141c"/><ellipse cx="0" cy="40" rx="60" ry="120" fill="url(#beam)" opacity=".10"/></g>`);
   const winds = spec(3,i=>`<rect x="${560+i*140}" y="70" width="110" height="120" rx="6" fill="url(#win)" opacity=".55"/><line x1="${615+i*140}" y1="70" x2="${615+i*140}" y2="190" stroke="#0a0c12" stroke-width="3"/>`);
@@ -878,20 +893,39 @@ function buildTabs(){
   const t=document.getElementById('scenetabs');
   t.innerHTML=SCENES.map(s=>`<button class="stab" data-s="${s}" onclick="applyScene('${s}')"><span class="e">${SCENE_META[s].emoji}</span><span class="t">${SCENE_META[s].label}</span></button>`).join('');
 }
+function toggleFeed(){ document.getElementById('mic').classList.toggle('open'); }
+function cycLabel(e){ return `Day ${e.day} · ${cap(e.cycle||'')}`; }
 function renderMic(){
   const w=S.world;
   document.getElementById('pulse-txt').textContent=w.pulse||'';
-  // latest interaction
-  let inter=null;
-  for(let i=S.feed.length-1;i>=0;i--){if(S.feed[i].type==='interaction'){inter=S.feed[i];break}}
-  const t=document.getElementById('transcript');
-  if(inter){
-    const lines=(inter.dialogue||[]).slice(-4);
-    t.innerHTML=`<div class="desc">${inter.description||''}</div>`+
-      lines.map(d=>{const c=F(d.speaker);return `<div class="ln" style="--cc:${c.color||'#fff'}"><b>${firstName(d.speaker)||d.speaker}:</b> ${d.line}</div>`}).join('');
-  } else { t.innerHTML=`<div class="desc">${w.scene_blurb||''}</div>`; }
   document.getElementById('mic-ev').textContent=`${(w.week_label||'').split('—')[0].trim()} · Day ${w.day||1}`;
+  // ── FULL conversation feed (every line, like the other worlds) ──
+  const feedEl=document.getElementById('chat-feed');
+  const ents=S.feed.slice(-50);
+  let latestLbl=''; ents.forEach(e=>{latestLbl=cycLabel(e);});
+  let html='', last='';
+  ents.forEach(e=>{
+    const lbl=cycLabel(e); const isLatest=lbl===latestLbl;
+    if(lbl!==last){
+      const rel=isLatest?` <span class="rel">● Latest</span>`:'';
+      html+=`<div class="cl-ts${isLatest?' latest':''}">${(SCENE_META[e.scene]||{}).emoji||'🥊'} ${lbl}${rel}</div>`;
+      last=lbl;
+    }
+    if(e.type==='interaction' && e.description){
+      html+=`<div class="cl-label">${e.description}</div>`;
+      (e.dialogue||[]).forEach(d=>{
+        html+=`<div class="cl-msg"><span class="spk" style="color:${col(d.speaker)}">${firstName(d.speaker)||d.speaker}:</span> <span class="ln">${d.line||''}</span></div>`;
+      });
+    } else if(e.type==='results' && e.bouts){
+      html+=`<div class="cl-label">🏆 ${e.event} results:</div>`;
+      e.bouts.forEach(b=>{const r=b.result||{};
+        html+=`<div class="cl-msg"><span class="spk" style="color:var(--gold)">${firstName(r.winner)}</span> <span class="ln">def. ${firstName(r.loser)} — ${r.method_detail||r.method||''}${r.round?(' R'+r.round):''}</span></div>`;});
+    }
+  });
+  feedEl.innerHTML=html || `<div class="cl-label">${w.scene_blurb||'The feed is warming up…'}</div>`;
+  feedEl.scrollTop=feedEl.scrollHeight;
 }
+const col=id=>(F(id).color)||'#fff';
 
 /* ════════════ render ════════════ */
 function render(){
