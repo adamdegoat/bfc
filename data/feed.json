@@ -337,5 +337,172 @@
     "scene": "gym",
     "phase": "camp",
     "timestamp": "2026-06-09T21:57:38.120204"
+  },
+  {
+    "day": 1,
+    "cycle": "evening",
+    "character": "lw_tamiev",
+    "action": "Tamiev steps off the mats after finishing heavy-bag work, cooling down as evening light fills the gym.",
+    "thought": "Twenty-one and zero stays that way Saturday.",
+    "mood": "focused",
+    "timestamp": "2026-06-09T22:00:10.892649"
+  },
+  {
+    "day": 1,
+    "cycle": "evening",
+    "character": "lw_cross",
+    "action": "Cross hits mitts with a partner, snapping crisp combinations as he rides the high of Saturday's confirmation.",
+    "thought": "Finally my moment. I own this gym.",
+    "mood": "electric",
+    "timestamp": "2026-06-09T22:00:10.892649"
+  },
+  {
+    "day": 1,
+    "cycle": "evening",
+    "character": "hw_flynn",
+    "action": "Flynn wraps his hands, watching the Lightweight rivals acknowledge each other across the gym floor with quiet intensity.",
+    "thought": "Both killers. This one's special.",
+    "mood": "observant",
+    "timestamp": "2026-06-09T22:00:10.892649"
+  },
+  {
+    "day": 1,
+    "cycle": "evening",
+    "character": "lw_ferreira",
+    "action": "Ferreira finishes a pad session, striking with the relentless elbow-knee combinations that define his game.",
+    "thought": "The mountain falls to someone. Not tomorrow.",
+    "mood": "determined",
+    "timestamp": "2026-06-09T22:00:10.892649"
+  },
+  {
+    "day": 1,
+    "cycle": "evening",
+    "character": "lhw_banks",
+    "action": "Banks shadowboxes off the heavy bag, tracking Tamiev and Cross with hungry eyes.",
+    "thought": "That's the fight right there, man.",
+    "mood": "hungry",
+    "timestamp": "2026-06-09T22:00:10.892649"
+  },
+  {
+    "day": 1,
+    "cycle": "evening",
+    "character": "lhw_sokolov",
+    "action": "Sokolov drills sambo throws on the mat, his focus unshaken by the championship drama around him.",
+    "thought": "The champion will defend. Always does.",
+    "mood": "methodical",
+    "timestamp": "2026-06-09T22:00:10.892649"
+  },
+  {
+    "day": 1,
+    "cycle": "evening",
+    "character": "mw_tonga",
+    "action": "Tonga hits the heavy bag with measured, devastating power shots, his eyes flicking toward the title contenders.",
+    "thought": "Lightweight crown settles. My rise continues.",
+    "mood": "locked-in",
+    "timestamp": "2026-06-09T22:00:10.892649"
+  },
+  {
+    "day": 1,
+    "cycle": "evening",
+    "character": "hw_morozov",
+    "action": "Morozov works a takedown drill with a partner, methodical and immovable as the evening session winds down.",
+    "thought": "Eyes on Boateng. One step at a time.",
+    "mood": "grounded",
+    "timestamp": "2026-06-09T22:00:10.892649"
+  },
+  {
+    "day": 1,
+    "cycle": "evening",
+    "type": "interaction",
+    "characters": [
+      "lw_tamiev",
+      "lw_cross"
+    ],
+    "description": "In the cooling evening, Cross locks eyes with Tamiev—their title shot finally confirmed, the gym quiets to watch the Lightweight rivals acknowledge each other as Saturday looms.",
+    "dialogue": [
+      {
+        "speaker": "lw_cross",
+        "line": "Saturday's here, Mountain. You ready?"
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Always ready."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Speed you've never seen."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "I'll study every second of film."
+      },
+      {
+        "speaker": "lhw_banks",
+        "line": "This fight's going to be insane!"
+      },
+      {
+        "speaker": "lw_ferreira",
+        "line": "The king stays king!"
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "No chance. I'm taking that belt."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Not undefeated by accident."
+      },
+      {
+        "speaker": "hw_flynn",
+        "line": "Both of you killers. Incredible stuff."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "I've got my hands full right now."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "The work matters, not the talk."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "I'll back it up in the cage."
+      },
+      {
+        "speaker": "lhw_sokolov",
+        "line": "Champion will win."
+      },
+      {
+        "speaker": "hw_morozov",
+        "line": "The Mountain stands."
+      },
+      {
+        "speaker": "lhw_banks",
+        "line": "Real test right here, Tamiev!"
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Every fight's a real test."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Not like Saturday. Nothing like it."
+      },
+      {
+        "speaker": "lw_ferreira",
+        "line": "Champion or challenger. One walks different."
+      },
+      {
+        "speaker": "mw_tonga",
+        "line": "Someone rises. Someone falls. That's Saturday."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Time to work. Let's go."
+      }
+    ],
+    "scene": "gym",
+    "phase": "camp",
+    "timestamp": "2026-06-09T22:00:10.892649"
   }
 ]

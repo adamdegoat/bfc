@@ -1,6 +1,6 @@
 {
   "day": 1,
-  "cycle": "midday",
+  "cycle": "evening",
   "scene": "gym",
   "phase": "camp",
   "week_label": "Camp — Tuesday, grinding the rounds",
@@ -136,19 +136,19 @@
   },
   "next_card": null,
   "results_history": [],
-  "pulse": "Showtime's moment arrives: the fastest hands in the division challenge the undefeated Mountain for the lightweight strap.",
-  "scene_blurb": "Tamiev grinds takedowns while Cross celebrates nearby—the champ and his challenger now officially locked in. The gym hums with championship-week tension.",
+  "pulse": "Two rivals face off for the Lightweight throne—undefeated Mountain against the hungry Showman, the gym electric as their championship week begins.",
+  "scene_blurb": "The announcement sits fresh on the gym floor as evening settles—Cross finishes hard rounds while Tamiev winds down, the championship pace already setting in. The mats hum with the weight of Saturday.",
   "last_run_date": "2026-06-09",
-  "last_cycle_key": "2026-06-09:midday",
+  "last_cycle_key": "2026-06-09:evening",
   "day_summaries": {},
   "present": [
     "lw_tamiev",
     "lw_cross",
-    "lw_mori",
-    "mw_hcosta",
-    "fw_dubois",
-    "mw_brenner",
-    "lhw_ford",
-    "hw_boateng"
+    "hw_flynn",
+    "lw_ferreira",
+    "lhw_banks",
+    "lhw_sokolov",
+    "mw_tonga",
+    "hw_morozov"
   ]
 }
