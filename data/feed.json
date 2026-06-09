@@ -504,5 +504,160 @@
     "scene": "gym",
     "phase": "camp",
     "timestamp": "2026-06-09T22:00:10.892649"
+  },
+  {
+    "day": 1,
+    "cycle": "night",
+    "character": "lw_tamiev",
+    "action": "Towels off after heavy-bag work, eyes locked across the gym toward Cross with quiet certainty.",
+    "thought": "Finally testing myself against real speed.",
+    "mood": "focused",
+    "timestamp": "2026-06-09T23:00:00.710443"
+  },
+  {
+    "day": 1,
+    "cycle": "night",
+    "character": "lw_cross",
+    "action": "Finishes explosive pad combinations, his partner barely keeping pace with the relentless tempo.",
+    "thought": "Saturday I end his zero.",
+    "mood": "electric",
+    "timestamp": "2026-06-09T23:00:00.710443"
+  },
+  {
+    "day": 1,
+    "cycle": "night",
+    "character": "lhw_manos",
+    "action": "Wraps loosening as he sits on the bench, watching the Lightweight rivals with seasoned eyes.",
+    "thought": "This is the fight everyone wanted.",
+    "mood": "attentive",
+    "timestamp": "2026-06-09T23:00:00.710443"
+  },
+  {
+    "day": 1,
+    "cycle": "night",
+    "character": "fw_costa",
+    "action": "Drills angle slips at half-speed, each movement economical and detached from the championship noise.",
+    "thought": "My counter work is sharper now.",
+    "mood": "cold",
+    "timestamp": "2026-06-09T23:00:00.710443"
+  },
+  {
+    "day": 1,
+    "cycle": "night",
+    "character": "lw_torres",
+    "action": "Zips his gym bag with deliberate care, his gaze locked on the two Lightweights.",
+    "thought": "He has the speed to trouble him.",
+    "mood": "measured",
+    "timestamp": "2026-06-09T23:00:00.710443"
+  },
+  {
+    "day": 1,
+    "cycle": "night",
+    "character": "fw_karim",
+    "action": "Leans against the cage frame, watching the night session wind down with weathered composure.",
+    "thought": "I've seen every style there is.",
+    "mood": "watchful",
+    "timestamp": "2026-06-09T23:00:00.710443"
+  },
+  {
+    "day": 1,
+    "cycle": "night",
+    "character": "lw_novak",
+    "action": "Submerges into the ice bath with steady breathing, his iron jaw set against the cold.",
+    "thought": "Iron jaw never breaks under pressure.",
+    "mood": "resolved",
+    "timestamp": "2026-06-09T23:00:00.710443"
+  },
+  {
+    "day": 1,
+    "cycle": "night",
+    "character": "lhw_brandt",
+    "action": "Paces the mat in slow methodical rhythm, rolling his shoulders as evening light fades.",
+    "thought": "Pressure, always forward, always relentless.",
+    "mood": "methodical",
+    "timestamp": "2026-06-09T23:00:00.710443"
+  },
+  {
+    "day": 1,
+    "cycle": "night",
+    "type": "interaction",
+    "characters": [
+      "lw_tamiev",
+      "lw_cross"
+    ],
+    "description": "Cross finishes his final combination as Tamiev rises from cooling down—their eyes meet in the electric silence, the undefeated Mountain and Showtime's relentless challenger finally locked in the moment Saturday will settle.",
+    "dialogue": [
+      {
+        "speaker": "lw_cross",
+        "line": "Saturday can't come soon enough for me."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "I will be waiting."
+      },
+      {
+        "speaker": "lw_torres",
+        "line": "This is it. This is the one right here."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Twenty-one and zero means nothing when I bring my heat."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "I have faced everyone who climbs the ladder."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "You've never faced me."
+      },
+      {
+        "speaker": "lw_karim",
+        "line": "Kid's got the hand speed. Mountain's got the weight and wrestling."
+      },
+      {
+        "speaker": "coach",
+        "line": "Both camps ready. This one settles everything."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Your undefeated streak ends in my backyard."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "We will see what happens Saturday."
+      },
+      {
+        "speaker": "lw_manos",
+        "line": "Respect to both camps. This is real."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "It's my time now. My moment to become champ."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "The belt will know who earned it."
+      },
+      {
+        "speaker": "lw_torres",
+        "line": "Gonna be a hell of a night."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "No hell. Just my victory on Saturday."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Only the cage decides."
+      },
+      {
+        "speaker": "coach",
+        "line": "Both of you ready. That's all we know."
+      }
+    ],
+    "scene": "gym",
+    "phase": "camp",
+    "timestamp": "2026-06-09T23:00:00.710443"
   }
 ]
