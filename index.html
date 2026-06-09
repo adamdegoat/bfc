@@ -447,7 +447,20 @@ function GYM(){
   const bags = spec(5,i=>{const x=120+i*60;return `<g transform="translate(${x} 200)"><rect x="-1.5" y="-60" width="3" height="60" fill="#3a3f4a"/><g class="hbag" style="animation-delay:${(i*-0.7).toFixed(1)}s"><rect x="-13" y="-2" width="26" height="80" rx="11" fill="#${i%2?'b23b3b':'2a2f3a'}"/><rect x="-13" y="-2" width="26" height="80" rx="11" fill="url(#bagsh)"/><rect x="-13" y="10" width="26" height="5" fill="#00000033"/><rect x="-13" y="38" width="26" height="5" fill="#00000033"/><rect x="-6" y="-4" width="12" height="4" rx="2" fill="#15171d"/></g></g>`});
   const trusses = spec(7,i=>`<rect x="${60+i*135}" y="0" width="5" height="46" fill="#1a1e27"/>`);
   const lights = spec(6,i=>`<g transform="translate(${110+i*160} 44)"><rect x="-22" y="-6" width="44" height="9" rx="3" fill="#11141c"/><circle cx="0" cy="0" r="4" fill="#ffe9b0" opacity=".9"/><ellipse cx="0" cy="40" rx="58" ry="150" fill="url(#beam)" opacity=".16"/><ellipse cx="0" cy="430" rx="74" ry="40" fill="url(#beam)" opacity=".07"/></g>`);
-  const winds = spec(3,i=>`<rect x="${560+i*140}" y="70" width="110" height="120" rx="6" fill="url(#win)" opacity=".55"/><line x1="${615+i*140}" y1="70" x2="${615+i*140}" y2="190" stroke="#0a0c12" stroke-width="3"/>`);
+  // big windows looking out over a night-city skyline (scenery)
+  const cityWindow=(x,y,w,h,seed)=>{
+    let b=`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="url(#nsky)"/>`;
+    b+=`<circle cx="${x+w*0.72}" cy="${y+16}" r="6.5" fill="#cfe0f0" opacity=".45"/>`;
+    for(let s=0;s<10;s++) b+=`<circle cx="${x+((s*53+seed*17)%w)}" cy="${y+((s*31)%(h*0.5))}" r=".8" fill="#fff" opacity=".4"/>`;
+    const cols=7, bw=w/cols;
+    for(let i=0;i<cols;i++){const bx=x+i*bw, bh=24+((i*47+seed*29)%(h-34)), by=y+h-bh;
+      b+=`<rect x="${bx}" y="${by}" width="${bw-1.5}" height="${bh}" fill="#0a0e17"/>`;
+      const rows=Math.floor(bh/9);
+      for(let r=0;r<rows;r++)for(let c=0;c<2;c++){ if((i*7+r*5+c+seed)%3===0) b+=`<rect x="${(bx+2+c*(bw/2)).toFixed(1)}" y="${(by+4+r*9).toFixed(1)}" width="2.4" height="3" fill="#ffd98a" opacity="${(.35+((i+r)%3)*.18).toFixed(2)}"/>`; }
+    }
+    return `<g>${b}</g><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="4" fill="none" stroke="#0a0c12" stroke-width="3.5"/><line x1="${x+w/2}" y1="${y}" x2="${x+w/2}" y2="${y+h}" stroke="#0a0c12" stroke-width="3"/><line x1="${x}" y1="${y+h/2}" x2="${x+w}" y2="${y+h/2}" stroke="#0a0c12" stroke-width="3"/><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="4" fill="url(#beam)" opacity=".04"/>`;
+  };
+  const winds = spec(3,i=>cityWindow(560+i*140,70,118,124,i+1));
   return `<svg viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="gwall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b2030"/><stop offset="1" stop-color="#10131c"/></linearGradient>
@@ -458,6 +471,7 @@ function GYM(){
     <radialGradient id="cagelt" cx="50%" cy="20%" r="80%"><stop offset="0" stop-color="#fff4d6" stop-opacity=".5"/><stop offset="1" stop-color="transparent"/></radialGradient>
     <linearGradient id="gg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff8db"/><stop offset=".33" stop-color="#f7d35f"/><stop offset=".5" stop-color="#e7b637"/><stop offset=".515" stop-color="#a9760c"/><stop offset=".7" stop-color="#e2ad2e"/><stop offset="1" stop-color="#7d5505"/></linearGradient>
     <linearGradient id="gr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff5063"/><stop offset="1" stop-color="#b00f1d"/></linearGradient>
+    <linearGradient id="nsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a2a48"/><stop offset=".55" stop-color="#0e1828"/><stop offset="1" stop-color="#0a0f1a"/></linearGradient>
   </defs>
   <rect width="1000" height="600" fill="url(#gwall)"/>
   <!-- concrete wall panels + seams (texture) -->
@@ -512,6 +526,10 @@ function GYM(){
   <g transform="translate(330 92)"><rect x="-26" y="-8" width="52" height="18" rx="9" fill="#1a1d26" stroke="#2a2f3d"/><ellipse cx="0" cy="1" rx="9" ry="7" fill="#f5c542"/><ellipse cx="0" cy="1" rx="4.5" ry="3.6" fill="#ffe08a"/><rect x="-26" y="-8" width="10" height="18" rx="4" fill="#3a2c0a"/><rect x="16" y="-8" width="10" height="18" rx="4" fill="#3a2c0a"/></g>
   <circle cx="470" cy="96" r="16" fill="#11141c" stroke="#2a2f3d" stroke-width="2"/><circle cx="470" cy="96" r="1.6" fill="#e11d2e"/><path d="M470 96 L470 86 M470 96 L477 99" stroke="#cbd2e0" stroke-width="1.4" stroke-linecap="round"/>
   <g transform="translate(520 78)"><rect width="60" height="78" rx="3" fill="#141821" stroke="#262c3a"/><rect x="8" y="10" width="44" height="40" rx="2" fill="#2a1116"/><text x="30" y="36" font-family="Anton,sans-serif" font-weight="900" font-size="16" fill="#f5c542" text-anchor="middle">BFC</text><text x="30" y="66" font-family="Oswald,sans-serif" font-size="9" fill="#7a8295" text-anchor="middle">FIGHT NIGHT</text></g>
+  <!-- hall of champions: framed portraits -->
+  ${spec(2,i=>{const x=364+i*50;return `<g transform="translate(${x} 84)"><rect width="42" height="54" rx="2" fill="#0e1118" stroke="url(#gg)" stroke-width="1.5"/><ellipse cx="21" cy="10" rx="7" ry="3" fill="#f5c542" opacity=".55"/><rect x="4" y="14" width="34" height="28" fill="#19202c"/><circle cx="21" cy="27" r="7.5" fill="#2c3242"/><path d="M11 40 Q21 30 31 40 Z" fill="#2c3242"/><text x="21" y="50" font-family="Oswald,sans-serif" font-weight="700" font-size="6" letter-spacing="1" fill="#8a93a5" text-anchor="middle">CHAMPION</text></g>`})}
+  <!-- hanging BFC pennant -->
+  <g transform="translate(840 46)"><path d="M0 0 L34 0 L34 30 L17 22 L0 30 Z" fill="#171b27" stroke="#2a2f3d"/><text x="17" y="16" font-family="Anton,sans-serif" font-size="11" fill="#f5c542" text-anchor="middle">BFC</text></g>
   <!-- mat: tape lines + centre logo -->
   <ellipse cx="500" cy="500" rx="120" ry="40" fill="none" stroke="#e11d2e" stroke-width="2" opacity=".18"/>
   <text x="500" y="508" font-family="Anton,sans-serif" font-weight="900" font-size="40" fill="#ffffff" opacity=".05" text-anchor="middle">BFC</text>
@@ -554,9 +572,14 @@ function WEIGHIN(){
     <text x="500" y="180" font-family="Anton,sans-serif" font-weight="900" font-size="74" fill="#f5c542" text-anchor="middle">BFC</text>
     <text x="500" y="232" font-family="Plus Jakarta Sans,sans-serif" font-weight="800" font-size="22" letter-spacing="9" fill="#f5c542" text-anchor="middle">OFFICIAL WEIGH-INS</text>
   </g>
+  <!-- overhead lighting truss -->
+  <rect x="90" y="26" width="820" height="8" rx="2" fill="#0c0f17"/>
+  ${spec(9,i=>`<g transform="translate(${150+i*88} 34)"><rect x="-5" y="0" width="10" height="7" rx="2" fill="#11141c"/><circle cx="0" cy="3" r="2.5" fill="#ffe9b0" opacity=".8"/><ellipse cx="0" cy="40" rx="34" ry="70" fill="url(#spot)" opacity=".1"/></g>`)}
   <!-- spotlights -->
   <ellipse cx="340" cy="120" rx="180" ry="320" fill="url(#spot)"/>
   <ellipse cx="660" cy="120" rx="180" ry="320" fill="url(#spot)"/>
+  <!-- flanking sponsor banners -->
+  ${spec(2,i=>`<g transform="translate(${i?908:92} 50)"><rect x="-22" y="0" width="44" height="300" fill="#100b10" stroke="#2a1c26"/>${spec(3,j=>`<text x="0" y="${70+j*90}" font-family="Anton,sans-serif" font-size="20" fill="#f5c542" opacity=".55" text-anchor="middle" transform="rotate(90 0 ${70+j*90})">BFC</text>`)}</g>`)}
   <!-- stage floor -->
   <rect y="370" width="1000" height="230" fill="url(#stagefl)"/>
   <ellipse cx="500" cy="372" rx="520" ry="26" fill="#00000050"/>
@@ -710,6 +733,15 @@ function RECOVERY(){
   <g transform="translate(150 360)"><rect x="-70" y="0" width="200" height="26" rx="5" fill="#223044"/><rect x="-60" y="-12" width="180" height="14" rx="6" fill="#2c3e54"/><rect x="-60" y="26" width="10" height="60" fill="#1a2432"/><rect x="110" y="26" width="10" height="60" fill="#1a2432"/>
     <rect x="40" y="-26" width="34" height="16" rx="3" fill="#b23b3b"/><rect x="52" y="-30" width="10" height="6" fill="#b23b3b"/><path d="M53 -22 h8 M57 -26 v8" stroke="#fff" stroke-width="1.6"/></g>
   <g transform="translate(60 300)"><rect x="-1.5" y="0" width="3" height="120" fill="#2c3e54"/><circle cx="0" cy="0" r="5" fill="#3a4e64"/><rect x="-7" y="14" width="14" height="20" rx="3" fill="#cfe3f5" opacity=".5"/></g>
+  <!-- wall clock -->
+  <circle cx="500" cy="330" r="15" fill="#0e1622" stroke="#2a3a4e" stroke-width="2"/><circle cx="500" cy="330" r="1.4" fill="#7aa0c4"/><path d="M500 330 L500 321 M500 330 L506 333" stroke="#9fb6cc" stroke-width="1.3" stroke-linecap="round"/>
+  <!-- BFC wall sign -->
+  <text x="200" y="200" font-family="Anton,sans-serif" font-size="30" fill="#f5c542" opacity=".12" text-anchor="middle">BFC</text>
+  <text x="200" y="216" font-family="Oswald,sans-serif" font-size="9" letter-spacing="3" fill="#5a6680" opacity=".5" text-anchor="middle">RECOVERY ROOM</text>
+  <!-- water / Gatorade cooler -->
+  <g transform="translate(840 400)"><rect x="-16" y="0" width="32" height="48" rx="4" fill="#1a2432" stroke="#2c3e54"/><rect x="-16" y="0" width="32" height="12" rx="4" fill="#e11d2e" opacity=".7"/><rect x="-6" y="20" width="12" height="8" rx="2" fill="#0c1018"/><rect x="-9" y="50" width="18" height="34" rx="3" fill="#223044"/>${spec(3,i=>`<rect x="${-12+i*9}" y="86" width="6" height="14" rx="2" fill="#7fd6f5" opacity=".6"/>`)}</g>
+  <!-- hanging towels on a rack -->
+  <g transform="translate(360 300)"><rect x="0" y="0" width="120" height="4" rx="2" fill="#2c3e54"/>${spec(3,i=>`<rect x="${10+i*40}" y="4" width="24" height="40" rx="2" fill="#${['cfd8e6','b9c4d4','d8e0ec'][i]}" opacity=".${[5,4,5][i]}"/>`)}</g>
   <!-- bench -->
   <rect x="380" y="430" width="320" height="18" rx="5" fill="#28344a"/><rect x="380" y="430" width="320" height="18" rx="5" fill="#28344a"/><rect x="380" y="430" width="320" height="18" rx="5" fill="#28344a"/>
   <rect x="396" y="448" width="14" height="46" fill="#1a2432"/><rect x="670" y="448" width="14" height="46" fill="#1a2432"/>
