@@ -594,6 +594,8 @@ function WEIGHIN(){
   </g>
   <!-- BFC belt on a stand (centre, the prize) -->
   <g transform="translate(500 405)"><rect x="-2" y="0" width="4" height="40" fill="#15171f"/><ellipse cx="0" cy="42" rx="20" ry="5" fill="#0c0f17"/><path d="M -26 -6 Q 0 -14 26 -6 L 22 6 Q 0 -2 -22 6 Z" fill="#3a2c0a"/><ellipse cx="0" cy="0" rx="11" ry="9" fill="#f5c542" stroke="#a8810f" stroke-width="1"/><ellipse cx="0" cy="0" rx="5.5" ry="4.5" fill="#ffe08a"/></g>
+  <!-- crowd of fans flanking the stage -->
+  ${spec(2,side=>{const x0=side?640:30;return spec(14,i=>{const x=x0+(i%7)*45, row=Math.floor(i/7); const y=505+row*18;return `<circle cx="${x}" cy="${y+14}" r="9" fill="#0a0e16"/><circle cx="${x}" cy="${y}" r="6" fill="#0c1119"/>`+((i*3+side)%3===0?`<rect x="${x-2}" y="${y-3}" width="9" height="5" rx="1" fill="#11151d" transform="rotate(-8 ${x} ${y})"/>`:'');});})}
   <!-- press pit + photographers -->
   <rect y="556" width="1000" height="44" fill="#0a0509"/>
   ${press}${flashes}
