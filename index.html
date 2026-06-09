@@ -64,7 +64,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);color:var
   background:rgba(0,0,0,.55);border-radius:5px;padding:1px 6px;white-space:nowrap;
   border-bottom:2px solid var(--cc,#888)}
 .fg .nametag .belt{color:var(--gold)}
-.char-svg{display:block;filter:drop-shadow(0 5px 5px rgba(0,0,0,.45))}
+.char-svg{display:block;overflow:visible;filter:drop-shadow(0 5px 5px rgba(0,0,0,.45))}
 .bubble{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);margin-bottom:5px;
   max-width:150px;background:rgba(12,14,22,.94);border:1px solid var(--line);border-radius:10px;
   padding:5px 9px;font-size:11px;line-height:1.25;color:#eef;text-align:center;
@@ -816,9 +816,11 @@ function fighterSVG(cid, poseOverride){
     skip: {l:[-9,-41,-(+sw+1),-45],        r:[9,-41,(+sw+1),-45]},   // turning a skipping rope
     stretch:{l:[-4.5,-86,-(+sw),-70],      r:[4.5,-86,(+sw),-70]},   // arms up, warming up
   }[pose||'ready'];
+  // a real skipping rope: a big slack loop, clearly LONGER than the fighter (swings well below the feet / over the head)
   const rope = pose==='skip'
-    ? `<path class="rope-d" d="M -9 -40 C -23 8 23 8 9 -40" fill="none" stroke="#e6ecf4" stroke-width="1.7" stroke-linecap="round"/>`
-     +`<path class="rope-u" d="M -9 -40 C -23 -90 23 -90 9 -40" fill="none" stroke="#e6ecf4" stroke-width="1.7" stroke-linecap="round"/>` : '';
+    ? `<path class="rope-d" d="M -10 -41 C -34 30 34 30 10 -41" fill="none" stroke="#e6ecf4" stroke-width="1.8" stroke-linecap="round"/>`
+     +`<path class="rope-u" d="M -10 -41 C -34 -112 34 -112 10 -41" fill="none" stroke="#e6ecf4" stroke-width="1.8" stroke-linecap="round"/>`
+     +`<circle cx="-10" cy="-41" r="1.6" fill="#c9a06a"/><circle cx="10" cy="-41" r="1.6" fill="#c9a06a"/>` : '';
   const arm=(shx,shy,ex,ey,hx,hy)=>`<path d="M ${shx} ${shy} Q ${ex} ${ey} ${hx} ${hy}" stroke="${skin}" stroke-width="6.4" fill="none" stroke-linecap="round"/>`;
   // padded MMA fist held UP like a fighter's guard — knuckles toward the TOP, forearm enters from BELOW
   const glove=(x,y)=>{x=+x;y=+y;const out=x>0?1:-1;return `<ellipse cx="${x}" cy="${y}" rx="4.6" ry="5" fill="${color}"/>`
