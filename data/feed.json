@@ -1263,5 +1263,164 @@
     "scene": "gym",
     "phase": "camp",
     "timestamp": "2026-06-10T15:00:00.251928"
+  },
+  {
+    "day": 2,
+    "cycle": "evening",
+    "character": "lw_tamiev",
+    "action": "Towels off from wrestling, stretching his shoulders as Cross locks eyes with him across the gym.",
+    "thought": "Three days. I do what I always do.",
+    "mood": "composed",
+    "timestamp": "2026-06-10T18:30:00.198354"
+  },
+  {
+    "day": 2,
+    "cycle": "evening",
+    "character": "lw_cross",
+    "action": "Finishes the final combination on the mitts, chest heaving, refusing to look away from the champ.",
+    "thought": "That mountain comes down Saturday night.",
+    "mood": "fired",
+    "timestamp": "2026-06-10T18:30:00.198354"
+  },
+  {
+    "day": 2,
+    "cycle": "evening",
+    "character": "hw_morozov",
+    "action": "Rolls across the wrestling mat, methodical and heavy, shoulders tight from hours of bottom control.",
+    "thought": "Wrestling beats noise. Always does.",
+    "mood": "grinding",
+    "timestamp": "2026-06-10T18:30:00.198354"
+  },
+  {
+    "day": 2,
+    "cycle": "evening",
+    "character": "lw_walsh",
+    "action": "Wraps his knuckles slowly, watching the tension between the two lightweights with a knowing smirk.",
+    "thought": "This kid's got stones, but stones break.",
+    "mood": "amused",
+    "timestamp": "2026-06-10T18:30:00.198354"
+  },
+  {
+    "day": 2,
+    "cycle": "evening",
+    "character": "mw_tonga",
+    "action": "Finishes the final round on the heavy bag, sweat streaming, power still crackling in every shot.",
+    "thought": "Mountain's real. This cross walks uphill.",
+    "mood": "focused",
+    "timestamp": "2026-06-10T18:30:00.198354"
+  },
+  {
+    "day": 2,
+    "cycle": "evening",
+    "character": "mw_adeyemi",
+    "action": "Laughs loudly from his corner, shouting encouragement to his team, thriving in the electric gym energy.",
+    "thought": "Three days until the rankings reshape.",
+    "mood": "electric",
+    "timestamp": "2026-06-10T18:30:00.198354"
+  },
+  {
+    "day": 2,
+    "cycle": "evening",
+    "character": "lhw_brandt",
+    "action": "Performs core work on the mat, each rep mechanical and flawless, unmoved by the chaos above.",
+    "thought": "Two fighters. One goes home sad.",
+    "mood": "unmoved",
+    "timestamp": "2026-06-10T18:30:00.198354"
+  },
+  {
+    "day": 2,
+    "cycle": "evening",
+    "character": "mw_hutchins",
+    "action": "Leans against the cage, watching the standoff between Tamiev and Cross, nodding slowly to himself.",
+    "thought": "Respect the cross. But mountain won't fall.",
+    "mood": "composed",
+    "timestamp": "2026-06-10T18:30:00.198354"
+  },
+  {
+    "day": 2,
+    "cycle": "evening",
+    "type": "interaction",
+    "characters": [
+      "lw_tamiev",
+      "lw_cross"
+    ],
+    "description": "As Tamiev towels off from wrestling, Cross's eyes burn into him from across the mat—three days until the unification war, and the gym's electric with the weight of what's coming.",
+    "dialogue": [
+      {
+        "speaker": "lw_cross",
+        "line": "You ready, Tamiev?"
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Ready every day. Saturday same."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Tuesday you didn't have everything on the line. This is different."
+      },
+      {
+        "speaker": "mw_adeyemi",
+        "line": "Man, you can feel the pressure from here!"
+      },
+      {
+        "speaker": "lhw_brandt",
+        "line": "Good fight. Good fighters. One goes home sad."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Then Saturday I go home happy."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Your perfect record ends, Tamiev. I'm taking that."
+      },
+      {
+        "speaker": "coach",
+        "line": "Alright, Tamiev. Let's get you cooled down. Recovery first."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Yeah, go recover. You'll need it!"
+      },
+      {
+        "speaker": "hw_morozov",
+        "line": "Cross has no wrestling. Tamiev will dominate."
+      },
+      {
+        "speaker": "lw_walsh",
+        "line": "Cross is slick on his feet, though. That might matter."
+      },
+      {
+        "speaker": "mw_hutchins",
+        "line": "Not against Tamiev's top control. The champ suffocates everyone."
+      },
+      {
+        "speaker": "mw_tonga",
+        "line": "That undefeated record is legit. Real thing."
+      },
+      {
+        "speaker": "mw_adeyemi",
+        "line": "Three days, baby. Three days and we got clarity."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Saturday, Tamiev! Don't disappoint me now!"
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "See you then, Cross."
+      },
+      {
+        "speaker": "lw_walsh",
+        "line": "Kid's got fire. Respect that."
+      },
+      {
+        "speaker": "coach",
+        "line": "Alright, everyone. Good work today. Same tomorrow."
+      }
+    ],
+    "scene": "gym",
+    "phase": "camp",
+    "timestamp": "2026-06-10T18:30:00.198354"
   }
 ]
