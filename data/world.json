@@ -1,6 +1,6 @@
 {
   "day": 2,
-  "cycle": "morning",
+  "cycle": "midday",
   "scene": "gym",
   "phase": "camp",
   "week_label": "Camp — Wednesday, sharpening tools",
@@ -136,21 +136,21 @@
   },
   "next_card": null,
   "results_history": [],
-  "pulse": "Tamiev and Cross exchange heat as the morning sharpens—the undefeated Mountain measured and ice-cold, his challenger electric and desperate.",
-  "scene_blurb": "Wrestles, pad work, and heavy bag rounds fill the gym as Tamiev and Cross trade words across the mats. Three days to BFC 100.",
+  "pulse": "The undefeated champ and his #1 challenger stare across the gym—three days until everything changes for one of them.",
+  "scene_blurb": "Tamiev rises from wrestling as Cross finishes mitts—the unification rivals lock eyes across the gym. Around them, the camp grinds: Achebe lands teeps, Tanaka fires combos, Banks works explosively in his corner, Khalidov and Brenner methodical on the bags.",
   "last_run_date": "2026-06-10",
-  "last_cycle_key": "2026-06-10:morning",
+  "last_cycle_key": "2026-06-10:midday",
   "day_summaries": {
     "1": "BFC 100's announcement sent shockwaves through The Gym: the undefeated Mountain finally faces Showtime across the mats Saturday night. Every fighter sharpened their tools today as the entire card locks in with championship stakes sky-high. From featherweight to heavyweight, the promotion breathes with one focus: this weekend."
   },
   "present": [
     "lw_tamiev",
     "lw_cross",
-    "fw_dubois",
-    "fw_chen",
-    "lw_mori",
-    "mw_adeyemi",
-    "hw_bamidele",
-    "hw_walker"
+    "lhw_achebe",
+    "mw_khalidov",
+    "lhw_banks",
+    "fw_tanaka",
+    "lhw_ford",
+    "mw_brenner"
   ]
 }

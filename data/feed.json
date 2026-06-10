@@ -961,5 +961,156 @@
     "scene": "gym",
     "phase": "camp",
     "timestamp": "2026-06-10T07:00:00.520191"
+  },
+  {
+    "day": 2,
+    "cycle": "midday",
+    "character": "lw_tamiev",
+    "action": "Rises from the wrestling mat, towel around his neck, eyes steady and locked on Cross.",
+    "thought": "He talks. I wrestle. Saturday decides everything.",
+    "mood": "composed",
+    "timestamp": "2026-06-10T11:30:00.452929"
+  },
+  {
+    "day": 2,
+    "cycle": "midday",
+    "character": "lw_cross",
+    "action": "Drops his hands from the mitts, chest heaving, gaze fixed on Tamiev across the gym.",
+    "thought": "Three days. I'm taking that zero from him.",
+    "mood": "wired",
+    "timestamp": "2026-06-10T11:30:00.452929"
+  },
+  {
+    "day": 2,
+    "cycle": "midday",
+    "character": "lhw_achebe",
+    "action": "Plants his feet and fires a sharp teep into the heavy bag, observing the staredown.",
+    "thought": "That's champion composure right there, undeniable.",
+    "mood": "focused",
+    "timestamp": "2026-06-10T11:30:00.452929"
+  },
+  {
+    "day": 2,
+    "cycle": "midday",
+    "character": "mw_khalidov",
+    "action": "Walks steady forward into the heavy bag, cold and methodical, locked in his own work.",
+    "thought": "Noise means nothing. Work on the mat decides.",
+    "mood": "relentless",
+    "timestamp": "2026-06-10T11:30:00.452929"
+  },
+  {
+    "day": 2,
+    "cycle": "midday",
+    "character": "lhw_banks",
+    "action": "Explosive bursts on the heavy bag in his corner, hands a blur, watching the rivals.",
+    "thought": "Cross is gonna make him dance hard Saturday.",
+    "mood": "amped",
+    "timestamp": "2026-06-10T11:30:00.452929"
+  },
+  {
+    "day": 2,
+    "cycle": "midday",
+    "character": "fw_tanaka",
+    "action": "Fires rapid-fire combinations on the mitts with blinding speed, eyes locked on his work.",
+    "thought": "Focus on your own craft. Let work speak.",
+    "mood": "centered",
+    "timestamp": "2026-06-10T11:30:00.452929"
+  },
+  {
+    "day": 2,
+    "cycle": "midday",
+    "character": "lhw_ford",
+    "action": "Stands at the edge of the mat, undefeated and watching both rivals with sharp eyes.",
+    "thought": "That's the elite tier. That's where I'm headed.",
+    "mood": "ambitious",
+    "timestamp": "2026-06-10T11:30:00.452929"
+  },
+  {
+    "day": 2,
+    "cycle": "midday",
+    "character": "mw_brenner",
+    "action": "Walks steady forward into the heavy bag, cold and methodical, focused purely on pace and pressure.",
+    "thought": "Stay methodical. Pressure wins rounds, rounds win fights.",
+    "mood": "detached",
+    "timestamp": "2026-06-10T11:30:00.452929"
+  },
+  {
+    "day": 2,
+    "cycle": "midday",
+    "type": "interaction",
+    "characters": [
+      "lw_tamiev",
+      "lw_cross"
+    ],
+    "description": "Tamiev rises from the wrestling round as Cross finishes pad work—undefeated Mountain and hungry Showtime lock eyes across the gym, three days before their unification war.",
+    "dialogue": [
+      {
+        "speaker": "lw_cross",
+        "line": "What's up, champ? Still unsmiling three days out?"
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "You talk a lot for a challenger."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "I back it up. You're getting humbled Saturday."
+      },
+      {
+        "speaker": "lhw_banks",
+        "line": "Let's go, Cross! Showtime's gonna light him up!"
+      },
+      {
+        "speaker": "fw_tanaka",
+        "line": "Fight does the talking. Let's see what Saturday brings."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Noise doesn't scare mountains."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Then why you keep staring at me across the gym?"
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "You're next. That's all."
+      },
+      {
+        "speaker": "lhw_achebe",
+        "line": "That's how a true champ carries himself."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Three days, Mountain. Your zero ends with Showtime."
+      },
+      {
+        "speaker": "mw_khalidov",
+        "line": "Let him talk. Work will answer."
+      },
+      {
+        "speaker": "coach",
+        "line": "Alright, reset for round two. Let's go, people."
+      },
+      {
+        "speaker": "mw_brenner",
+        "line": "Focus on your own work. That's how you win fights."
+      },
+      {
+        "speaker": "lhw_ford",
+        "line": "That's what elite composure looks like right there."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Again. Higher pace. Let's move."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "See you Saturday, champ."
+      }
+    ],
+    "scene": "gym",
+    "phase": "camp",
+    "timestamp": "2026-06-10T11:30:00.452929"
   }
 ]
