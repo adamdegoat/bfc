@@ -1736,5 +1736,156 @@
     "scene": "gym",
     "phase": "fight_week",
     "timestamp": "2026-06-11T00:00:00.729214"
+  },
+  {
+    "day": 3,
+    "cycle": "morning",
+    "character": "lw_tamiev",
+    "action": "Wraps his hands tightly, methodical and unhurried, eyes locked on the wrestling mats.",
+    "thought": "Three days. He breaks or I do.",
+    "mood": "focused",
+    "timestamp": "2026-06-11T07:00:00.240752"
+  },
+  {
+    "day": 3,
+    "cycle": "morning",
+    "character": "lw_cross",
+    "action": "Finishes a sharp four-punch combination on the heavy bag, breathing hard, then stares across the gym.",
+    "thought": "He's gonna feel me Saturday.",
+    "mood": "electric",
+    "timestamp": "2026-06-11T07:00:00.240752"
+  },
+  {
+    "day": 3,
+    "cycle": "morning",
+    "character": "lhw_brandt",
+    "action": "Walks through a pad round with his coach, staying low, moving forward without pause.",
+    "thought": "Same grind every day. Stay dangerous.",
+    "mood": "steady",
+    "timestamp": "2026-06-11T07:00:00.240752"
+  },
+  {
+    "day": 3,
+    "cycle": "morning",
+    "character": "lhw_doyle",
+    "action": "Rolls his shoulders and watches the lightweight tension bubble, then nods at Brandt.",
+    "thought": "Two nights. Then it's mine.",
+    "mood": "focused",
+    "timestamp": "2026-06-11T07:00:00.240752"
+  },
+  {
+    "day": 3,
+    "cycle": "morning",
+    "character": "hw_flynn",
+    "action": "Wraps his hands while checking out Cross's combinations, impressed and calculating.",
+    "thought": "Fast hands for a lightweight.",
+    "mood": "observant",
+    "timestamp": "2026-06-11T07:00:00.240752"
+  },
+  {
+    "day": 3,
+    "cycle": "morning",
+    "character": "lw_torres",
+    "action": "Coils a jump rope after a steady pad session, gray temple catching the gym light.",
+    "thought": "Young blood always talks. I remember.",
+    "mood": "calm",
+    "timestamp": "2026-06-11T07:00:00.240752"
+  },
+  {
+    "day": 3,
+    "cycle": "morning",
+    "character": "lw_mwangi",
+    "action": "Snaps a heavy round-kick against the bag, then pauses to watch the lightweight theater unfold.",
+    "thought": "One of them falls Saturday.",
+    "mood": "curious",
+    "timestamp": "2026-06-11T07:00:00.240752"
+  },
+  {
+    "day": 3,
+    "cycle": "morning",
+    "character": "lhw_manos",
+    "action": "Holds a heavy bag for a partner, solid and unmoved by the surrounding noise and drama.",
+    "thought": "Show up. Do the work. Live.",
+    "mood": "grounded",
+    "timestamp": "2026-06-11T07:00:00.240752"
+  },
+  {
+    "day": 3,
+    "cycle": "morning",
+    "type": "interaction",
+    "characters": [
+      "lw_tamiev",
+      "lw_cross"
+    ],
+    "description": "Cross bangs the heavy bag and locks eyes with Tamiev—three days out, the undefeated champ and the people's draw cutting weight, sharper than ever.",
+    "dialogue": [
+      {
+        "speaker": "lw_cross",
+        "line": "You feel that speed, Tamiev? Saturday's going to be eye-opening."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Speed goes away when you're on your back."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "That's cute. I've never been on my back."
+      },
+      {
+        "speaker": "lw_torres",
+        "line": "Yet. That's the word you're missing, kid."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Torres, you weren't even in my rankings five years ago."
+      },
+      {
+        "speaker": "lw_torres",
+        "line": "No, but I'm still standing. Remember that Saturday."
+      },
+      {
+        "speaker": "lw_mwangi",
+        "line": "Cross, if he catches you with that clinch grip? You're done."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "He's not catching me with anything. I'm too fast."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Fast men break slow. I've seen it before."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Yeah? You've never fought someone like me."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "I've fought five of you. They all lost."
+      },
+      {
+        "speaker": "lhw_doyle",
+        "line": "Mountain always sounds the same. Respect that."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Respect doesn't win rounds. Damage does."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Then we'll see whose damage is real."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Saturday. Fifty thousand people watching me end it."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "They'll watch you try. That's all."
+      }
+    ],
+    "scene": "gym",
+    "phase": "fight_week",
+    "timestamp": "2026-06-11T07:00:00.240752"
   }
 ]
