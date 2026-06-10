@@ -1573,5 +1573,168 @@
     "scene": "gym",
     "phase": "camp",
     "timestamp": "2026-06-10T22:30:00.546282"
+  },
+  {
+    "day": 3,
+    "cycle": "oracle",
+    "character": "lw_tamiev",
+    "action": "Unwraps his hands slowly after a hard grappling round, eyes fixed on Cross.",
+    "thought": "Saturday settles everything between us.",
+    "mood": "centered",
+    "timestamp": "2026-06-11T00:00:00.729214"
+  },
+  {
+    "day": 3,
+    "cycle": "oracle",
+    "character": "lw_cross",
+    "action": "Finishes a heavy combination with his mitts, breathing hard, staring directly at Tamiev.",
+    "thought": "Two days until I prove myself.",
+    "mood": "electric",
+    "timestamp": "2026-06-11T00:00:00.729214"
+  },
+  {
+    "day": 3,
+    "cycle": "oracle",
+    "character": "fw_chen",
+    "action": "Snaps a hard roundhouse kick against the heavy bag, then pauses to watch the lightweights.",
+    "thought": "I see the main event heating up.",
+    "mood": "locked in",
+    "timestamp": "2026-06-11T00:00:00.729214"
+  },
+  {
+    "day": 3,
+    "cycle": "oracle",
+    "character": "lw_mori",
+    "action": "Rolls slowly off the wrestling mat after drilling a counter-takedown, observing without comment.",
+    "thought": "I can feel it coming now.",
+    "mood": "steady",
+    "timestamp": "2026-06-11T00:00:00.729214"
+  },
+  {
+    "day": 3,
+    "cycle": "oracle",
+    "character": "lhw_petrovic",
+    "action": "Coils his jump rope and leans against the wall, thick shoulders relaxed, studying the tension.",
+    "thought": "Kid's got courage, I respect it.",
+    "mood": "amused",
+    "timestamp": "2026-06-11T00:00:00.729214"
+  },
+  {
+    "day": 3,
+    "cycle": "oracle",
+    "character": "lhw_sokolov",
+    "action": "Works through his final core set on the mat, methodical and undisturbed by the gym noise.",
+    "thought": "Tomorrow I sharpen. Saturday I fight.",
+    "mood": "grinding",
+    "timestamp": "2026-06-11T00:00:00.729214"
+  },
+  {
+    "day": 3,
+    "cycle": "oracle",
+    "character": "hw_bamidele",
+    "action": "Holds a heavy bag as his partner drills, occasionally glancing at the lightweight drama.",
+    "thought": "That's what the belt looks like.",
+    "mood": "hungry",
+    "timestamp": "2026-06-11T00:00:00.729214"
+  },
+  {
+    "day": 3,
+    "cycle": "oracle",
+    "character": "hw_reyes",
+    "action": "Wraps his hands and watches the gym, ready for a hard round of pad work.",
+    "thought": "I'm watching the best about to collide.",
+    "mood": "focused",
+    "timestamp": "2026-06-11T00:00:00.729214"
+  },
+  {
+    "day": 3,
+    "cycle": "oracle",
+    "type": "interaction",
+    "characters": [
+      "lw_tamiev",
+      "lw_cross"
+    ],
+    "description": "Cross finishes heavy pad work and locks eyes with Tamiev across the gym floor. The simmering tension erupts into words — Saturday will come, and both men know exactly who they are.",
+    "dialogue": [
+      {
+        "speaker": "lw_cross",
+        "line": "Two days, Champ. You ready for this?"
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "I've been ready. That's why I'm undefeated."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Undefeated? You haven't faced anyone like me."
+      },
+      {
+        "speaker": "lhw_petrovic",
+        "line": "Here we go..."
+      },
+      {
+        "speaker": "lw_mori",
+        "line": "Both confident. That's good."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "I've faced wrestlers, strikers, submissions. Same pattern."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "I'm different. I'm faster, slicker, hungry."
+      },
+      {
+        "speaker": "fw_chen",
+        "line": "Let him talk. See what happens Saturday."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "I know exactly what happens Saturday. You on your back."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "My back? I'll be dancing around you the whole time."
+      },
+      {
+        "speaker": "lhw_sokolov",
+        "line": "Five rounds is long. Anything can happen."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "He can keep dreaming. I'm taking that belt."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "You believe that. That's your strength and your weakness."
+      },
+      {
+        "speaker": "hw_bamidele",
+        "line": "Oooh, philosophical now..."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Three weeks I've wanted this. Three weeks!"
+      },
+      {
+        "speaker": "lw_mori",
+        "line": "The wait ends in two days."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Then let's settle it. I'm done talking."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "All talk is over. Saturday's my day."
+      },
+      {
+        "speaker": "hw_reyes",
+        "line": "And that's how champions are made."
+      }
+    ],
+    "scene": "gym",
+    "phase": "fight_week",
+    "timestamp": "2026-06-11T00:00:00.729214"
   }
 ]
