@@ -1112,5 +1112,156 @@
     "scene": "gym",
     "phase": "camp",
     "timestamp": "2026-06-10T11:30:00.452929"
+  },
+  {
+    "day": 2,
+    "cycle": "afternoon",
+    "character": "lw_tamiev",
+    "action": "Towels off after wrestling, eyes locked steady on Cross across the gym floor.",
+    "thought": "He wants this. Good. Let him come.",
+    "mood": "focused",
+    "timestamp": "2026-06-10T15:00:00.251928"
+  },
+  {
+    "day": 2,
+    "cycle": "afternoon",
+    "character": "lw_cross",
+    "action": "Drops his mitts and stares back, chest heaving, refusing to blink first.",
+    "thought": "Three days. Show him you're different.",
+    "mood": "hungry",
+    "timestamp": "2026-06-10T15:00:00.251928"
+  },
+  {
+    "day": 2,
+    "cycle": "afternoon",
+    "character": "hw_reyes",
+    "action": "Pauses his heavy-bag work, watching the tension simmer between the lightweights.",
+    "thought": "That's the main event right there.",
+    "mood": "intrigued",
+    "timestamp": "2026-06-10T15:00:00.251928"
+  },
+  {
+    "day": 2,
+    "cycle": "afternoon",
+    "character": "fw_tanaka",
+    "action": "Fires rapid combinations on the mitts, stealing a glance at the rivals from the corner.",
+    "thought": "Respect earned in the ring, not stares.",
+    "mood": "steady",
+    "timestamp": "2026-06-10T15:00:00.251928"
+  },
+  {
+    "day": 2,
+    "cycle": "afternoon",
+    "character": "lhw_doyle",
+    "action": "Wraps his knuckles slowly, eyes flicking between Tamiev and Cross with grim appreciation.",
+    "thought": "Best fight on the card, no question.",
+    "mood": "watchful",
+    "timestamp": "2026-06-10T15:00:00.251928"
+  },
+  {
+    "day": 2,
+    "cycle": "afternoon",
+    "character": "hw_walker",
+    "action": "Bounces lightly on his toes near the heavy bag, grinning at the electric standoff.",
+    "thought": "This is what we came for, boys.",
+    "mood": "energized",
+    "timestamp": "2026-06-10T15:00:00.251928"
+  },
+  {
+    "day": 2,
+    "cycle": "afternoon",
+    "character": "lw_aliyev",
+    "action": "Sits on the bench, cooling down from his own wrestling session, studying Tamiev with dark intent.",
+    "thought": "He's not the only wrestler here.",
+    "mood": "calculating",
+    "timestamp": "2026-06-10T15:00:00.251928"
+  },
+  {
+    "day": 2,
+    "cycle": "afternoon",
+    "character": "lw_mori",
+    "action": "Practices footwork drills alone, methodical and unbothered, ears open to the gym's hum.",
+    "thought": "Everyone's watching their fight, not mine.",
+    "mood": "patient",
+    "timestamp": "2026-06-10T15:00:00.251928"
+  },
+  {
+    "day": 2,
+    "cycle": "afternoon",
+    "type": "interaction",
+    "characters": [
+      "lw_tamiev",
+      "lw_cross"
+    ],
+    "description": "Tamiev rises from wrestling with a stare that doesn't waver; Cross drops his mitts and meets it—three days until they collide, and the gym holds its breath.",
+    "dialogue": [
+      {
+        "speaker": "lw_cross",
+        "line": "You look tired, Tamiev. That wrestling take it out of you?"
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "I'm fresh. You'll know tired on Saturday."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Saturday you're eating leather, brother. Your record ends with me."
+      },
+      {
+        "speaker": "lw_aliyev",
+        "line": "He beats your wrestling first, Cross. I've seen the films."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Not my wrestling. My striking has levels."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Levels? I'm undefeated. What record do you have, Cross?"
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "I'm the only one hungry enough to take it from you."
+      },
+      {
+        "speaker": "coach",
+        "line": "Cross, mitts, two more rounds. Tamiev, roll with Aliyev. Let's go."
+      },
+      {
+        "speaker": "lw_mori",
+        "line": "That one goes to the scorecards if Cross survives round two."
+      },
+      {
+        "speaker": "lw_walker",
+        "line": "Scorecard? Nah, someone's getting hurt Saturday night."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Not me. I'm finishing him in the second."
+      },
+      {
+        "speaker": "lw_tanaka",
+        "line": "Both great fighters. Respect the work."
+      },
+      {
+        "speaker": "lw_doyle",
+        "line": "That's championship blood right there. Both of them."
+      },
+      {
+        "speaker": "lw_reyes",
+        "line": "Undefeated wrestler versus volume striker. That's the blueprint fight."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Talk is easy. See you Saturday, Cross."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Can't wait, champ. Your belt comes home with me."
+      }
+    ],
+    "scene": "gym",
+    "phase": "camp",
+    "timestamp": "2026-06-10T15:00:00.251928"
   }
 ]
