@@ -1422,5 +1422,156 @@
     "scene": "gym",
     "phase": "camp",
     "timestamp": "2026-06-10T18:30:00.198354"
+  },
+  {
+    "day": 2,
+    "cycle": "night",
+    "character": "lw_tamiev",
+    "action": "Wraps his towel around his neck, shoulders still shiny with sweat, eyes tracking Cross across the mat.",
+    "thought": "Three days. He does not blink first.",
+    "mood": "cold",
+    "timestamp": "2026-06-10T22:30:00.546282"
+  },
+  {
+    "day": 2,
+    "cycle": "night",
+    "character": "lw_cross",
+    "action": "Drops his hands from the mitts, breathing hard, chest heaving, locking eyes with Tamiev across the gym.",
+    "thought": "He's here. Saturday I take everything.",
+    "mood": "electric",
+    "timestamp": "2026-06-10T22:30:00.546282"
+  },
+  {
+    "day": 2,
+    "cycle": "night",
+    "character": "mw_demir",
+    "action": "Rolls off the wrestling mat after a hard round, wiping his face, watching the two lightweights in his peripheral.",
+    "thought": "That tension could crack the canvas.",
+    "mood": "grinding",
+    "timestamp": "2026-06-10T22:30:00.546282"
+  },
+  {
+    "day": 2,
+    "cycle": "night",
+    "character": "lhw_banks",
+    "action": "Finishes heavy bag work with a final explosive combination, then turns to see the Tamiev-Cross staredown.",
+    "thought": "That's how you carry a belt, though.",
+    "mood": "confident",
+    "timestamp": "2026-06-10T22:30:00.546282"
+  },
+  {
+    "day": 2,
+    "cycle": "night",
+    "character": "mw_alves",
+    "action": "Stretches his hips after pad work, spinning idly on one leg, eyes on the lightweight drama unfolding.",
+    "thought": "Someone's walking out undefeated gone.",
+    "mood": "hungry",
+    "timestamp": "2026-06-10T22:30:00.546282"
+  },
+  {
+    "day": 2,
+    "cycle": "night",
+    "character": "lhw_sokolov",
+    "action": "Works through his final core set on the mat, methodical and undisturbed, tuning out the gym noise.",
+    "thought": "Tomorrow we drill sambo throws again.",
+    "mood": "methodical",
+    "timestamp": "2026-06-10T22:30:00.546282"
+  },
+  {
+    "day": 2,
+    "cycle": "night",
+    "character": "fw_marin",
+    "action": "Tapes off his hands slowly, jaw set, watching the two lightweights with a warrior's nod of respect.",
+    "thought": "Both killers. Saturday will be brutal.",
+    "mood": "gritty",
+    "timestamp": "2026-06-10T22:30:00.546282"
+  },
+  {
+    "day": 2,
+    "cycle": "night",
+    "character": "lhw_petrovic",
+    "action": "Coils up a heavy jump rope, thick neck glistening, studying Cross and Tamiev with a knowing smirk.",
+    "thought": "The young lion wants the old one's crown.",
+    "mood": "focused",
+    "timestamp": "2026-06-10T22:30:00.546282"
+  },
+  {
+    "day": 2,
+    "cycle": "night",
+    "type": "interaction",
+    "characters": [
+      "lw_tamiev",
+      "lw_cross"
+    ],
+    "description": "Tamiev rises from the mats, toweling off, and holds Cross's stare across the gym floor—three days until the undefeated champ and the people's flashy challenger collide for the lightweight crown, and the gym's electric with it.",
+    "dialogue": [
+      {
+        "speaker": "lw_cross",
+        "line": "You see me working, Mountain? Three days."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "I see you. Always."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "First loss coming. I'm taking that zero off your record."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "You will try very hard, Showtime. That is good."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Try? Nah. I'm walking out champ, brother. The people believe it."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "The people do not fight. I do."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Yeah? Your wrestling gonna stop these hands Saturday night?"
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "My wrestling will do what it always does, Cross. Control."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "I've watched every tape. I know every shot you hunt."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Then you know what happens when I land."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Not Saturday. I'm faster, smarter, hungrier than you, man."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Speed fades. Power doesn't. See you in the cage."
+      },
+      {
+        "speaker": "coach",
+        "line": "Tamiev! Shower. Fifteen minutes. We debrief."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Can't wait, Mountain. Five rounds. You and me."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "I will be there."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Yeah. You will be."
+      }
+    ],
+    "scene": "gym",
+    "phase": "camp",
+    "timestamp": "2026-06-10T22:30:00.546282"
   }
 ]
