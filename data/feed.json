@@ -2038,5 +2038,160 @@
     "scene": "gym",
     "phase": "fight_week",
     "timestamp": "2026-06-11T11:30:00.381852"
+  },
+  {
+    "day": 3,
+    "cycle": "afternoon",
+    "character": "lw_tamiev",
+    "action": "Stands motionless at the center of the mat, wraps still around his wrists, watching Cross across the gym floor.",
+    "thought": "Three days. Same work, same discipline.",
+    "mood": "composed",
+    "timestamp": "2026-06-11T15:00:00.615257"
+  },
+  {
+    "day": 3,
+    "cycle": "afternoon",
+    "character": "lw_cross",
+    "action": "Wipes his face with a towel, eyes locked on Tamiev, breathing still elevated from pad work.",
+    "thought": "I'm the one who changes history.",
+    "mood": "wired",
+    "timestamp": "2026-06-11T15:00:00.615257"
+  },
+  {
+    "day": 3,
+    "cycle": "afternoon",
+    "character": "lhw_petrovic",
+    "action": "Finishes a clinch drill with his coach, then steps back and observes the lightweight tension without breaking rhythm.",
+    "thought": "Two men hunting the same crown.",
+    "mood": "methodical",
+    "timestamp": "2026-06-11T15:00:00.615257"
+  },
+  {
+    "day": 3,
+    "cycle": "afternoon",
+    "character": "hw_muller",
+    "action": "Continues light footwork drills, unbothered, occasionally glancing over at the lightweights' silent standoff.",
+    "thought": "Young men with fire always burn bright.",
+    "mood": "composed",
+    "timestamp": "2026-06-11T15:00:00.615257"
+  },
+  {
+    "day": 3,
+    "cycle": "afternoon",
+    "character": "hw_bamidele",
+    "action": "Pauses heavy-bag work and turns to watch the staredown, grinning slightly at the electric charge.",
+    "thought": "That's the energy I need right there.",
+    "mood": "eager",
+    "timestamp": "2026-06-11T15:00:00.615257"
+  },
+  {
+    "day": 3,
+    "cycle": "afternoon",
+    "character": "mw_tonga",
+    "action": "Winds down from a sparring session, sits at the edge of the mat, tracking Tamiev and Cross.",
+    "thought": "One of them won't leave the same.",
+    "mood": "sharp",
+    "timestamp": "2026-06-11T15:00:00.615257"
+  },
+  {
+    "day": 3,
+    "cycle": "afternoon",
+    "character": "mw_khalidov",
+    "action": "Moves through slow stretching in the corner, dark eyes occasionally rising to the gym's center stage.",
+    "thought": "Pressure breaks everyone, mountain or man.",
+    "mood": "methodical",
+    "timestamp": "2026-06-11T15:00:00.615257"
+  },
+  {
+    "day": 3,
+    "cycle": "afternoon",
+    "character": "lw_novak",
+    "action": "Takes a water break on the bench, watching the two lightweights with the calm of a veteran gatekeeper.",
+    "thought": "I've seen hungry fighters before.",
+    "mood": "composed",
+    "timestamp": "2026-06-11T15:00:00.615257"
+  },
+  {
+    "day": 3,
+    "cycle": "afternoon",
+    "type": "interaction",
+    "characters": [
+      "lw_tamiev",
+      "lw_cross"
+    ],
+    "description": "Three days out, Cross steps toward the center as Tamiev watches—the air snaps tight, the room quiets, and the hunt for Saturday's crown begins in earnest.",
+    "dialogue": [
+      {
+        "speaker": "lw_cross",
+        "line": "You feel it yet, champ? The heat coming?"
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Heat doesn't break stone, Cross. You know that."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Stone cracks. I'm going to crack you."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "You will try. Saturday, you will try."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Not try. I'm taking that belt home."
+      },
+      {
+        "speaker": "coach",
+        "line": "Alright, that's enough jawing. Save it for the cage."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Saturday can't come fast enough, man."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "It will come. And you will learn."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "I've learned plenty. From everyone but you."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Then Saturday will be your education."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Bring it, Mountain. I'm done waiting."
+      },
+      {
+        "speaker": "hw_muller",
+        "line": "Kid's got fire. Let's see if he's got the hands."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "I've got everything, Müller. Just wait."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Hands fade. Discipline remains. We will see."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Saturday, undefeated dies."
+      },
+      {
+        "speaker": "lw_novak",
+        "line": "Kid, the hype won't hurt him in the cage."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Neither will his wrestling. Not against me."
+      }
+    ],
+    "scene": "gym",
+    "phase": "fight_week",
+    "timestamp": "2026-06-11T15:00:00.615257"
   }
 ]
