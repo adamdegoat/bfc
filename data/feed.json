@@ -2360,5 +2360,172 @@
     "scene": "gym",
     "phase": "fight_week",
     "timestamp": "2026-06-11T18:30:00.282466"
+  },
+  {
+    "day": 3,
+    "cycle": "night",
+    "character": "lw_tamiev",
+    "action": "Stands motionless at center, wraps loose on his wrists, eyes unblinking and locked on Cross.",
+    "thought": "Mountain doesn't move. Let him come.",
+    "mood": "focused",
+    "timestamp": "2026-06-11T22:30:00.166131"
+  },
+  {
+    "day": 3,
+    "cycle": "night",
+    "character": "lw_cross",
+    "action": "Steps forward with chest high, breath sharp from pad work, fists up and loose.",
+    "thought": "This is my moment. This is it.",
+    "mood": "wired",
+    "timestamp": "2026-06-11T22:30:00.166131"
+  },
+  {
+    "day": 3,
+    "cycle": "night",
+    "character": "hw_walker",
+    "action": "Pauses his heavy bag work and turns fully to watch, wraps still tight on his wrists.",
+    "thought": "Here we go. The main event's starting.",
+    "mood": "engaged",
+    "timestamp": "2026-06-11T22:30:00.166131"
+  },
+  {
+    "day": 3,
+    "cycle": "night",
+    "character": "lw_novak",
+    "action": "Stops his sparring rounds and walks to the mat edge, arms folded across his chest.",
+    "thought": "One walks out champ. One walks out empty.",
+    "mood": "observant",
+    "timestamp": "2026-06-11T22:30:00.166131"
+  },
+  {
+    "day": 3,
+    "cycle": "night",
+    "character": "fw_hale",
+    "action": "Stops his bag work midway and watches from his station, nodding slow and steady.",
+    "thought": "These two carry the whole division.",
+    "mood": "respectful",
+    "timestamp": "2026-06-11T22:30:00.166131"
+  },
+  {
+    "day": 3,
+    "cycle": "night",
+    "character": "lhw_sokolov",
+    "action": "Continues his light footwork but his eyes drift to the center, tracking both men.",
+    "thought": "Tamiev won't be rushed. Cross doesn't know yet.",
+    "mood": "calm",
+    "timestamp": "2026-06-11T22:30:00.166131"
+  },
+  {
+    "day": 3,
+    "cycle": "night",
+    "character": "fw_chen",
+    "action": "Stands from his pad work, bouncing lightly on his toes, watching the face-off.",
+    "thought": "The show before the show.",
+    "mood": "intrigued",
+    "timestamp": "2026-06-11T22:30:00.166131"
+  },
+  {
+    "day": 3,
+    "cycle": "night",
+    "character": "fw_dubois",
+    "action": "Wraps his hands slowly, eyes steady on both men, face unsmiling and still.",
+    "thought": "Smart range wins this, not explosions.",
+    "mood": "analytical",
+    "timestamp": "2026-06-11T22:30:00.166131"
+  },
+  {
+    "day": 3,
+    "cycle": "night",
+    "type": "interaction",
+    "characters": [
+      "lw_tamiev",
+      "lw_cross"
+    ],
+    "description": "Tamiev and Cross lock eyes at center; Cross calls out the mountain, and the gym holds its breath as Saturday's main event simmers in real time.",
+    "dialogue": [
+      {
+        "speaker": "lw_cross",
+        "line": "Saturday's the night you lose, champ."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "You believe this."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "I know it. Speed, athleticism, I'm different."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Then show me now."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Saturday, all the world watches."
+      },
+      {
+        "speaker": "fw_hale",
+        "line": "Save it for the cage, boys."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "He can't stay undefeated forever. That's me."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Many have believed. All have failed."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Not like me. I'm the future."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Come, then."
+      },
+      {
+        "speaker": "hw_walker",
+        "line": "This is what we came for."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Your mountain gets moved Saturday night."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Mountains do not move."
+      },
+      {
+        "speaker": "lw_novak",
+        "line": "One will break. Always does."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "It won't be me."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "We will learn Saturday."
+      },
+      {
+        "speaker": "fw_chen",
+        "line": "The champ's unfazed."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "You should be!"
+      },
+      {
+        "speaker": "fw_hale",
+        "line": "Alright, let's keep training."
+      },
+      {
+        "speaker": "lhw_sokolov",
+        "line": "Cross has fire. Tamiev has time."
+      }
+    ],
+    "scene": "gym",
+    "phase": "fight_week",
+    "timestamp": "2026-06-11T22:30:00.166131"
   }
 ]
