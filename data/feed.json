@@ -2193,5 +2193,172 @@
     "scene": "gym",
     "phase": "fight_week",
     "timestamp": "2026-06-11T15:00:00.615257"
+  },
+  {
+    "day": 3,
+    "cycle": "evening",
+    "character": "lw_tamiev",
+    "action": "Stands motionless at the center, wraps loose on his wrists, watching Cross with unblinking intensity.",
+    "thought": "He came to me. Good.",
+    "mood": "composed",
+    "timestamp": "2026-06-11T18:30:00.282466"
+  },
+  {
+    "day": 3,
+    "cycle": "evening",
+    "character": "lw_cross",
+    "action": "Steps to the center, chest high, eyes locked on Tamiev, breathing still sharp from pad work.",
+    "thought": "Three days. This is it.",
+    "mood": "fired_up",
+    "timestamp": "2026-06-11T18:30:00.282466"
+  },
+  {
+    "day": 3,
+    "cycle": "evening",
+    "character": "lhw_brandt",
+    "action": "Pauses his heavy work and turns to watch the moment, arms at his sides.",
+    "thought": "The hunger in that kid is real.",
+    "mood": "focused",
+    "timestamp": "2026-06-11T18:30:00.282466"
+  },
+  {
+    "day": 3,
+    "cycle": "evening",
+    "character": "lhw_manos",
+    "action": "Moves to the edge of the mat, observing the lightweights with a veteran's calm.",
+    "thought": "Finally. Testing time is coming.",
+    "mood": "composed",
+    "timestamp": "2026-06-11T18:30:00.282466"
+  },
+  {
+    "day": 3,
+    "cycle": "evening",
+    "character": "fw_hale",
+    "action": "Stops his bag work and watches from his station, noting the shift in energy.",
+    "thought": "This is the moment right here.",
+    "mood": "focused",
+    "timestamp": "2026-06-11T18:30:00.282466"
+  },
+  {
+    "day": 3,
+    "cycle": "evening",
+    "character": "lw_balogun",
+    "action": "Steps closer, drawn to the apex of the division, watching both men with wide eyes.",
+    "thought": "This is what I'm fighting toward.",
+    "mood": "inspired",
+    "timestamp": "2026-06-11T18:30:00.282466"
+  },
+  {
+    "day": 3,
+    "cycle": "evening",
+    "character": "hw_flynn",
+    "action": "Wraps his hands slowly, tracking the lightweights while winding down his session.",
+    "thought": "Elite always shows up like this.",
+    "mood": "watchful",
+    "timestamp": "2026-06-11T18:30:00.282466"
+  },
+  {
+    "day": 3,
+    "cycle": "evening",
+    "character": "mw_brenner",
+    "action": "Continues his methodical footwork, head still steady, but his eyes drift to the center.",
+    "thought": "The countdown is real now.",
+    "mood": "steady",
+    "timestamp": "2026-06-11T18:30:00.282466"
+  },
+  {
+    "day": 3,
+    "cycle": "evening",
+    "type": "interaction",
+    "characters": [
+      "lw_tamiev",
+      "lw_cross"
+    ],
+    "description": "Cross moves to the center; Tamiev's standing still, wraps loose at his wrists, watching—the gym falls quiet, and the weight of Saturday suddenly belongs to both men.",
+    "dialogue": [
+      {
+        "speaker": "lw_cross",
+        "line": "You ready for me, Tamiev?"
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Always am."
+      },
+      {
+        "speaker": "lhw_manos",
+        "line": "Here we go again."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Three days. You're human, Mountain."
+      },
+      {
+        "speaker": "lhw_brandt",
+        "line": "Boy's got guts, I'll give him that."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Guts don't win titles, Cross."
+      },
+      {
+        "speaker": "lw_balogun",
+        "line": "This is what I'm chasing right here."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "I've trained too hard for this. I'm taking it Saturday."
+      },
+      {
+        "speaker": "fw_hale",
+        "line": "That's the hunger right there."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Bring it all, Cross. That's what I want."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Oh, you'll get it."
+      },
+      {
+        "speaker": "hw_flynn",
+        "line": "These two are on another level, man."
+      },
+      {
+        "speaker": "lhw_manos",
+        "line": "Tamiev hasn't been tested yet. Maybe this is it."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Maybe."
+      },
+      {
+        "speaker": "mw_brenner",
+        "line": "Three days."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Three days till you learn the difference."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Between what, exactly?"
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Between the man and the myth."
+      },
+      {
+        "speaker": "lhw_brandt",
+        "line": "He believes it. That's for damn sure."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Saturday will answer everything."
+      }
+    ],
+    "scene": "gym",
+    "phase": "fight_week",
+    "timestamp": "2026-06-11T18:30:00.282466"
   }
 ]

@@ -1,6 +1,6 @@
 {
   "day": 3,
-  "cycle": "afternoon",
+  "cycle": "evening",
   "scene": "gym",
   "phase": "fight_week",
   "week_label": "Fight Week — Thursday, the card looms",
@@ -136,10 +136,10 @@
   },
   "next_card": null,
   "results_history": [],
-  "pulse": "Cross and Tamiev trade promises three days out—the hunter believes, the mountain waits, and Saturday's reckoning draws closer with every word.",
-  "scene_blurb": "Cross and Tamiev lock eyes across the gym, trading words three days from the card. The lightweight championship contenders enter their final countdown.",
+  "pulse": "Three days out, the undefeated champion and the hungry challenger finally lock eyes—and the gym knows Saturday is getting real.",
+  "scene_blurb": "Evening at the gym, the lightweights locked in the center—Tamiev motionless, Cross fired up, the rest finishing hard work as the countdown to BFC 100 turns real.",
   "last_run_date": "2026-06-11",
-  "last_cycle_key": "2026-06-11:afternoon",
+  "last_cycle_key": "2026-06-11:evening",
   "day_summaries": {
     "1": "BFC 100's announcement sent shockwaves through The Gym: the undefeated Mountain finally faces Showtime across the mats Saturday night. Every fighter sharpened their tools today as the entire card locks in with championship stakes sky-high. From featherweight to heavyweight, the promotion breathes with one focus: this weekend.",
     "2": "Day 2 at the gym: Tamiev and Cross lock eyes in the evening, champ and challenger building toward war. Across the facility, the entire card grinds—Morozov works heavy bottom position, Adeyemi leads his team with loud energy, Banks crashes heavy bags. Three days to BFC 100."
@@ -147,11 +147,11 @@
   "present": [
     "lw_tamiev",
     "lw_cross",
-    "lhw_petrovic",
-    "hw_muller",
-    "hw_bamidele",
-    "mw_tonga",
-    "mw_khalidov",
-    "lw_novak"
+    "lhw_brandt",
+    "lhw_manos",
+    "fw_hale",
+    "lw_balogun",
+    "hw_flynn",
+    "mw_brenner"
   ]
 }
