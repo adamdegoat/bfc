@@ -1,9 +1,9 @@
 {
-  "day": 3,
-  "cycle": "night",
-  "scene": "gym",
-  "phase": "fight_week",
-  "week_label": "Fight Week — Thursday, the card looms",
+  "day": 4,
+  "cycle": "oracle",
+  "scene": "weighin",
+  "phase": "weigh_in",
+  "week_label": "Weigh-In Day — Friday, making weight + face-offs",
   "promotion": "Best Fighting Championship",
   "abbr": "BFC",
   "event_no": 100,
@@ -136,10 +136,10 @@
   },
   "next_card": null,
   "results_history": [],
-  "pulse": "The undefeated champion's cool resolve meets the contender's electric hunger—Saturday's title fight is already burning.",
-  "scene_blurb": "Tamiev and Cross face off at center; the gym falls silent, every fighter tracking the championship moment unfolding three days before the cage.",
-  "last_run_date": "2026-06-11",
-  "last_cycle_key": "2026-06-11:night",
+  "pulse": "Tamiev and Cross lock eyes at the official weigh-ins — undefeated mountain meets hungry challenger, and the entire roster holds its breath.",
+  "scene_blurb": "Official weigh-in stage, Friday afternoon. The scale is locked, the cameras are flashing, and every fighter on BFC 100's card is in the building.",
+  "last_run_date": "2026-06-12",
+  "last_cycle_key": "2026-06-12:oracle",
   "day_summaries": {
     "1": "BFC 100's announcement sent shockwaves through The Gym: the undefeated Mountain finally faces Showtime across the mats Saturday night. Every fighter sharpened their tools today as the entire card locks in with championship stakes sky-high. From featherweight to heavyweight, the promotion breathes with one focus: this weekend.",
     "2": "Day 2 at the gym: Tamiev and Cross lock eyes in the evening, champ and challenger building toward war. Across the facility, the entire card grinds—Morozov works heavy bottom position, Adeyemi leads his team with loud energy, Banks crashes heavy bags. Three days to BFC 100.",
@@ -148,11 +148,13 @@
   "present": [
     "lw_tamiev",
     "lw_cross",
-    "hw_walker",
-    "lw_novak",
-    "fw_hale",
-    "lhw_sokolov",
-    "fw_chen",
-    "fw_dubois"
+    "mw_adeyemi",
+    "mw_romano",
+    "hw_morozov",
+    "hw_tui",
+    "lhw_banks",
+    "lhw_petrovic",
+    "fw_brady",
+    "fw_tanaka"
   ]
 }

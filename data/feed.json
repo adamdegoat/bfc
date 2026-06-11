@@ -2527,5 +2527,174 @@
     "scene": "gym",
     "phase": "fight_week",
     "timestamp": "2026-06-11T22:30:00.166131"
+  },
+  {
+    "day": 4,
+    "cycle": "oracle",
+    "character": "lw_tamiev",
+    "action": "Steps onto the scale alone, steady and composed, the cameras flashing around him as the official nods and records his weight.",
+    "thought": "Tomorrow the mountain fights. Today, one breath.",
+    "mood": "focused",
+    "timestamp": "2026-06-12T00:00:00.393493"
+  },
+  {
+    "day": 4,
+    "cycle": "oracle",
+    "character": "lw_cross",
+    "action": "Bounces in place near the scale line, chest pumped, eyes already locked on Tamiev across the stage.",
+    "thought": "That giant's mine. I can feel it.",
+    "mood": "wired",
+    "timestamp": "2026-06-12T00:00:00.393493"
+  },
+  {
+    "day": 4,
+    "cycle": "oracle",
+    "character": "mw_adeyemi",
+    "action": "Flashes a megawatt smile as he steps off the scale, nodding to his team behind the press barrier.",
+    "thought": "The weight's gone. Show time starts now.",
+    "mood": "energized",
+    "timestamp": "2026-06-12T00:00:00.393493"
+  },
+  {
+    "day": 4,
+    "cycle": "oracle",
+    "character": "mw_romano",
+    "action": "Makes weight silently, glances down at the scale readout, then back toward Adeyemi with a flat, studying gaze.",
+    "thought": "Numbers don't lie. Film never lies either.",
+    "mood": "calculated",
+    "timestamp": "2026-06-12T00:00:00.393493"
+  },
+  {
+    "day": 4,
+    "cycle": "oracle",
+    "character": "hw_morozov",
+    "action": "Steps from the scale with the weight of a mountain, silent and massive, his presence alone drawing the room's attention.",
+    "thought": "Tui will feel my strength tomorrow.",
+    "mood": "immense",
+    "timestamp": "2026-06-12T00:00:00.393493"
+  },
+  {
+    "day": 4,
+    "cycle": "oracle",
+    "character": "hw_tui",
+    "action": "Grins wide as he makes weight, waving to fans in the crowd, the beloved giant at ease.",
+    "thought": "Weight's good. Heart's full. Ready to go.",
+    "mood": "warm",
+    "timestamp": "2026-06-12T00:00:00.393493"
+  },
+  {
+    "day": 4,
+    "cycle": "oracle",
+    "character": "lhw_banks",
+    "action": "Hits the scale and immediately points across the stage at the light heavyweight contenders, chest high and grinning.",
+    "thought": "Petrović sees this lightning right here.",
+    "mood": "brash",
+    "timestamp": "2026-06-12T00:00:00.393493"
+  },
+  {
+    "day": 4,
+    "cycle": "oracle",
+    "character": "lhw_petrovic",
+    "action": "Stands motionless off the scale, arms folded, watching Banks with a cold, grinding stare.",
+    "thought": "The kid talks. I break. Simple.",
+    "mood": "mean",
+    "timestamp": "2026-06-12T00:00:00.393493"
+  },
+  {
+    "day": 4,
+    "cycle": "oracle",
+    "character": "fw_brady",
+    "action": "Makes weight and immediately starts shadow-boxing, muttering toward Tanaka and the cameras alike.",
+    "thought": "Rafael's belt will be mine. Bad intentions forever.",
+    "mood": "aggressive",
+    "timestamp": "2026-06-12T00:00:00.393493"
+  },
+  {
+    "day": 4,
+    "cycle": "oracle",
+    "character": "fw_tanaka",
+    "action": "Smiles softly as he hits the scale, bows slightly to the officials, then stands calm among the chaos.",
+    "thought": "One fight left. Then the title shot.",
+    "mood": "humble",
+    "timestamp": "2026-06-12T00:00:00.393493"
+  },
+  {
+    "day": 4,
+    "cycle": "oracle",
+    "type": "interaction",
+    "characters": [
+      "lw_tamiev",
+      "lw_cross"
+    ],
+    "description": "Twenty-four hours before the main event, Tamiev and Cross meet at the weigh-in stage face-off — cameras flash, crowd roars, and the undefeated champion and hungry challenger finally lock eyes.",
+    "dialogue": [
+      {
+        "speaker": "lw_cross",
+        "line": "You're the mountain? Looks unclimbable from here, champ."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Mountains don't speak. Tomorrow, you'll know why."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "That's cute. I've broken mountains before."
+      },
+      {
+        "speaker": "reporter",
+        "line": "Aslan, Jordan — final words before Saturday night?"
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "The King is dead. Long live the new King. Twenty-one zeros? Not tonight."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "You will feel my weight tomorrow, Cross. That is all."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Feel this — I'm faster, sharper, and I want it more."
+      },
+      {
+        "speaker": "mw_adeyemi",
+        "line": "Let them talk. We all know how this ends."
+      },
+      {
+        "speaker": "fw_brady",
+        "line": "Nah, the Mountain's reign ends tomorrow, mark it."
+      },
+      {
+        "speaker": "hw_tui",
+        "line": "Cross is tough, real tough. But Aslan's different."
+      },
+      {
+        "speaker": "lhw_banks",
+        "line": "Tamiev's getting clipped. I feel it. Cross is electric."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Tomorrow, the world will see. Not today. Not words."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "The world's gonna see a new champ. That's a promise."
+      },
+      {
+        "speaker": "mw_romano",
+        "line": "Film already shows who wins. It always does."
+      },
+      {
+        "speaker": "fw_tanaka",
+        "line": "Great fighters, both. Tomorrow will be beautiful."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "See you in the cage, Mountain. Hope you're ready."
+      }
+    ],
+    "scene": "weighin",
+    "phase": "weigh_in",
+    "timestamp": "2026-06-12T00:00:00.393493"
   }
 ]
