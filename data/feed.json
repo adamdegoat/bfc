@@ -1887,5 +1887,156 @@
     "scene": "gym",
     "phase": "fight_week",
     "timestamp": "2026-06-11T07:00:00.240752"
+  },
+  {
+    "day": 3,
+    "cycle": "midday",
+    "character": "lw_tamiev",
+    "action": "Wraps his hands methodically at the wall, eyes tracking Cross across the floor.",
+    "thought": "Three days left. He'll test me.",
+    "mood": "focused",
+    "timestamp": "2026-06-11T11:30:00.381852"
+  },
+  {
+    "day": 3,
+    "cycle": "midday",
+    "character": "lw_cross",
+    "action": "Finishes another set of pad work, breathing hard, sweat dripping, still locked on the champ.",
+    "thought": "This is my moment. I'm taking him down.",
+    "mood": "fired",
+    "timestamp": "2026-06-11T11:30:00.381852"
+  },
+  {
+    "day": 3,
+    "cycle": "midday",
+    "character": "lhw_manos",
+    "action": "Holds a heavy bag steady for a younger fighter, watching the lightweight theater unfold without a word.",
+    "thought": "Young men burning. I just hold the bag.",
+    "mood": "steady",
+    "timestamp": "2026-06-11T11:30:00.381852"
+  },
+  {
+    "day": 3,
+    "cycle": "midday",
+    "character": "mw_okeke",
+    "action": "Drinks water at the edge of the mat, eyes flicking between Cross and the champ.",
+    "thought": "One day I'll be fighting for gold.",
+    "mood": "eager",
+    "timestamp": "2026-06-11T11:30:00.381852"
+  },
+  {
+    "day": 3,
+    "cycle": "midday",
+    "character": "hw_muller",
+    "action": "Moves through some light wrestling footwork, unmoved by the surrounding intensity.",
+    "thought": "Kids have fire. I've got scars.",
+    "mood": "steady",
+    "timestamp": "2026-06-11T11:30:00.381852"
+  },
+  {
+    "day": 3,
+    "cycle": "midday",
+    "character": "lhw_achebe",
+    "action": "Stretches methodically in the corner, long limbs unfolding with his usual quiet grace.",
+    "thought": "Faith and focus. One step at a time.",
+    "mood": "calm",
+    "timestamp": "2026-06-11T11:30:00.381852"
+  },
+  {
+    "day": 3,
+    "cycle": "midday",
+    "character": "hw_boateng",
+    "action": "Rolls his neck and watches the energy in the room, a faint smile crossing his face.",
+    "thought": "The beast wakes up Saturday.",
+    "mood": "patient",
+    "timestamp": "2026-06-11T11:30:00.381852"
+  },
+  {
+    "day": 3,
+    "cycle": "midday",
+    "character": "lhw_petrovic",
+    "action": "Works a clinch drill with a coach, methodical and heavy, paying little attention to the lightweights.",
+    "thought": "Two days. Banks will feel the weight.",
+    "mood": "brutal",
+    "timestamp": "2026-06-11T11:30:00.381852"
+  },
+  {
+    "day": 3,
+    "cycle": "midday",
+    "type": "interaction",
+    "characters": [
+      "lw_tamiev",
+      "lw_cross"
+    ],
+    "description": "Cross catches Tamiev's eye across the gym floor three days out—the tension snaps taut as both men acknowledge the countdown to Saturday. Manos and Boateng pause their work; the room tilts toward the lightweights.",
+    "dialogue": [
+      {
+        "speaker": "lw_cross",
+        "line": "You keeping track of the days, champ? Getting nervous?"
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "No. Are you?"
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Not a chance. I'm sleeping perfect."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Sleep well. Rest helps."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "That's it? No trash back? That's weak."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "I don't talk. Saturday talks for me."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Saturday you're getting tagged. Got it?"
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "You'll try. That's all."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Trying? Man, I'm taking you down."
+      },
+      {
+        "speaker": "lhw_manos",
+        "line": "Both of you shut it. Save it for the cage."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Stay out of this, old man."
+      },
+      {
+        "speaker": "hw_boateng",
+        "line": "Let them talk. Saturday we'll know who was right."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Saturday. And it won't be close."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "You're nervous. I can hear it."
+      },
+      {
+        "speaker": "lw_cross",
+        "line": "Wrong. I'm hungry."
+      },
+      {
+        "speaker": "lw_tamiev",
+        "line": "Good. Come hungry. Come ready."
+      }
+    ],
+    "scene": "gym",
+    "phase": "fight_week",
+    "timestamp": "2026-06-11T11:30:00.381852"
   }
 ]
